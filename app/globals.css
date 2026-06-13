@@ -76,6 +76,14 @@ footer{ margin-top:34px; display:flex; align-items:center; justify-content:space
 footer .ig{ display:inline-flex; align-items:center; gap:8px; color:var(--ink); text-decoration:none; }
 footer .ig:hover{ color:var(--magenta); }
 
+/* floating instagram button (right side) */
+.ig-float{ position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:1100;
+  width:62px; height:62px; border-radius:50%; background:var(--magenta); border:3px solid var(--ink);
+  box-shadow:4px 4px 0 rgba(20,20,20,.28); display:flex; align-items:center; justify-content:center;
+  color:#fff; text-decoration:none; transition:transform .15s ease, background .15s ease; }
+.ig-float:hover{ transform:translateY(-50%) scale(1.07); background:var(--ink); }
+.ig-float i{ font-size:32px; }
+
 @media (max-width:640px){
   .banner{ height:172px; } .wordmark .l1,.wordmark .l2{ font-size:24px; } .banner-face{ width:130px; }
   .lesson-card{ flex-direction:column-reverse; align-items:flex-start; }

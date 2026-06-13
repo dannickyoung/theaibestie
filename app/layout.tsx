@@ -30,7 +30,18 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/iconoir@7.10.1/css/iconoir.css"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <a
+          className="ig-float"
+          href="https://instagram.com/the.ai.bestie"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow @the.ai.bestie on Instagram"
+        >
+          <i className="iconoir-instagram" />
+        </a>
+      </body>
     </html>
   );
 }

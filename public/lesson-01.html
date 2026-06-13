@@ -163,10 +163,20 @@
   .term-note .tn{ font-size:12px; font-weight:600; color:#2c3137; line-height:1.42; }
   /* ---- live web toolbar (screen only) ---- */
   .toolbar{ display:none; }
+  .ig-float{ display:none; }
   @media screen{
-    body{ padding-top:76px; }
-    .page{ margin:0 auto 24px; box-shadow:0 10px 30px rgba(0,0,0,.16); }
-    .page:first-of-type{ margin-top:8px; }
+    /* full-width notepaper background; pages become seamless sections on it */
+    html,body{ background:var(--paper); background-image:repeating-linear-gradient(0deg, transparent 0 38px, var(--line) 38px 39px); }
+    body{ padding-top:64px; }
+    .page{ margin:0 auto; box-shadow:none; background:transparent; background-image:none; }
+    .runhead{ display:none; }
+    .page:not(:last-of-type) .footer{ display:none; }
+    .copybox{ cursor:pointer; transition:filter .12s ease, transform .12s ease; }
+    .copybox:hover{ filter:brightness(1.1); }
+    .copybox:active{ transform:translateY(1px); }
+    .footer .insta{ cursor:pointer; }
+    .footer .insta:hover{ color:var(--magenta); }
+
     .toolbar{ position:fixed; top:0; left:0; right:0; height:64px; z-index:1000;
       background:var(--green); border-bottom:3px solid var(--ink);
       display:flex; align-items:center; justify-content:space-between; padding:0 22px; box-shadow:0 3px 0 rgba(20,20,20,.18); }
@@ -179,8 +189,16 @@
       color:#fff; background:var(--magenta); border:3px solid var(--ink); border-radius:12px; padding:10px 18px; box-shadow:3px 3px 0 rgba(20,20,20,.28); transition:transform .15s ease; }
     .tb-dl:hover{ transform:translateY(-1px); }
     .tb-dl i{ font-size:20px; }
+
+    /* floating instagram button (right side) */
+    .ig-float{ position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:1100;
+      width:62px; height:62px; border-radius:50%; background:var(--magenta); border:3px solid var(--ink);
+      box-shadow:4px 4px 0 rgba(20,20,20,.28); display:flex; align-items:center; justify-content:center;
+      color:#fff; text-decoration:none; transition:transform .15s ease, background .15s ease; }
+    .ig-float:hover{ transform:translateY(-50%) scale(1.07); background:var(--ink); }
+    .ig-float i{ font-size:32px; }
   }
-  @media print{ .toolbar{ display:none !important; } body{ padding-top:0; } .page{ margin:0 auto; box-shadow:none; } }
+  @media print{ .toolbar{ display:none !important; } .ig-float{ display:none !important; } body{ padding-top:0; } .page{ margin:0 auto; box-shadow:none; } }
 </style>
 </head>
 <body>
@@ -249,7 +267,7 @@
 
     <div class="footer">
       <span>Lesson <span class="dot">1</span> of 4 · The AI Bestie Course</span>
-      <span class="insta"><i class="iconoir-instagram"></i> @the.ai.bestie</span>
+      <a class="insta" href="https://instagram.com/the.ai.bestie" target="_blank" rel="noopener"><i class="iconoir-instagram"></i> @the.ai.bestie</a>
     </div>
   </div>
 </section>
@@ -323,7 +341,7 @@
 
     <div class="footer">
       <span>Lesson <span class="dot">1</span> of 4 · The AI Bestie Course</span>
-      <span class="insta"><i class="iconoir-instagram"></i> @the.ai.bestie</span>
+      <a class="insta" href="https://instagram.com/the.ai.bestie" target="_blank" rel="noopener"><i class="iconoir-instagram"></i> @the.ai.bestie</a>
     </div>
   </div>
 </section>
@@ -387,7 +405,7 @@
 
     <div class="footer">
       <span>Lesson <span class="dot">1</span> of 4 · The AI Bestie Course</span>
-      <span class="insta"><i class="iconoir-instagram"></i> @the.ai.bestie</span>
+      <a class="insta" href="https://instagram.com/the.ai.bestie" target="_blank" rel="noopener"><i class="iconoir-instagram"></i> @the.ai.bestie</a>
     </div>
   </div>
 </section>
@@ -451,10 +469,39 @@
 
     <div class="footer">
       <span>Lesson <span class="dot">1</span> of 4 · The AI Bestie Course</span>
-      <span class="insta"><i class="iconoir-instagram"></i> @the.ai.bestie</span>
+      <a class="insta" href="https://instagram.com/the.ai.bestie" target="_blank" rel="noopener"><i class="iconoir-instagram"></i> @the.ai.bestie</a>
     </div>
   </div>
 </section>
 
+<a class="ig-float" href="https://instagram.com/the.ai.bestie" target="_blank" rel="noopener" aria-label="Follow @the.ai.bestie on Instagram"><i class="iconoir-instagram"></i></a>
+
+<script>
+  // Click any black code box to copy its command/prompt
+  document.querySelectorAll('.copybox').forEach(function (box) {
+    var code = box.querySelector('.cb-code');
+    var btn = box.querySelector('.cb-copy');
+    if (!code) return;
+    box.addEventListener('click', function () {
+      var text = code.innerText.trim();
+      function flash() {
+        if (!btn) return;
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<i class="iconoir-check"></i> copied!';
+        setTimeout(function () { btn.innerHTML = orig; }, 1400);
+      }
+      function fallback() {
+        var t = document.createElement('textarea');
+        t.value = text; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.focus(); t.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(t); flash();
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(flash).catch(fallback);
+      } else { fallback(); }
+    });
+  });
+</script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 .col {
   max-width: 860px;
   margin: 0 auto;
-  padding: 14px 22px 80px;
+  padding: 18px 22px 90px;
   position: relative;
 }
 .root h1, .root h2, .root h3, .root h4 { font-family: "Baloo 2", cursive; margin: 0; line-height: 1.06; }
@@ -70,20 +70,20 @@
 .bFace { position: absolute; right: 30px; bottom: -6px; width: 172px; z-index: 5; filter: drop-shadow(4px 6px 6px rgba(0, 0, 0, .28)); }
 
 /* ---------- title block ---------- */
-.titleCard { margin-top: 24px; padding: 28px 30px 26px; position: relative; }
+.titleCard { margin-top: 34px; padding: 28px 30px 26px; position: relative; }
 .titleCard h1 { font-size: 54px; font-weight: 800; margin: 14px 0 8px; letter-spacing: -1px; }
 .sub { font-size: 16.5px; font-weight: 700; color: #3a4047; max-width: 78%; }
 .ccSticker { position: absolute; right: 30px; bottom: 24px; width: 128px; height: 128px; transform: rotate(6deg); background: #FBEEE7; border: 3px solid var(--ink); border-radius: 26px; box-shadow: 4px 5px 0 rgba(20, 20, 20, .16); display: flex; align-items: center; justify-content: center; }
 .ccSticker img { width: 94px; height: 94px; image-rendering: pixelated; }
 
 /* ---------- promise / chip cards ---------- */
-.promise { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.promise { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 .promise .clay { padding: 14px 14px 16px; }
 .promise h3 { font-size: 16px; margin: 10px 0 4px; }
 .promise p { font-size: 13px; color: #3a4047; font-weight: 600; }
 
 /* ---------- in this lesson ---------- */
-.inThis { margin-top: 22px; padding: 20px 24px 18px; position: relative; }
+.inThis { margin-top: 30px; padding: 20px 24px 18px; position: relative; }
 .inThis h3 { font-size: 18px; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
 .inThisGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 .checkItem { display: flex; gap: 9px; align-items: flex-start; font-weight: 800; font-size: 13px; }
@@ -93,7 +93,7 @@
 .poweredBy img { height: 16px; }
 
 /* ---------- section heading ---------- */
-.hRow { display: flex; align-items: center; gap: 12px; margin: 30px 0 5px; }
+.hRow { display: flex; align-items: center; gap: 12px; margin: 52px 0 6px; }
 .hRow h2 { font-size: 29px; font-weight: 800; }
 .lead { font-size: 15.5px; font-weight: 600; color: #2c3137; }
 
@@ -125,14 +125,14 @@
 .tn { font-size: 12px; font-weight: 600; color: #2c3137; line-height: 1.42; }
 
 /* ---------- big idea / vs ---------- */
-.bigAnalogy { margin-top: 12px; padding: 22px 26px; position: relative; }
+.bigAnalogy { margin-top: 16px; padding: 22px 26px; position: relative; }
 .q { font-size: 19px; font-weight: 800; font-family: "Baloo 2"; line-height: 1.28; }
 .q b { color: var(--magenta); }
 .hl { background: linear-gradient(180deg, transparent 55%, var(--cyan) 55%); padding: 0 3px; border-radius: 3px; }
-.explain { margin-top: 16px; padding: 18px 22px; background: #fff7fd; display: flex; gap: 16px; align-items: center; }
+.explain { margin-top: 18px; padding: 18px 22px; background: #fff7fd; display: flex; gap: 16px; align-items: center; }
 .explain h3 { font-size: 18px; }
 .explain p { margin-top: 5px; font-weight: 600; font-size: 14.5px; color: #33383e; }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 66px; margin-top: 14px; position: relative; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 66px; margin-top: 18px; position: relative; }
 .vsCard { padding: 16px 18px 18px; position: relative; }
 .vsTop { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
 .vsCard h3 { font-size: 19px; }
@@ -142,17 +142,17 @@
 .vsBubble { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-6deg); z-index: 6; font-family: "Press Start 2P"; font-size: 13px; color: #fff; background: var(--ink); border: 3px solid #fff; border-radius: 50%; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; box-shadow: 3px 3px 0 rgba(20, 20, 20, .25); }
 
 /* ---------- quote ---------- */
-.quote { margin-top: 16px; padding: 16px 20px; background: var(--lilac); display: flex; gap: 18px; align-items: center; }
+.quote { margin-top: 34px; padding: 16px 20px; background: var(--lilac); display: flex; gap: 18px; align-items: center; }
 .qFace { width: 86px; flex: none; filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, .22)); }
 .qText { font-family: "Baloo 2"; font-weight: 800; font-size: 19px; color: #2a1538; line-height: 1.2; }
 .qWho { font-family: "Caveat"; font-weight: 700; font-size: 20px; color: #3a1f4d; margin-top: 6px; }
 
 /* ---------- what it can make ---------- */
-.grid6 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 13px; margin-top: 12px; }
+.grid6 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 13px; margin-top: 16px; }
 .grid6 .clay { padding: 14px; display: flex; gap: 13px; align-items: flex-start; }
 .grid6 h3 { font-size: 15px; margin: 2px 0 3px; }
 .grid6 p { font-size: 12.5px; color: #3a4047; font-weight: 600; }
-.super { margin-top: 14px; padding: 16px 20px; background: var(--ink); color: #fff; position: relative; }
+.super { margin-top: 22px; padding: 16px 20px; background: var(--ink); color: #fff; position: relative; }
 .super h3 { color: #fff; font-size: 21px; }
 .super p { font-size: 14px; color: #e9ecef; font-weight: 600; margin: 8px 0 0; }
 .pop { color: var(--cyan); }
@@ -160,7 +160,7 @@
 .yap { font-family: "Caveat"; font-size: 24px; color: var(--cyan); margin-top: 10px; }
 
 /* ---------- roadmap ---------- */
-.roadmap { margin-top: 22px; padding: 14px 18px; }
+.roadmap { margin-top: 44px; padding: 14px 18px; }
 .rmTitle { font-size: 15px; margin-bottom: 11px; display: flex; align-items: center; gap: 8px; }
 .rmTitle i { color: var(--magenta); font-size: 18px; }
 .rmRow { display: flex; align-items: stretch; gap: 8px; }
@@ -173,7 +173,7 @@
 .rmArrow { color: #aeb4ba; font-size: 18px; flex: none; align-self: center; }
 
 /* ---------- footer ---------- */
-.footer { margin-top: 30px; display: flex; align-items: center; justify-content: space-between; font-family: "Baloo 2"; font-weight: 700; font-size: 13px; color: #5b6168; }
+.footer { margin-top: 44px; display: flex; align-items: center; justify-content: space-between; font-family: "Baloo 2"; font-weight: 700; font-size: 13px; color: #5b6168; }
 .dot { color: var(--magenta); }
 .insta { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); text-decoration: none; }
 .insta:hover { color: var(--magenta); }

@@ -1,10 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://theaibestie.vercel.app";
+const TITLE = "The AI Bestie — AI tutorials even your mom can understand";
+const DESCRIPTION =
+  "The AI Bestie course. Tiny, beginner-friendly AI lessons. Zero coding. Start with Lesson 1: What is Claude Code?";
+
 export const metadata: Metadata = {
-  title: "The AI Bestie — AI tutorials even your mom can understand",
-  description:
-    "The AI Bestie course. Tiny, beginner-friendly AI lessons. Zero coding. Start with Lesson 1: What is Claude Code?",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  icons: { icon: "/assets/favicon.png" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "The AI Bestie",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "The AI Bestie" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({

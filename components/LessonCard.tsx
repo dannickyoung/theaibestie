@@ -2,7 +2,7 @@
 // When the lesson becomes a real Next route, swap href for next/link.
 export default function LessonCard() {
   return (
-    <a className="lesson-card" href="/lesson-01.html">
+    <a className="lesson-card" href="/lesson-01">
       <div className="lc-left">
         <span className="lc-badge">
           <i className="iconoir-bookmark-book" /> LESSON 01

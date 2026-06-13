@@ -18,20 +18,20 @@ a{ color:inherit; }
 .wrap{ max-width:960px; margin:0 auto; padding:26px 22px 70px; }
 
 /* ---------- banner ---------- */
-.banner{ position:relative; height:200px; border-radius:24px; overflow:hidden;
+.hb-banner{ position:relative; height:200px; border-radius:24px; overflow:hidden;
   background:radial-gradient(120% 160% at 12% -20%, rgba(255,255,255,.18), transparent 50%), var(--green);
   border:3px solid var(--ink); box-shadow:6px 8px 0 rgba(20,20,20,.18); }
-.banner .grid{ position:absolute; inset:0; opacity:.18;
+.hb-banner .hb-grid{ position:absolute; inset:0; opacity:.18;
   background-image:linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
   background-size:36px 36px; }
-.kicker{ position:absolute; left:34px; top:16px; font-family:'Press Start 2P',monospace; font-size:9px; color:#eafff2; letter-spacing:1px; }
-.wordmark{ position:absolute; left:32px; top:44px; font-family:'Press Start 2P',monospace; line-height:1.45; }
-.wordmark .l1{ font-size:32px; color:var(--lilac); text-shadow:3px 0 var(--magenta),-3px 0 var(--cyan); display:block; }
-.wordmark .l2{ font-size:32px; color:var(--sky); text-shadow:3px 0 var(--magenta),-3px 0 var(--lilac); display:block; }
-.coursetab{ position:absolute; right:24px; top:18px; font-family:'Press Start 2P',monospace; font-size:11px; color:var(--ink);
+.hb-kicker{ position:absolute; left:34px; top:16px; font-family:'Press Start 2P',monospace; font-size:9px; color:#eafff2; letter-spacing:1px; }
+.hb-wm{ position:absolute; left:32px; top:44px; font-family:'Press Start 2P',monospace; line-height:1.45; }
+.hb-wm .l1{ font-size:32px; color:var(--lilac); text-shadow:3px 0 var(--magenta),-3px 0 var(--cyan); display:block; }
+.hb-wm .l2{ font-size:32px; color:var(--sky); text-shadow:3px 0 var(--magenta),-3px 0 var(--lilac); display:block; }
+.hb-coursetab{ position:absolute; right:24px; top:18px; font-family:'Press Start 2P',monospace; font-size:11px; color:var(--ink);
   background:#fff; border:3px solid var(--ink); border-radius:0 22px 0 14px; padding:9px 14px 9px 16px; box-shadow:0 3px 0 rgba(20,20,20,.22); }
-.banner .tag{ position:absolute; left:34px; bottom:22px; color:#eafff2; font-family:'Caveat',cursive; font-size:27px; font-weight:700; }
-.banner-face{ position:absolute; right:30px; bottom:-8px; width:188px; filter:drop-shadow(4px 6px 6px rgba(0,0,0,.28)); }
+.hb-banner .hb-tag{ position:absolute; left:34px; bottom:22px; color:#eafff2; font-family:'Caveat',cursive; font-size:27px; font-weight:700; }
+.hb-face{ position:absolute; right:30px; bottom:-8px; width:188px; filter:drop-shadow(4px 6px 6px rgba(0,0,0,.28)); }
 
 /* ---------- intro ---------- */
 .intro{ margin:26px 4px 6px; }
@@ -85,7 +85,7 @@ footer .ig:hover{ color:var(--magenta); }
 .ig-float i{ font-size:32px; }
 
 @media (max-width:640px){
-  .banner{ height:172px; } .wordmark .l1,.wordmark .l2{ font-size:24px; } .banner-face{ width:130px; }
+  .hb-banner{ height:172px; } .hb-wm .l1,.hb-wm .l2{ font-size:24px; } .hb-face{ width:130px; }
   .lesson-card{ flex-direction:column-reverse; align-items:flex-start; }
   .lc-art{ width:100%; justify-content:flex-start; } .lc-left h2{ font-size:32px; }
   .soon-row{ grid-template-columns:1fr; }

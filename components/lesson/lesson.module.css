@@ -36,6 +36,9 @@
 }
 .tbDl:hover { transform: translateY(-1px); }
 .tbDl i { font-size: 20px; }
+.tbSep { color: #eafff2; font-weight: 700; opacity: .8; }
+.dlFull { display: inline; }
+.dlShort { display: none; }
 
 /* ---------- shared sticker pieces ---------- */
 .clay { background: #fff; border: 3px solid var(--ink); border-radius: 22px; box-shadow: 5px 6px 0 rgba(20, 20, 20, .16); }
@@ -189,4 +192,17 @@
   .bWm .l1, .bWm .l2 { font-size: 24px; }
   .rmRow { flex-direction: column; }
   .rmArrow { transform: rotate(90deg); }
+}
+
+/* phones: compact toolbar so the Download button always fits */
+@media (max-width: 560px) {
+  .toolbar { padding: 0 14px; }
+  .tbWm, .tbSep { display: none; }
+  .tbAr { font-size: 26px; }
+  .tbLs { font-size: 15px; }
+  .tbDl { font-size: 14px; padding: 9px 13px; gap: 7px; }
+  .tbDl i { font-size: 18px; }
+  .dlFull { display: none; }
+  .dlShort { display: inline; }
+  .col { padding-left: 16px; padding-right: 16px; }
 }

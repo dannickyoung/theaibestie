@@ -12,10 +12,13 @@ export default function LessonToolbar({
       <a className={styles.tbHome} href="/">
         <span className={styles.tbAr}>&lsaquo;</span>
         <span className={styles.tbWm}>THE AI BESTIE</span>
-        <span className={styles.tbLs}>&middot; {label}</span>
+        <span className={styles.tbSep}>&middot;</span>
+        <span className={styles.tbLs}>{label}</span>
       </a>
       <a className={styles.tbDl} href={pdfHref} download>
-        <i className="iconoir-download" /> Download PDF
+        <i className="iconoir-download" />
+        <span className={styles.dlFull}>Download PDF</span>
+        <span className={styles.dlShort}>PDF</span>
       </a>
     </header>
   );

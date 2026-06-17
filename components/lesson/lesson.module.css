@@ -206,3 +206,13 @@
   .dlShort { display: inline; }
   .col { padding-left: 16px; padding-right: 16px; }
 }
+
+/* print: clean PDF export of the lesson */
+@media print {
+  .toolbar { display: none !important; }
+  .root { padding-top: 0 !important; background: var(--paper) !important; }
+  .col { max-width: 100% !important; padding: 0 6px 12px !important; }
+  .banner, .titleCard, .clay, .setup, .two, .copybox, .quote, .super,
+  .roadmap, .promise, .grid6, .inThis, .explain, .bigAnalogy, .termNote { break-inside: avoid; }
+  .hRow { break-after: avoid; }
+}

@@ -37,7 +37,7 @@ const PROMPT =
 
 export default function Lesson2Page() {
   return (
-    <Lesson label="Lesson 2">
+    <Lesson label="Lesson 2" pdfHref="/lesson-02-youre-using-claude-all-wrong.pdf">
       <CoverBanner tab="LESSON 02" faceSrc="/assets/wendy-talk.svg" />
 
       {/* title */}
@@ -61,6 +61,51 @@ export default function Lesson2Page() {
         <div className={`${styles.tape} ${styles.tapeLilac}`} style={{ top: -14, left: 120, transform: "rotate(-7deg)" }} />
         <Star fill="#FF12E6" style={{ position: "absolute", right: 26, top: 56, width: 40, transform: "rotate(-12deg)" }} />
       </div>
+
+      {/* set it up — instructions first */}
+      <div className={styles.hRow}>
+        <Chip icon="iconoir-rocket" color="var(--green)" />
+        <h2>Set it up in 3 steps</h2>
+      </div>
+      <p className={styles.lead}>Free, and about 5 minutes. Tap any black box to copy.</p>
+
+      <Step n={1} title="Get VS Code">
+        <p>
+          Download <b>Visual Studio Code</b> — it&apos;s free. Open Chrome or Safari and
+          go here:
+        </p>
+        <CopyBox variant="url" label="OPEN IN YOUR BROWSER" copyText="code.visualstudio.com" />
+        <p style={{ marginTop: 6 }}>Download, install, and open it like any app.</p>
+      </Step>
+
+      <Step n={2} title="Add Claude Code">
+        <p>
+          Inside VS Code, open <b>Extensions</b>, search <b>“Claude Code”</b>, and click
+          <b> Install</b>. Then sign in (you&apos;ll need a Claude Pro or Max plan).
+        </p>
+        <div className={styles.termNote}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className={styles.termIco} src="/assets/vscode.png" alt="VS Code" style={{ imageRendering: "auto" }} />
+          <div className={styles.tn}>
+            <b>Where&apos;s Extensions?</b> The four-squares icon in the left sidebar — or
+            press <b>Cmd/Ctrl + Shift + X</b>. Then click the <b>✱ spark</b> icon to open
+            Claude.
+          </div>
+        </div>
+      </Step>
+
+      <Step n={3} title="Open a folder & make something">
+        <p>Open any folder, then tell Claude your wish. Paste this to start:</p>
+        <CopyBox variant="prompt" label="TRY THIS PROMPT" copyText={PROMPT}>
+          Build me a gorgeous{" "}
+          <span className={styles.k}>landing page for my coffee brand</span> — soft pastel
+          colours, a big friendly headline, a sign-up button, and a little about-me
+          section. <span className={styles.k2}>Make it stunning.</span>
+        </CopyBox>
+        <p className={styles.note} style={{ fontSize: 18, marginTop: 9, color: "#3a4047" }}>
+          watch it build, right in front of you.
+        </p>
+      </Step>
 
       {/* the mistake */}
       <div className={styles.hRow}>
@@ -127,51 +172,6 @@ export default function Lesson2Page() {
           <div className={styles.qWho}>— Wendy, your AI Bestie</div>
         </div>
       </div>
-
-      {/* set it up */}
-      <div className={styles.hRow}>
-        <Chip icon="iconoir-rocket" color="var(--green)" />
-        <h2>Set it up in 3 steps</h2>
-      </div>
-      <p className={styles.lead}>Free, and about 5 minutes. Tap any black box to copy.</p>
-
-      <Step n={1} title="Get VS Code">
-        <p>
-          Download <b>Visual Studio Code</b> — it&apos;s free. Open Chrome or Safari and
-          go here:
-        </p>
-        <CopyBox variant="url" label="OPEN IN YOUR BROWSER" copyText="code.visualstudio.com" />
-        <p style={{ marginTop: 6 }}>Download, install, and open it like any app.</p>
-      </Step>
-
-      <Step n={2} title="Add Claude Code">
-        <p>
-          Inside VS Code, open <b>Extensions</b>, search <b>“Claude Code”</b>, and click
-          <b> Install</b>. Then sign in (you&apos;ll need a Claude Pro or Max plan).
-        </p>
-        <div className={styles.termNote}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.termIco} src="/assets/vscode.png" alt="VS Code" style={{ imageRendering: "auto" }} />
-          <div className={styles.tn}>
-            <b>Where&apos;s Extensions?</b> The four-squares icon in the left sidebar — or
-            press <b>Cmd/Ctrl + Shift + X</b>. Then click the <b>✱ spark</b> icon to open
-            Claude.
-          </div>
-        </div>
-      </Step>
-
-      <Step n={3} title="Open a folder & make something">
-        <p>Open any folder, then tell Claude your wish. Paste this to start:</p>
-        <CopyBox variant="prompt" label="TRY THIS PROMPT" copyText={PROMPT}>
-          Build me a gorgeous{" "}
-          <span className={styles.k}>landing page for my coffee brand</span> — soft pastel
-          colours, a big friendly headline, a sign-up button, and a little about-me
-          section. <span className={styles.k2}>Make it stunning.</span>
-        </CopyBox>
-        <p className={styles.note} style={{ fontSize: 18, marginTop: 9, color: "#3a4047" }}>
-          watch it build, right in front of you.
-        </p>
-      </Step>
 
       {/* the secret */}
       <div className={styles.hRow}>

@@ -9,7 +9,7 @@ export default function LessonToolbar({
 }) {
   return (
     <header className={styles.toolbar}>
-      <a className={styles.tbHome} href="/">
+      <a className={styles.tbHome} href="/lessons">
         <span className={styles.tbAr}>&lsaquo;</span>
         <span className={styles.tbWm}>THE AI BESTIE</span>
         <span className={styles.tbSep}>&middot;</span>

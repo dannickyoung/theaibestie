@@ -8,7 +8,7 @@ export default function Lesson({
   children,
 }: {
   label: string;
-  pdfHref: string;
+  pdfHref?: string;
   children: React.ReactNode;
 }) {
   return (

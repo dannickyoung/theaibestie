@@ -5,7 +5,7 @@ export default function LessonToolbar({
   pdfHref,
 }: {
   label: string;
-  pdfHref: string;
+  pdfHref?: string;
 }) {
   return (
     <header className={styles.toolbar}>
@@ -15,11 +15,13 @@ export default function LessonToolbar({
         <span className={styles.tbSep}>&middot;</span>
         <span className={styles.tbLs}>{label}</span>
       </a>
-      <a className={styles.tbDl} href={pdfHref} download>
-        <i className="iconoir-download" />
-        <span className={styles.dlFull}>Download PDF</span>
-        <span className={styles.dlShort}>PDF</span>
-      </a>
+      {pdfHref && (
+        <a className={styles.tbDl} href={pdfHref} download>
+          <i className="iconoir-download" />
+          <span className={styles.dlFull}>Download PDF</span>
+          <span className={styles.dlShort}>PDF</span>
+        </a>
+      )}
     </header>
   );
 }

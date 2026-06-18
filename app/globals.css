@@ -133,7 +133,11 @@ a{ color:inherit; }
 .hero .hero-cta{ margin:28px 0 0; }
 .hero .hero-note{ color:#cdebd8; }
 .hero .hero-note i{ color:#fff; }
-.hero-art{ position:relative; display:flex; justify-content:center; align-items:center; }
+.hero-art{ position:relative; display:flex; justify-content:center; align-items:center; transform:translateX(-96px); }
+.hero-annot{ position:absolute; z-index:5; top:14px; right:-46px; width:210px; text-align:right; pointer-events:none; }
+.hero-annot-text{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:32px; line-height:1.02; color:#fff; rotate:4deg; }
+.hero-annot-arrow{ display:block; width:84px; height:60px; margin:0 56px 0 auto; }
+.hero-annot-arrow path{ fill:none; stroke:#fff; stroke-width:4.5; stroke-linecap:round; stroke-linejoin:round; }
 .hero-face{ width:100%; max-width:288px; filter:drop-shadow(6px 9px 8px rgba(0,0,0,.30));
   transform-origin:center bottom; animation:scrapbook 1.8s steps(3,end) infinite; }
 .hero .scroll-cue{ color:#7a8086; }
@@ -159,10 +163,73 @@ a{ color:inherit; }
 
 /* read online / download pdf pills (lessons page) */
 .learn-modes{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.learn-modes--center{ justify-content:center; }
+.learn-modes .lm:nth-child(1){ rotate:-2deg; }
+.learn-modes .lm:nth-child(2){ rotate:1.5deg; }
 .lm{ display:inline-flex; align-items:center; gap:8px; font-family:'Baloo 2',cursive; font-weight:800; font-size:13.5px;
   background:#fff; border:3px solid var(--ink); border-radius:999px; padding:8px 15px; box-shadow:3px 3px 0 rgba(20,20,20,.16); }
 .lm i{ font-size:18px; color:var(--green-deep); }
 .lp-section.lp-alt{ background:rgba(134,213,238,.10); border-top:3px solid var(--line); border-bottom:3px solid var(--line); }
+
+/* ===== scrapbook desk: gingham + real torn paper + washi tape ===== */
+.lp{ position:relative; overflow-x:clip; }
+.lp::before{ content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background-color:#f8f0d8; background-image:url(/assets/tex/cream-paper.png); background-repeat:repeat; }
+.lp::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 51px, rgba(120,150,190,.22) 51px 53px),
+    linear-gradient(90deg, transparent 84px, rgba(214,120,128,.42) 84px 87px, transparent 87px); }
+.lp-section.lp-alt{ background:transparent; border:none; }
+
+/* torn-paper note: ::before = ripped textured sheet, ::after = washi tape */
+.promise-card, .step-card{ position:relative; background:transparent; border:none; border-radius:0; box-shadow:none; padding:32px 30px 36px; }
+.promise-card > *, .step-card > *{ position:relative; z-index:1; }
+.promise-card::before, .step-card::before{ content:""; position:absolute; inset:-6px; z-index:0;
+  background:linear-gradient(rgba(245,236,210,.52), rgba(245,236,210,.52)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 4px 5px rgba(45,33,16,.2)); }
+.promise-card::after, .step-card::after{ content:""; position:absolute; top:-15px; left:50%; translate:-50% 0; rotate:-4deg; z-index:3;
+  width:130px; height:34px; opacity:.82; box-shadow:0 2px 3px rgba(0,0,0,.12);
+  background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 11px, rgba(255,255,255,.18) 11px 22px); }
+.promise-row > .promise-card:nth-child(1){ rotate:-1.8deg; }
+.promise-row > .promise-card:nth-child(2){ rotate:1.3deg; }
+.promise-row > .promise-card:nth-child(3){ rotate:-0.9deg; }
+.steps-row > .step-card:nth-child(1){ rotate:1.6deg; }
+.steps-row > .step-card:nth-child(2){ rotate:-1.4deg; }
+.steps-row > .step-card:nth-child(3){ rotate:1deg; }
+.promise-row > .promise-card:nth-child(1)::after{ background-color:var(--sky); }
+.promise-row > .promise-card:nth-child(2)::after{ background-color:var(--lilac); }
+.promise-row > .promise-card:nth-child(3)::after{ background-color:var(--cyan); }
+.steps-row > .step-card:nth-child(1)::after{ background-color:var(--cyan); }
+.steps-row > .step-card:nth-child(2)::after{ background-color:var(--magenta); opacity:.7; }
+.steps-row > .step-card:nth-child(3)::after{ background-color:var(--sky); }
+
+/* testimonial = torn lilac paper */
+.testi{ background:transparent; border:none; border-radius:0; box-shadow:none; overflow:visible; rotate:-1.2deg; }
+.testi > *{ position:relative; z-index:1; }
+.testi::before{ content:""; position:absolute; inset:-8px; z-index:0;
+  background:linear-gradient(rgba(197,150,226,.6), rgba(197,150,226,.6)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 5px 6px rgba(45,33,16,.2)); }
+.testi::after{ content:""; position:absolute; top:-16px; left:90px; rotate:-6deg; z-index:3; width:150px; height:38px; opacity:.8;
+  background-color:var(--cyan); background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 12px, rgba(255,255,255,.18) 12px 24px); box-shadow:0 2px 3px rgba(0,0,0,.12); }
+
+/* final cta = torn green paper */
+.cta-card{ background:transparent; border:none; border-radius:0; box-shadow:none; overflow:visible; rotate:0.8deg; }
+.cta-card > *{ position:relative; z-index:1; }
+.cta-card .cta-grid{ display:none; }
+.cta-card::before{ content:""; position:absolute; inset:-8px; z-index:0;
+  background:linear-gradient(rgba(20,165,80,.72), rgba(20,165,80,.72)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 5px 7px rgba(45,33,16,.22)); }
+.cta-face{ z-index:2; position:absolute; }
+
+/* buttons = little torn paper tags */
+.btn{ border:none; background:transparent; box-shadow:none; isolation:isolate; }
+.btn > *, .btn{ position:relative; }
+.btn::before{ content:""; position:absolute; inset:-3px -7px; z-index:-1; background-blend-mode:multiply; filter:url(#torn) drop-shadow(1px 2px 3px rgba(45,33,16,.2)); }
+.btn-primary::before{ background:linear-gradient(rgba(255,18,230,.66), rgba(255,18,230,.66)), url(/assets/tex/paper-kraft.jpg) center/cover; }
+.btn-ghost::before, .cta-card .btn::before{ background:linear-gradient(rgba(252,246,230,.78), rgba(252,246,230,.78)), url(/assets/tex/paper-kraft.jpg) center/cover; }
+.hero-cta .btn-primary, .cta-card .btn{ rotate:-1.4deg; }
+.hero-cta .btn-ghost{ rotate:1.2deg; }
+.free-badge{ rotate:-2deg; }
 .lp-head{ text-align:center; max-width:60ch; margin:0 auto 30px; }
 .lp-eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family:'Press Start 2P',monospace; font-size:10px;
   color:var(--green-deep); letter-spacing:1px; margin-bottom:14px; }
@@ -193,9 +260,9 @@ a{ color:inherit; }
 /* stop-motion: entrances pop in stepped frames, not smooth eases */
 @keyframes rise{ from{ opacity:0; transform:translateY(22px); } to{ opacity:1; transform:none; } }
 .rise{ opacity:0; animation:rise .6s steps(5,end) both; }
-.reveal{ opacity:0; transform:translateY(20px);
-  transition:opacity .55s steps(5,end), transform .55s steps(5,end); will-change:opacity,transform; }
-.reveal.in{ opacity:1; transform:none; }
+.reveal{ opacity:0; translate:0 22px;
+  transition:opacity .55s steps(5,end), translate .55s steps(5,end); will-change:opacity,translate; }
+.reveal.in{ opacity:1; translate:0 0; }
 
 @media (prefers-reduced-motion: reduce){
   .rise, .reveal{ opacity:1; transform:none; animation:none; transition:none; }

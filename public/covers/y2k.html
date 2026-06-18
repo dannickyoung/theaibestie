@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Caveat:wght@700&family=Nunito:wght@700;800;900&family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  .stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Nunito", sans-serif; color: #3a1430;
+    background-color: #f7d9e8;
+    background-image: repeating-linear-gradient(90deg, rgba(232,120,170,.32) 0 28px, transparent 28px 56px), repeating-linear-gradient(0deg, rgba(232,120,170,.32) 0 28px, transparent 28px 56px); }
+  .stage::after { content: ""; position: absolute; inset: 0; background: url(/assets/tex/paper-kraft.jpg) center/cover; mix-blend-mode: multiply; opacity: .45; pointer-events: none; }
+  .center { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 0 90px; }
+  .kicker { font-family: "Press Start 2P"; font-size: 23px; color: #c01f6e; letter-spacing: 1px; }
+  .note { position: relative; padding: 26px 46px; }
+  .note > * { position: relative; z-index: 1; }
+  .note::before { content: ""; position: absolute; inset: -14px -20px; z-index: 0; background: #fffdf4 url(/assets/tex/cream-paper.png); background-blend-mode: multiply; filter: url(#torn) drop-shadow(5px 7px 9px rgba(0,0,0,.26)); }
+  .title { font-family: "Baloo 2"; font-weight: 800; font-size: 86px; line-height: 1.16; letter-spacing: -1px; text-align: center; color: #25131f; white-space: nowrap; }
+  .hl { padding: 0 12px; border-radius: 6px; }
+  .cy { background: #35ECEC; color:#143; } .li { background: #BD8DDB; } .mg { background: #FF12E6; color: #fff; }
+  .cards { display: flex; flex-direction: column; gap: 34px; width: 760px; }
+  .card { position: relative; padding: 24px 30px; display: flex; align-items: center; gap: 24px; }
+  .card > * { position: relative; z-index: 1; }
+  .card::before { content: ""; position: absolute; inset: -10px; z-index: 0; background-blend-mode: multiply; filter: url(#torn) drop-shadow(4px 6px 8px rgba(0,0,0,.24)); }
+  .card.k1::before { background: #d6fbfb url(/assets/tex/cream-paper.png); }
+  .card.k2::before { background: #efe2fb url(/assets/tex/cream-paper.png); }
+  .card.k3::before { background: #ffe0f6 url(/assets/tex/cream-paper.png); }
+  .card .ico { width: 76px; height: 76px; border-radius: 16px; border: 5px solid #141414; display: flex; align-items: center; justify-content: center; font-size: 42px; flex: none; box-shadow: 3px 3px 0 rgba(20,20,20,.25); }
+  .card .nm { font-family: "Baloo 2"; font-weight: 800; font-size: 54px; color: #1f1320; }
+  .card .ds { font-family: "Special Elite"; font-size: 34px; color: #5a3b50; }
+  .pin { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); width: 44px; height: 44px; border-radius: 50%; z-index: 6;
+    background: radial-gradient(circle at 36% 30%, #fff 4%, var(--p, #ff6f8b) 40%, #b0163a 100%); box-shadow: 3px 5px 6px rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute"><filter id="torn" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="15" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+  <div class="stage">
+    <div class="center">
+      <div class="kicker">EP 3 &mdash; THE AI BESTIE</div>
+      <div class="note"><div class="title"><span class="hl cy">Chat</span> vs <span class="hl li">Co-work</span> vs <span class="hl mg">Code</span></div></div>
+      <div class="cards">
+        <div class="card k1"><span class="pin" style="--p:#35d6d6"></span><div class="ico" style="background:#35ECEC">&#128172;</div><div><div class="nm">Chat</div><div class="ds">ask it anything</div></div></div>
+        <div class="card k2"><span class="pin" style="--p:#b98ddb"></span><div class="ico" style="background:#BD8DDB">&#129309;</div><div><div class="nm">Co-work</div><div class="ds">do it together, live</div></div></div>
+        <div class="card k3"><span class="pin" style="--p:#ff5ac0"></span><div class="ico" style="background:#FF12E6">&#9889;</div><div><div class="nm">Code</div><div class="ds">let it build the thing</div></div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

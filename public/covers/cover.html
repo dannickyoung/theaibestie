@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Caveat:wght@700&family=Nunito:wght@800;900&family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  .stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Nunito", sans-serif; color: #3a1430;
+    background-color: #f7d9e8;
+    background-image: repeating-linear-gradient(90deg, rgba(232,120,170,.32) 0 28px, transparent 28px 56px), repeating-linear-gradient(0deg, rgba(232,120,170,.32) 0 28px, transparent 28px 56px); }
+  .stage::after { content: ""; position: absolute; inset: 0; background: url(/assets/tex/paper-kraft.jpg) center/cover; mix-blend-mode: multiply; opacity: .45; pointer-events: none; }
+  .center { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 56px; padding: 0 70px; z-index: 2; }
+  .kicker { font-family: "Press Start 2P"; font-size: 24px; color: #c01f6e; letter-spacing: 1px; }
+
+  /* torn notepaper title block */
+  .note { position: relative; width: 820px; padding: 50px 64px 56px; }
+  .note > * { position: relative; z-index: 1; }
+  .note::before { content: ""; position: absolute; inset: -14px; z-index: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 47px, rgba(92,124,176,.3) 47px 49px),
+      linear-gradient(90deg, transparent 56px, rgba(210,80,92,.5) 56px 60px, transparent 60px),
+      url(/assets/tex/paper-beige.jpg);
+    background-size: auto, auto, cover; background-position: 0 0, 0 0, center; filter: url(#torn); }
+  .title { font-family: "Baloo 2"; font-weight: 800; font-size: 96px; line-height: 1.14; letter-spacing: -1px; text-align: center; color: #1f1320; white-space: nowrap; }
+  .hl { padding: 0 14px; border-radius: 6px; }
+  .cy { background: #35ECEC; color: #143; } .li { background: #BD8DDB; } .mg { background: #FF12E6; color: #fff; }
+  .sub { font-family: "Special Elite"; font-size: 42px; color: #3a1430; text-align: center; margin-top: 16px; }
+
+  /* realistic polaroid */
+  .polaroid { position: relative; width: 540px; padding: 30px 30px 104px; transform: rotate(-5deg);
+    background:
+      linear-gradient(150deg, rgba(255,255,255,.9), rgba(244,240,230,.4) 40%, rgba(225,219,205,.55)),
+      #f6f3ea url(/assets/tex/paper-white.jpg) center/cover;
+    box-shadow: 0 26px 40px rgba(40,12,34,.34), 0 6px 14px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.7); }
+  .win { position: relative; width: 100%; height: 540px; background: #d9cfbf; overflow: hidden;
+    box-shadow: inset 0 4px 14px rgba(0,0,0,.42), inset 0 -2px 8px rgba(0,0,0,.22), inset 0 0 0 1px rgba(0,0,0,.12); }
+  .win img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+  .win::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, rgba(255,255,255,.16), transparent 38%); }
+  .cap { position: absolute; left: 0; right: 0; bottom: 30px; text-align: center; font-family: "Caveat"; font-size: 56px; color: #555; }
+  /* real push-pin PNG */
+  .pin { position: absolute; top: -46px; left: 50%; transform: translateX(-46%) rotate(8deg); width: 96px; height: 96px; z-index: 9;
+    filter: drop-shadow(3px 8px 7px rgba(0,0,0,.4)); }
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute"><filter id="torn" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="6" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+  <div class="stage">
+    <div class="center">
+      <div class="kicker">EP 3 &mdash; THE AI BESTIE</div>
+
+      <div class="note">
+        <div class="title"><span class="hl cy">Chat</span> vs <span class="hl li">Co-work</span><br />vs <span class="hl mg">Code</span></div>
+        <div class="sub">same Claude, 3 superpowers</div>
+      </div>
+
+      <div class="polaroid">
+        <img class="pin" src="/assets/pin.png" alt="" />
+        <div class="win"><img src="/assets/cover-chin.png" alt="" /></div>
+        <div class="cap">chat? co-work? code?</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

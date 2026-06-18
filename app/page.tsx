@@ -64,7 +64,7 @@ export default function Home() {
                   </h1>
                   <p className="hero-sub rise" style={{ animationDelay: "220ms" }}>
                     Tiny, no-jargon lessons that teach you to build real things with
-                    AI. No coding, no overwhelm. Just you and your AI bestie.
+                    AI. No coding. Just you and your AI bestie.
                   </p>
                   <div className="hero-cta rise" style={{ animationDelay: "300ms" }}>
                     <a className="btn btn-primary" href="/lesson-01">
@@ -80,6 +80,14 @@ export default function Home() {
                 </div>
 
                 <div className="hero-art rise" style={{ animationDelay: "220ms" }}>
+                  <div className="hero-annot">
+                    <span className="hero-annot-text">hi! I&apos;m your AI bestie</span>
+                    <svg className="hero-annot-arrow" viewBox="0 0 120 86" aria-hidden="true">
+                      <path d="M104 12 C 78 2, 52 16, 64 34 C 72 46, 86 40, 80 28 C 76 20, 64 24, 66 36 C 70 56, 46 66, 18 60" />
+                      <path d="M18 60 l 20 -4" />
+                      <path d="M18 60 l 16 13" />
+                    </svg>
+                  </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img className="hero-face" src="/assets/wendy-front.png" alt="Wendy, your AI Bestie" />
                 </div>
@@ -143,6 +151,27 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ---------- learn your way ---------- */}
+        <section className="lp-section" id="learn">
+          <div className="lp-container">
+            <Reveal className="lp-head">
+              <span className="lp-eyebrow">
+                <i className="iconoir-book" /> Learn your way
+              </span>
+              <h2>Online or offline, your call</h2>
+              <p>Read every lesson right here, or download the PDF and learn on the go.</p>
+            </Reveal>
+            <Reveal className="learn-modes learn-modes--center">
+              <span className="lm">
+                <i className="iconoir-internet" /> Read online
+              </span>
+              <span className="lm">
+                <i className="iconoir-download" /> Download the PDF &middot; learn offline
+              </span>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ---------- testimonial + final cta ---------- */}
         <section className="lp-section" id="start">
           <div className="lp-container lp-close">
@@ -170,7 +199,7 @@ export default function Home() {
             </Reveal>
 
             <footer>
-              <span>The AI Bestie Course &middot; Lessons 1 to 4</span>
+              <span>The AI Bestie Course</span>
               <a className="ig" href="https://instagram.com/the.ai.bestie">
                 <i className="iconoir-instagram" /> @the.ai.bestie
               </a>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Caveat:wght@700&family=Nunito:wght@800;900&family=Press+Start+2P&family=Special+Elite&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  .stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: "Nunito", sans-serif; color: #2a2440; background: #efeafc; }
+  .stage::before { content: ""; position: absolute; inset: 0; background: #efe9fb url(/assets/tex/paper-white.jpg) center/cover; background-blend-mode: multiply; opacity: .92; }
+  .rip { position: absolute; left: -40px; right: -40px; height: 150px; background: #fffdf6 url(/assets/tex/cream-paper.png); background-blend-mode: multiply; filter: url(#torn) drop-shadow(0 6px 8px rgba(0,0,0,.16)); }
+  .rip.top { top: -82px; } .rip.bot { bottom: -82px; }
+  .board { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 940px; height: 1240px; }
+  .kicker { position: absolute; left: 50%; top: 0; transform: translateX(-50%); font-family: "Press Start 2P"; font-size: 23px; color: #7a3fd0; letter-spacing: 1px; }
+  .polaroid { position: absolute; left: 50%; top: 320px; transform: translate(-50%,0) rotate(-3deg); background: #fff; padding: 22px 22px 78px; box-shadow: 8px 12px 18px rgba(0,0,0,.28); }
+  .polaroid img { display: block; width: 420px; height: 460px; object-fit: cover; object-position: center 16%; background: #e7ddcf; }
+  .polaroid .cap { position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font-family: "Caveat"; font-size: 48px; color: #555; }
+  .pin { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); width: 48px; height: 48px; border-radius: 50%; z-index: 6;
+    background: radial-gradient(circle at 36% 30%, #fff 4%, #7a6cff 40%, #3b2bc0 100%); box-shadow: 3px 5px 6px rgba(0,0,0,.4); }
+  .snote { position: absolute; width: 250px; min-height: 210px; padding: 26px 26px; font-family: "Caveat"; font-weight: 700; font-size: 58px; line-height: 1.04;
+    background-color: #fff27a; background-image: url(/assets/tex/cream-paper.png); background-blend-mode: multiply; box-shadow: 7px 9px 13px rgba(0,0,0,.2); }
+  .snote.cy { background-color: #9ff0f0; } .snote.pk { background-color: #ffb3d9; } .snote.li { background-color: #d8c0f0; }
+  .tape { position: absolute; top: -16px; left: 50%; transform: translateX(-50%) rotate(-5deg); width: 130px; height: 34px; background-color: rgba(255,255,255,.55); background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 10px, rgba(255,255,255,.2) 10px 20px); box-shadow: 0 2px 3px rgba(0,0,0,.12); }
+  .note { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); padding: 22px 44px; }
+  .note > * { position: relative; z-index: 1; }
+  .note::before { content: ""; position: absolute; inset: -12px -18px; z-index: 0; background: #fffdf4 url(/assets/tex/cream-paper.png); background-blend-mode: multiply; filter: url(#torn) drop-shadow(5px 7px 9px rgba(0,0,0,.26)); }
+  .title { font-family: "Baloo 2"; font-weight: 800; font-size: 76px; letter-spacing: -1px; color: #25131f; white-space: nowrap; }
+  .hl { background: #FF12E6; color: #fff; padding: 0 12px; border-radius: 5px; }
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute"><filter id="torn" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="3" seed="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+  <div class="stage">
+    <div class="rip top"></div>
+    <div class="rip bot"></div>
+
+    <div class="board">
+      <div class="kicker">★ THE AI BESTIE &mdash; EP 3</div>
+
+      <div class="snote" style="left:0; top:200px; transform:rotate(-6deg)"><span class="tape"></span>just<br />chatting?</div>
+      <div class="snote cy" style="right:0; top:230px; transform:rotate(5deg)"><span class="tape"></span>let it<br />co-work</div>
+      <div class="snote pk" style="left:10px; top:680px; transform:rotate(4deg)"><span class="tape"></span>or full<br />code?</div>
+      <div class="snote li" style="right:0; top:710px; transform:rotate(-5deg)"><span class="tape"></span>which<br />one r u?</div>
+
+      <div class="polaroid"><span class="pin"></span><img src="/assets/cover-smile.png" alt="" /><div class="cap">3 ways to use AI</div></div>
+
+      <div class="note"><div class="title">Chat vs <span class="hl">Co-work</span> vs Code</div></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -51,6 +51,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+          <filter id="torn" x="-12%" y="-18%" width="124%" height="136%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="3" seed="7" result="n" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="13" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </svg>
         {children}
         <a
           className="ig-float"

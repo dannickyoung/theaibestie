@@ -133,7 +133,7 @@ a{ color:inherit; }
 .hero .hero-cta{ margin:28px 0 0; }
 .hero .hero-note{ color:#cdebd8; }
 .hero .hero-note i{ color:#fff; }
-.hero-art{ position:relative; display:flex; justify-content:center; align-items:center; transform:translateX(-96px); }
+.hero-art{ position:relative; left:-96px; display:flex; justify-content:center; align-items:center; }
 .hero-annot{ position:absolute; z-index:5; top:14px; right:-46px; width:210px; text-align:right; pointer-events:none; }
 .hero-annot-text{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:32px; line-height:1.02; color:#fff; rotate:4deg; }
 .hero-annot-arrow{ display:block; width:84px; height:60px; margin:0 56px 0 auto; }

@@ -92,10 +92,10 @@ a{ color:inherit; }
 
 /* ---------- testimonial ---------- */
 .testi{ margin-top:30px; padding:18px 22px; background:var(--lilac); border:3px solid var(--ink); border-radius:22px;
-  box-shadow:5px 6px 0 rgba(20,20,20,.16); display:flex; gap:18px; align-items:center; position:relative; overflow:hidden; }
+  box-shadow:5px 6px 0 rgba(20,20,20,.16); display:flex; gap:18px; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; }
 .testi img{ width:96px; flex:none; filter:drop-shadow(2px 3px 3px rgba(0,0,0,.22)); }
-.testi .tq{ font-family:'Baloo 2'; font-weight:800; font-size:20px; color:#2a1538; line-height:1.22; }
-.testi .tw{ font-family:'Caveat',cursive; font-weight:700; font-size:21px; color:#3a1f4d; margin-top:6px; }
+.testi .tq{ font-family:'Baloo 2'; font-weight:800; font-size:30px; color:#2a1538; line-height:1.2; }
+.testi .tw{ font-family:'Caveat',cursive; font-weight:700; font-size:27px; color:#3a1f4d; margin-top:8px; text-align:right; }
 
 /* ---------- final cta ---------- */
 .cta-card{ margin-top:34px; position:relative; overflow:hidden; text-align:center; color:#eafff2;
@@ -104,14 +104,14 @@ a{ color:inherit; }
 .cta-card .cta-grid{ position:absolute; inset:0; opacity:.16; pointer-events:none;
   background-image:linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
   background-size:36px 36px; }
-.cta-card h2{ font-size:34px; font-weight:800; color:#fff; position:relative; }
+.cta-card h2{ font-size:34px; font-weight:800; color:#fff; position:relative; margin-bottom:26px; }
 .cta-card p{ font-weight:700; font-size:16px; color:#eafff2; margin:8px 0 20px; position:relative; }
 .cta-card .btn{ position:relative; background:#fff; color:var(--ink); }
 
 /* ===== landing layout: full-height hero + spaced sections ===== */
 .lp-container{ max-width:1200px; margin:0 auto; padding:0 32px; }
 
-.hero{ position:relative; min-height:calc(100svh - 60px); display:flex; align-items:center; padding:30px 0 74px; }
+.hero{ position:relative; display:flex; align-items:center; padding:18px 0 72px; }
 .hero .lp-container{ width:100%; }
 .hero-panel{ position:relative; overflow:hidden; width:100%; color:#eafff2; display:flex; align-items:center;
   min-height:calc(100svh - 184px); padding:52px 54px;
@@ -124,8 +124,8 @@ a{ color:inherit; }
 .hero-copy{ display:flex; flex-direction:column; align-items:flex-start; }
 .hero .free-badge{ background:#fff; color:var(--ink); }
 .hero h1{ font-family:'Baloo 2',cursive; font-weight:800; font-size:60px; letter-spacing:-1px; line-height:1.04; color:#fff; margin:18px 0 0; }
-.hero h1 .hl{ background:linear-gradient(180deg, transparent 56%, var(--magenta) 56%); padding:0 5px; border-radius:3px; }
-.hero-type{ min-height:2.2em; display:block; }
+.hero h1 .hl{ background:linear-gradient(180deg, transparent 44%, var(--magenta) 44%, var(--magenta) 82%, transparent 82%); padding:0 5px; border-radius:3px; }
+.hero-type{ min-height:2.2em; display:block; white-space:pre-line; }
 .tw-caret{ display:inline-block; width:4px; height:0.92em; margin-left:5px; background:var(--cyan); vertical-align:-3px;
   animation:caret 0.9s steps(1,end) infinite; }
 @keyframes caret{ 0%,50%{ opacity:1; } 50.01%,100%{ opacity:0; } }
@@ -134,11 +134,14 @@ a{ color:inherit; }
 .hero .hero-note{ color:#cdebd8; }
 .hero .hero-note i{ color:#fff; }
 .hero-art{ position:relative; left:-96px; display:flex; justify-content:center; align-items:center; }
-.hero-annot{ position:absolute; z-index:5; top:14px; right:-46px; width:210px; text-align:right; pointer-events:none; }
-.hero-annot-text{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:32px; line-height:1.02; color:#fff; rotate:4deg; }
-.hero-annot-arrow{ display:block; width:84px; height:60px; margin:0 56px 0 auto; }
+.hero-annot{ position:absolute; z-index:5; top:14px; right:-114px; width:248px; text-align:right; pointer-events:none; }
+.hero-annot-name{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:32px; line-height:1.02; color:#FFE14D; rotate:4deg; }
+.hero-annot-line{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:21px; line-height:1.12; color:#fff; rotate:4deg; margin-top:4px; }
+.hero-annot-arrow{ display:block; width:84px; height:74px; margin:8px 56px 0 auto; }
+.btn-arrow{ width:1.7em; height:1.05em; display:inline-block; vertical-align:-2px; flex:none; }
+.btn-arrow path{ fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
 .hero-annot-arrow path{ fill:none; stroke:#fff; stroke-width:4.5; stroke-linecap:round; stroke-linejoin:round; }
-.hero-face{ width:100%; max-width:288px; filter:drop-shadow(6px 9px 8px rgba(0,0,0,.30));
+.hero-face{ width:100%; max-width:236px; filter:drop-shadow(6px 9px 8px rgba(0,0,0,.30));
   transform-origin:center bottom; animation:scrapbook 1.8s steps(3,end) infinite; }
 .hero .scroll-cue{ color:#7a8086; }
 .hero .scroll-cue i{ color:var(--ink); }
@@ -158,8 +161,8 @@ a{ color:inherit; }
 @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
 
 .lp-section{ padding:62px 0; }
-.lp-close{ display:flex; flex-direction:column; gap:26px; }
-.lp-close .testi{ margin:0; }
+.lp-close{ display:flex; flex-direction:column; gap:78px; max-width:980px; }
+.lp-close .testi, .lp-close .cta-card, .lp-close footer, .lp-close .paper-card{ margin:0; }
 
 /* read online / download pdf pills (lessons page) */
 .learn-modes{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
@@ -169,6 +172,12 @@ a{ color:inherit; }
 .lm{ display:inline-flex; align-items:center; gap:8px; font-family:'Baloo 2',cursive; font-weight:800; font-size:13.5px;
   background:#fff; border:3px solid var(--ink); border-radius:999px; padding:8px 15px; box-shadow:3px 3px 0 rgba(20,20,20,.16); }
 .lm i{ font-size:18px; color:var(--green-deep); }
+/* landing brown-paper: labeled icon items, not buttons */
+.paper-card .learn-modes{ gap:40px; margin-top:26px; }
+.paper-card .learn-modes .lm{ background:none; border:none; border-radius:0; box-shadow:none; padding:0; rotate:0; gap:11px;
+  font-family:'Baloo 2',cursive; font-weight:800; font-size:17px; color:#3a2c18; }
+.paper-card .learn-modes .lm i{ width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:999px; background:var(--green-deep); color:#fff; font-size:20px; }
 .lp-section.lp-alt{ background:rgba(134,213,238,.10); border-top:3px solid var(--line); border-bottom:3px solid var(--line); }
 
 /* ===== scrapbook desk: gingham + real torn paper + washi tape ===== */
@@ -220,6 +229,33 @@ a{ color:inherit; }
   background:linear-gradient(rgba(20,165,80,.72), rgba(20,165,80,.72)), url(/assets/tex/paper-kraft.jpg) center/cover;
   filter:url(#torn) drop-shadow(1px 5px 7px rgba(45,33,16,.22)); }
 .cta-face{ z-index:2; position:absolute; }
+.cta-card::after{ content:""; position:absolute; top:-16px; left:50%; transform:translateX(-50%); rotate:4deg; z-index:3; width:158px; height:36px; opacity:.85;
+  background-color:var(--magenta); background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.5) 0 12px, rgba(255,255,255,.16) 12px 24px); box-shadow:0 2px 3px rgba(0,0,0,.12); }
+
+/* learn-your-way = torn brown kraft paper */
+.paper-card{ position:relative; padding:34px 28px; text-align:center; rotate:-0.7deg; }
+.paper-card > *{ position:relative; z-index:1; }
+.paper-card.paper-brown::before{ content:""; position:absolute; inset:-8px; z-index:0;
+  background:linear-gradient(rgba(206,168,118,.5), rgba(206,168,118,.5)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 5px 7px rgba(45,33,16,.22)); }
+.paper-card::after{ content:""; position:absolute; top:-18px; right:90px; rotate:5deg; z-index:3; width:164px; height:38px; opacity:.85;
+  background-color:var(--lilac); background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 12px, rgba(255,255,255,.18) 12px 24px); box-shadow:0 2px 3px rgba(0,0,0,.12); }
+/* two phrases on torn light-beige paper scraps; "OR" plain in the middle */
+.paper-card .lp-head{ max-width:none; margin:0; }
+.learn-line{ line-height:2.3; }
+.learn-line .scrap{ position:relative; display:inline-block; white-space:nowrap; vertical-align:middle; margin:6px 6px; padding:7px 16px;
+  font-family:'Baloo 2',cursive; font-weight:800; font-size:16.5px; color:#3a2c18; }
+.learn-line .scrap:nth-of-type(1){ rotate:-2deg; }
+.learn-line .scrap:nth-of-type(2){ rotate:2deg; }
+.learn-line .scrap::before{ content:""; position:absolute; inset:-3px -2px; z-index:-1;
+  background:linear-gradient(rgba(240,231,210,.74), rgba(240,231,210,.74)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 2px 3px rgba(45,33,16,.24)); }
+.learn-line .scrap::after{ content:""; position:absolute; top:-9px; rotate:-14deg; z-index:1; width:34px; height:15px; opacity:.88;
+  background-color:var(--sky); background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 7px, rgba(255,255,255,.18) 7px 14px); box-shadow:0 1px 2px rgba(0,0,0,.14); }
+.learn-line .scrap:nth-of-type(1)::after{ left:-7px; }
+.learn-line .scrap:nth-of-type(2)::after{ right:-7px; rotate:14deg; }
+.or-word{ display:inline-block; vertical-align:middle; margin:0 7px;
+  font-family:'Baloo 2',cursive; font-weight:800; font-size:24px; letter-spacing:1px; color:var(--ink); }
 
 /* buttons = little torn paper tags */
 .btn{ border:none; background:transparent; box-shadow:none; isolation:isolate; }
@@ -280,11 +316,27 @@ a{ color:inherit; }
   .hero{ min-height:auto; padding:24px 0 48px; }
   .hero-panel{ min-height:auto; padding:30px 26px; border-radius:24px; }
   .hero-inner{ grid-template-columns:1fr; gap:16px; }
-  .hero-art{ order:-1; justify-content:flex-start; }
   .hero h1{ font-size:42px; }
   .hero-sub{ font-size:17px; }
-  .hero-face{ max-width:232px; }
-  .scroll-cue{ display:none; }
+  /* title wraps naturally to fill the column width */
+  .hero-type{ white-space:normal; }
+  /* face (smaller) + annotation with arrow stay side by side */
+  .hero-art{ order:-1; left:0; flex-direction:row-reverse; align-items:center; justify-content:center; gap:8px; }
+  .hero-face{ max-width:150px; }
+  .hero-annot{ position:static; width:auto; max-width:50%; right:auto; top:auto; text-align:right; }
+  .hero-annot-name{ font-size:23px; }
+  .hero-annot-line{ font-size:15px; }
+  .hero-annot-arrow{ margin:6px 8px 0 auto; }
+
+  /* brown scraps stack with OR centered between them; never wrap a scrap */
+  .learn-line{ display:flex; flex-direction:column; align-items:center; gap:12px; line-height:1.3; }
+  .learn-line .scrap{ rotate:0; white-space:nowrap; margin:0; }
+  .or-word{ margin:0; }
+
+  /* testimonial stays side by side; quote never wraps (scales to fit) */
+  .testi img{ width:72px; }
+  .testi .tq{ white-space:nowrap; font-size:clamp(13px, 3.7vw, 26px); }
+  .testi .tw{ font-size:clamp(16px, 4.4vw, 25px); }
 }
 .section-label{ display:flex; align-items:center; gap:9px; margin:26px 4px 12px; font-family:'Baloo 2'; font-weight:800; font-size:20px; }
 .section-label i{ color:var(--magenta); font-size:24px; }
@@ -342,7 +394,7 @@ footer .ig:hover{ color:var(--magenta); }
   .hb-tag{ left:24px; right:24px; bottom:16px; font-size:17px; max-width:none; line-height:1.2; }
   .intro h1{ font-size:32px; } .hero h1{ font-size:34px; }
   .lp-sticker{ width:76px; top:-18px; }
-  .cta-face{ display:none; }
+  .cta-face{ display:block; width:76px; right:14px; bottom:14px; }
   .ig-float{ top:auto; bottom:18px; transform:none; width:54px; height:54px; }
   .ig-float:hover{ transform:scale(1.07); }
   .ig-float i{ font-size:28px; }
@@ -352,7 +404,7 @@ footer .ig:hover{ color:var(--magenta); }
   .promise-row{ grid-template-columns:1fr; }
   .steps-row{ grid-template-columns:1fr; }
   .hero-cta .btn{ flex:1 1 auto; justify-content:center; }
-  .testi img{ width:74px; } .testi .tq{ font-size:17px; }
+  .testi img{ width:72px; }
   .cta-card h2{ font-size:27px; }
   .nav-inner{ padding:0 16px; gap:8px; }
   .nav-wm{ font-size:11px; }

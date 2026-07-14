@@ -33,13 +33,13 @@ export const metadata: Metadata = {
 };
 
 const PROMPT_ABOUT =
-  "Here's everything about me — my work, my wins, and the way I talk: [describe yourself]. Based on all of it, tell me: what makes me different from everyone else in my space, and how should I position my personal brand?";
+  "You are my personal brand strategist. Interview me to find out what makes me special and what my brand should be. Ask me one or two questions at a time, not a big list. Dig deeper when my answer is interesting or vague. After about 8 to 10 questions, stop and give me: (1) my core brand idea in one sentence, (2) the 3 things I stand for, (3) who I am for, (4) what I sound like, and (5) 5 content ideas that only I could make. Keep everything in simple, plain words. No jargon.";
 
 const PROMPT_POSTS =
-  "Write me a full week of posts (7 days) in my exact voice. Here are a few captions I love so you can copy my style: [paste 2–3 captions you're proud of].";
+  "Now be my ghostwriter. Use my core brand idea, the 3 things I stand for, and the way I sound from above. First, ask me which platform I post on and ask me to paste one thing I've already written so you can copy my voice. Then write me a full week of posts, one for each day, rotating through my 3 things. For each post give me a first line that stops the scroll, a short story or point in the middle, and a simple question at the end that makes people want to comment. Make it sound exactly like me. Plain words, no corporate voice.";
 
 const PROMPT_SITE =
-  "Build me my personal website — my bio, my story, and all my links, beautifully laid out. Make it stunning.";
+  "Now be my web designer. Use my brand idea, my 3 things, and my best posts from this week. First, ask me for my name, my links, and one word for the vibe I want. Then build me a complete one-page personal website I can put online today. Include a big headline based on my brand idea, a short 'about me' in my own voice, a section for each of my 3 things, and one clear button that tells people what to do next. Make it look modern and work on phones. Show me the full code, then tell me in plain steps how to put it online.";
 
 export default function Lesson15Page() {
   return (
@@ -110,37 +110,54 @@ export default function Lesson15Page() {
         </div>
       </Step>
 
-      <Step n={3} title="Tell it everything about you">
+      <Step n={3} title="Let it find your angle">
         <p>
-          Dump it all in — your work, your wins, the way you talk. Then ask the one
-          question that matters:
+          Don&apos;t dump everything — let Fable 5 <b>interview you</b> and pull out what
+          makes you, you. Paste this and just answer honestly:
         </p>
         <CopyBox variant="prompt" label="PASTE THIS PROMPT" copyText={PROMPT_ABOUT}>
-          Here&apos;s everything about me — my work, my wins, and the way I talk:{" "}
-          <span className={styles.k}>[describe yourself]</span>. Based on all of it,
-          tell me: <span className={styles.k2}>what makes me different</span> and how
-          should I position my personal brand?
+          You are my <span className={styles.k}>personal brand strategist</span>.{" "}
+          <span className={styles.k}>Interview me</span> to find out what makes me
+          special and what my brand should be. Ask me one or two questions at a time,
+          not a big list. Dig deeper when my answer is interesting or vague. After about
+          8 to 10 questions, stop and give me: (1) my core brand idea in one sentence,
+          (2) the 3 things I stand for, (3) who I am for, (4) what I sound like, and (5){" "}
+          <span className={styles.k2}>5 content ideas that only I could make</span>.
+          Keep everything in simple, plain words. No jargon.
         </CopyBox>
       </Step>
 
       <Step n={4} title="Get a full week of posts in your voice">
         <p>
-          Paste a few captions you love so it copies your style — then let it write a
-          whole week for you.
+          Same chat — it builds on the brand it just found and writes in <i>your</i>{" "}
+          voice, not a generic one.
         </p>
         <CopyBox variant="prompt" label="PASTE THIS PROMPT" copyText={PROMPT_POSTS}>
-          Write me a <span className={styles.k}>full week of posts</span> in my exact
-          voice. Here are a few captions I love so you can copy my style:{" "}
-          <span className={styles.k2}>[paste 2–3 captions]</span>.
+          Now be my <span className={styles.k}>ghostwriter</span>. Use my core brand
+          idea, the 3 things I stand for, and the way I sound from above. First, ask me
+          which platform I post on and ask me to{" "}
+          <span className={styles.k2}>paste one thing I&apos;ve already written</span> so
+          you can copy my voice. Then write me a <span className={styles.k}>full week of
+          posts</span>, one for each day, rotating through my 3 things. For each post
+          give me a first line that stops the scroll, a short story or point in the
+          middle, and a simple question at the end that makes people want to comment.
+          Make it sound exactly like me. Plain words, no corporate voice.
         </CopyBox>
       </Step>
 
       <Step n={5} title="Build your personal website">
-        <p>Your bio, your story, your links. All of it — designed and done for you.</p>
+        <p>Still the same chat — it turns your brand and posts into a real site.</p>
         <CopyBox variant="prompt" label="PASTE THIS PROMPT" copyText={PROMPT_SITE}>
-          Build me my <span className={styles.k}>personal website</span> — my bio, my
-          story, and all my links, beautifully laid out.{" "}
-          <span className={styles.k2}>Make it stunning.</span>
+          Now be my <span className={styles.k}>web designer</span>. Use my brand idea, my
+          3 things, and my best posts from this week. First, ask me for my name, my
+          links, and one word for the vibe I want. Then build me a{" "}
+          <span className={styles.k}>complete one-page personal website</span> I can put
+          online today. Include a big headline based on my brand idea, a short
+          &apos;about me&apos; in my own voice, a section for each of my 3 things, and
+          one clear button that tells people what to do next. Make it look modern and
+          work on phones.{" "}
+          <span className={styles.k2}>Show me the full code</span>, then tell me in plain
+          steps how to put it online.
         </CopyBox>
         <p className={styles.note} style={{ fontSize: 18, marginTop: 9, color: "#3a4047" }}>
           watch it build the whole thing for you.

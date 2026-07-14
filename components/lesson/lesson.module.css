@@ -122,6 +122,14 @@
 .k { color: var(--cyan); font-style: normal; }
 .k2 { color: var(--magenta); font-style: normal; }
 
+/* ---------- collapsible full prompt ---------- */
+.cbCode.cbPre { white-space: pre-wrap; font-family: "Nunito", system-ui, sans-serif; font-style: normal; font-weight: 600; font-size: 13.5px; line-height: 1.5; color: #eef1f3; }
+.cbClamp { max-height: 190px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 64%, transparent 100%); mask-image: linear-gradient(180deg, #000 64%, transparent 100%); }
+.cbOpen { max-height: none; }
+.cbMore { display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; background: #2d2d2d; color: #d3d7db; border: none; border-top: 2px solid #000; padding: 10px 12px; font-family: "Baloo 2", cursive; font-weight: 800; font-size: 14px; cursor: pointer; }
+.cbMore:hover { color: #fff; background: #343434; }
+.cbMore i { font-size: 18px; }
+
 /* ---------- terminal note ---------- */
 .termNote { display: flex; gap: 11px; align-items: flex-start; background: #eef5ff; border: 2.5px solid var(--ink); border-radius: 14px; padding: 10px 13px; margin-top: 9px; }
 .termIco { width: 44px; height: 44px; flex: none; border-radius: 12px; box-shadow: 2px 2px 0 rgba(20, 20, 20, .18); }
@@ -212,7 +220,10 @@
   .toolbar { display: none !important; }
   .root { padding-top: 0 !important; background: var(--paper) !important; }
   .col { max-width: 100% !important; padding: 0 6px 12px !important; }
-  .banner, .titleCard, .clay, .setup, .two, .copybox, .quote, .super,
+  .banner, .titleCard, .clay, .setup, .two, .quote, .super,
   .roadmap, .promise, .grid6, .inThis, .explain, .bigAnalogy, .termNote { break-inside: avoid; }
   .hRow { break-after: avoid; }
+  /* full prompts: expand completely, drop the fade + toggle */
+  .cbClamp { max-height: none !important; -webkit-mask-image: none !important; mask-image: none !important; }
+  .cbMore { display: none !important; }
 }

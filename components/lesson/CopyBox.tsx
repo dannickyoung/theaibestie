@@ -9,14 +9,17 @@ export default function CopyBox({
   label,
   copyText,
   variant = "cmd",
+  collapsible = false,
   children,
 }: {
   label: string;
   copyText: string;
   variant?: Variant;
+  collapsible?: boolean;
   children?: React.ReactNode;
 }) {
   const [copied, setCopied] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const className = [
     styles.copybox,
@@ -51,6 +54,10 @@ export default function CopyBox({
     }
   };
 
+  const codeClass = collapsible
+    ? `${styles.cbCode} ${styles.cbPre} ${open ? styles.cbOpen : styles.cbClamp}`
+    : styles.cbCode;
+
   return (
     <div
       className={className}
@@ -78,7 +85,28 @@ export default function CopyBox({
           )}
         </span>
       </div>
-      <div className={styles.cbCode}>{children ?? copyText}</div>
+      <div className={codeClass}>{children ?? copyText}</div>
+      {collapsible && (
+        <button
+          type="button"
+          className={styles.cbMore}
+          aria-expanded={open}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen((o) => !o);
+          }}
+        >
+          {open ? (
+            <>
+              <i className="iconoir-nav-arrow-up" /> See less
+            </>
+          ) : (
+            <>
+              <i className="iconoir-nav-arrow-down" /> See the full prompt
+            </>
+          )}
+        </button>
+      )}
     </div>
   );
 }

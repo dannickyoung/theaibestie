@@ -35,11 +35,117 @@ export const metadata: Metadata = {
 const PROMPT_ABOUT =
   "You are my personal brand strategist. Interview me to find out what makes me special and what my brand should be. Ask me one or two questions at a time, not a big list. Dig deeper when my answer is interesting or vague. After about 8 to 10 questions, stop and give me: (1) my core brand idea in one sentence, (2) the 3 things I stand for, (3) who I am for, (4) what I sound like, and (5) 5 content ideas that only I could make. Keep everything in simple, plain words. No jargon.";
 
-const PROMPT_POSTS =
-  "Now be my ghostwriter. Use my core brand idea, the 3 things I stand for, and the way I sound from above. First, ask me which platform I post on and ask me to paste one thing I've already written so you can copy my voice. Then write me a full week of posts, one for each day, rotating through my 3 things. For each post give me a first line that stops the scroll, a short story or point in the middle, and a simple question at the end that makes people want to comment. Make it sound exactly like me. Plain words, no corporate voice.";
+const PROMPT_POSTS = `You are my personal social media strategist and data analyst. Your job is to study my real social accounts, study the top creators in my space, name my niche, and then hand me a specific 30-day content plan I can start posting tomorrow. Work through the steps in order. Do not skip ahead. Show me what you find at each step before moving on.
 
-const PROMPT_SITE =
-  "Now be my web designer. Use my brand idea, my 3 things, and my best posts from this week. First, ask me for my name, my links, and one word for the vibe I want. Then build me a complete one-page personal website I can put online today. Include a big headline based on my brand idea, a short 'about me' in my own voice, a section for each of my 3 things, and one clear button that tells people what to do next. Make it look modern and work on phones. Show me the full code, then tell me in plain steps how to put it online.";
+STEP 0A — ASK ME FOR MY DETAILS FIRST
+Before you do anything else, ask me these questions and wait for my answers. Do not move on until I have filled them in. If I leave one blank, ask again.
+• My main account(s): (handles + platform, e.g. Instagram @__, TikTok @__, LinkedIn __)
+• What I currently post about:
+• What I sell or want to be known for:
+• Time I can give per week:
+
+STEP 0B — SET UP THE TOOL
+• Check if the Apify connector is installed and connected. If it is not, install/enable it first, then confirm it is working before you continue.
+• If you cannot connect it, stop and tell me exactly what to click to fix it. Do not fake or guess the data.
+
+STEP 1 — ANALYSE MY OWN ACCOUNT (use Apify)
+• Pull my last 30 to 60 posts.
+• For each post grab: format (Reel, carousel, static, text), topic, hook/first line, caption length, hashtags, post time, and the engagement numbers (views, likes, comments, shares, saves).
+• Then give me:
+  1. My top 5 posts and the pattern they share.
+  2. My bottom 5 posts and why they likely flopped.
+  3. My real average engagement rate (not vanity followers).
+  4. My best format, best topic, and best posting time.
+  5. What my content currently signals I am about, in one plain sentence.
+• Show this as a short table plus 5 bullet takeaways.
+
+STEP 2 — NAME MY NICHE
+• Based on step 1 plus my details, tell me my specific niche. Not "business" or "marketing." Something sharp, like "AI content systems for non-technical founders." Give me the exact niche in one line, then 2 backup angles.
+• Tell me who my content is FOR (the exact person) and what they want.
+
+STEP 3 — ANALYSE THE VIRAL CREATORS IN MY NICHE (use Apify)
+• Find 5 to 8 creators who are winning in my niche right now.
+• For each, pull their recent top posts with Apify and report: what they post, their hooks, their formats, their posting frequency, and what is clearly working for them.
+• Then give me:
+  1. The 5 content patterns that repeat across the winners.
+  2. The hook styles that get the most views.
+  3. The gaps nobody is filling (my opening).
+  4. What I can borrow, and the one thing I should do differently to stand out.
+
+STEP 4 — MY CONTENT STRATEGY
+• Give me 4 to 5 content pillars (the buckets I post about) with a one-line description of each and why it fits my niche.
+• Give me my brand voice in 3 rules and 5 words I sound like.
+• Give me my hook formula and 10 ready-to-use hook templates for my niche.
+
+STEP 5 — THE 30-DAY PLAN (be very specific)
+• Build a day-by-day calendar for 30 days. For each posting day give me: the date/day, the pillar, the format, the exact hook line, a 1-line concept, the call to action, and the best time to post.
+• Base the number of posts per week on the time I said I have.
+• Front-load the first week with my safest winning bets from step 1.
+• Put it in a clean table I can copy into a sheet.
+• End with: the 3 metrics I should watch, and a simple weekly check-in routine so I know if it is working.
+
+RULES
+• Use real Apify data, not assumptions. If a number is missing, say so.
+• Keep all writing in plain, simple words. No jargon. No em dashes.
+• Be specific. "Post a Reel" is useless. "Post a 20-second Reel, hook: '...', showing X" is what I want.
+• Pause after Step 1, Step 3, and Step 5 so I can react before you continue.`;
+
+const PROMPT_SITE = `Great. Now use everything you just learned about me (my niche, my audience, my pillars, my voice, my winning content) to turn my personal brand into a website that sells digital products. Work through the steps in order. Pause where I ask you to pause. Keep all writing in plain, simple words. No jargon. No em dashes.
+
+STEP 1 — CONFIRM THE FOUNDATION
+Before building, pull forward from our earlier work and restate in a few lines:
+• My niche in one sentence.
+• The exact person I serve and the problem they will pay to solve.
+• My brand voice and the 3 words I want the site to feel like.
+If any of these are missing, ask me before you continue.
+
+STEP 2 — DESIGN MY DIGITAL PRODUCT LADDER
+Give me a "value ladder" of 3 to 5 digital products, from cheap and easy to premium. For each product give me:
+• The name (real, sellable, on-brand).
+• What it is (format: guide, template pack, mini-course, notion system, cohort, etc.)
+• The exact problem it solves for my audience.
+• Why only I could make it (tie it to my unique edge from the brand work).
+• A suggested price.
+• Roughly how long it takes me to make it.
+Rank them so I know which ONE to build first for the fastest first sale. Pause here and let me pick.
+
+STEP 3 — WRITE THE FLAGSHIP PRODUCT
+For the product I pick, give me the full outline: what is inside, the sections or modules, and the promise/transformation. Make it something I can actually build this week. Keep it lean, not bloated.
+
+STEP 4 — PLAN THE WEBSITE
+Map out the full site, page by page. For each page tell me the goal and the sections in order. At minimum cover:
+• Home (who I am, who I help, the promise, proof, the offer, clear call to action)
+• About (my story told in my voice, why I am the person for this)
+• Products / Shop (the value ladder, priced, with buy buttons)
+• A sales page for the flagship product (hook, problem, solution, what is inside, proof, price, guarantee, FAQ, call to action)
+• Free lead magnet + email capture (so I grow a list, not just sell once)
+• Contact / links
+Tell me the ideal page order and what the visitor should feel at each step.
+
+STEP 5 — WRITE THE COPY
+Write the real, ready-to-paste copy for the Home page and the flagship sales page, in my voice. Include the headlines, subheads, body, and the exact button text. Make the headline specific to my niche, not generic.
+
+STEP 6 — BUILD IT AND DEPLOY ON GITHUB
+Build the website as a clean, modern, responsive project I can deploy on GitHub Pages.
+• Use plain HTML/CSS/JS so it runs on GitHub Pages with no build step, unless you have a strong reason to suggest better, in which case tell me why.
+• Make it fast, mobile-first, and on-brand with my voice and feel.
+• Wire up the email capture and add clear spots to plug in a payment link (Stripe / Gumroad / Lemon Squeezy). Show me exactly where to paste my links.
+• Give me the full code for every file, with the correct file names and folder structure for a GitHub Pages site (index.html at the root, etc.).
+• Then walk me through deploying it on GitHub, step by step:
+  1. Create the repo (tell me the exact steps and a good repo name).
+  2. Add the files (give me the exact git commands, or the click path if I use the GitHub website).
+  3. Turn on GitHub Pages in the repo settings and pick the right branch/folder.
+  4. Give me the live URL it will publish to.
+  5. Tell me how to connect a custom domain later if I want one (CNAME file + DNS steps).
+• If anything can go wrong (Pages not enabled, wrong branch, cache delay), warn me and tell me how to fix it.
+
+STEP 7 — LAUNCH PLAN
+Give me a simple 7-day launch plan that reuses my 30-day content calendar: which posts tease the product, which post opens sales, what to say in my email, and the exact call to action each day. Tie every step back to the content I am already planning to post.
+
+RULES
+• Be specific and practical. I want to actually ship this, not read theory.
+• If you need a decision from me, ask one clear question and wait.
+• Keep the whole thing doable by one non-technical founder.`;
 
 export default function Lesson15Page() {
   return (
@@ -127,40 +233,23 @@ export default function Lesson15Page() {
         </CopyBox>
       </Step>
 
-      <Step n={4} title="Get a full week of posts in your voice">
+      <Step n={4} title="Get a 30-day plan from your real numbers">
         <p>
-          Same chat — it builds on the brand it just found and writes in <i>your</i>{" "}
-          voice, not a generic one.
+          Same chat. This one has Fable 5 study <b>your real accounts</b> and the top
+          creators in your niche, then hand you a day-by-day plan. It uses the{" "}
+          <b>Apify connector</b> — the prompt sets it up for you.
         </p>
-        <CopyBox variant="prompt" label="PASTE THIS PROMPT" copyText={PROMPT_POSTS}>
-          Now be my <span className={styles.k}>ghostwriter</span>. Use my core brand
-          idea, the 3 things I stand for, and the way I sound from above. First, ask me
-          which platform I post on and ask me to{" "}
-          <span className={styles.k2}>paste one thing I&apos;ve already written</span> so
-          you can copy my voice. Then write me a <span className={styles.k}>full week of
-          posts</span>, one for each day, rotating through my 3 things. For each post
-          give me a first line that stops the scroll, a short story or point in the
-          middle, and a simple question at the end that makes people want to comment.
-          Make it sound exactly like me. Plain words, no corporate voice.
-        </CopyBox>
+        <CopyBox variant="prompt" collapsible label="PASTE THIS PROMPT" copyText={PROMPT_POSTS} />
       </Step>
 
-      <Step n={5} title="Build your personal website">
-        <p>Still the same chat — it turns your brand and posts into a real site.</p>
-        <CopyBox variant="prompt" label="PASTE THIS PROMPT" copyText={PROMPT_SITE}>
-          Now be my <span className={styles.k}>web designer</span>. Use my brand idea, my
-          3 things, and my best posts from this week. First, ask me for my name, my
-          links, and one word for the vibe I want. Then build me a{" "}
-          <span className={styles.k}>complete one-page personal website</span> I can put
-          online today. Include a big headline based on my brand idea, a short
-          &apos;about me&apos; in my own voice, a section for each of my 3 things, and
-          one clear button that tells people what to do next. Make it look modern and
-          work on phones.{" "}
-          <span className={styles.k2}>Show me the full code</span>, then tell me in plain
-          steps how to put it online.
-        </CopyBox>
+      <Step n={5} title="Turn it into a site that sells">
+        <p>
+          Still the same chat. It turns your brand into a website with digital products
+          — and walks you through <b>putting it live on GitHub Pages</b>, step by step.
+        </p>
+        <CopyBox variant="prompt" collapsible label="PASTE THIS PROMPT" copyText={PROMPT_SITE} />
         <p className={styles.note} style={{ fontSize: 18, marginTop: 9, color: "#3a4047" }}>
-          watch it build the whole thing for you.
+          big prompt, big payoff — let it work through each step with you.
         </p>
       </Step>
 

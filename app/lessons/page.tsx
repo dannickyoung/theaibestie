@@ -51,6 +51,18 @@ const LESSONS = [
       { icon: "iconoir-cursor-pointer", label: "Hands-on" },
     ],
   },
+  {
+    badge: "LESSON 15",
+    title: "If You're Not Using Fable 5, You're Already Behind",
+    desc: "Fable 5 is the smartest AI ever made — and it's free until July 19. Use it to build your whole personal brand: your positioning, a week of posts, and your website.",
+    href: "/lesson-15",
+    art: "/assets/claude-code-mascot.png",
+    pixel: true,
+    meta: [
+      { icon: "iconoir-flash", label: "Free until Jul 19" },
+      { icon: "iconoir-sparks", label: "Build your brand" },
+    ],
+  },
 ];
 
 const COMING_SOON = [
@@ -106,7 +118,7 @@ export default function LessonsPage() {
         </div>
 
         <footer>
-          <span>The AI Bestie Course &middot; Lessons 1–4</span>
+          <span>The AI Bestie Course &middot; New lessons drop regularly</span>
           <a className="ig" href="https://instagram.com/the.ai.bestie">
             <i className="iconoir-instagram" /> @the.ai.bestie
           </a>

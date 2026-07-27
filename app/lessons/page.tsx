@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import LessonCard from "@/components/LessonCard";
 
-const TITLE = "Lessons — The AI Bestie";
+const TITLE = "Lessons · The AI Bestie";
 const DESCRIPTION =
   "All The AI Bestie lessons in one place. Tiny, beginner-friendly AI lessons. Zero coding. Work through them in order or jump to what you need.";
 
@@ -42,7 +42,7 @@ const LESSONS = [
   {
     badge: "LESSON 02",
     title: "You're Using Claude All Wrong",
-    desc: "Most people only chat with Claude. Learn to make it actually build for you — live, inside VS Code.",
+    desc: "Most people only chat with Claude. Learn to make it actually build for you, live, inside VS Code.",
     href: "/lesson-02",
     art: "/assets/vscode.png",
     pixel: false,
@@ -54,7 +54,7 @@ const LESSONS = [
   {
     badge: "LESSON 15",
     title: "If You're Not Using Fable 5, You're Already Behind",
-    desc: "Fable 5 is the smartest AI ever made — and it's free until July 19. Use it to build your whole personal brand: your positioning, a week of posts, and your website.",
+    desc: "Fable 5 is the smartest AI ever made, and it's free until July 19. Use it to build your whole personal brand: your positioning, a week of posts, and your website.",
     href: "/lesson-15",
     art: "/assets/claude-code-mascot.png",
     pixel: true,
@@ -108,11 +108,11 @@ export default function LessonsPage() {
         <LessonCard
           badge="STARTER PACK"
           title="Build Your Personal Brand With Claude"
-          desc="The picture-guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts — in your voice, in one afternoon. No code."
+          desc="The picture-guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts, in your voice, in one afternoon. No code."
           href="/api/checkout"
           art="/assets/wendy-front.png"
           pixel={false}
-          cta="Get the Starter Pack — $9.90"
+          cta="Get the Starter Pack · $9.90"
           meta={[
             { icon: "iconoir-flash", label: "Guide + Claude skill, instant delivery" },
             { icon: "iconoir-credit-card", label: "$9.90 · one-time, yours forever" },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const SITE_URL = "https://theaibestie.vercel.app";
-const TITLE = "The AI Bestie — AI tutorials even your mom can understand";
+const TITLE = "The AI Bestie · AI tutorials even your mom can understand";
 const DESCRIPTION =
   "The AI Bestie course. Tiny, beginner-friendly AI lessons. Zero coding. Start with Lesson 1: What is Claude Code?";
 

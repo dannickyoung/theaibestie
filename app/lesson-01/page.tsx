@@ -8,9 +8,9 @@ import CopyBox from "@/components/lesson/CopyBox";
 import Roadmap from "@/components/lesson/Roadmap";
 import Star from "@/components/lesson/Star";
 
-const TITLE = "Lesson 1: What is Claude Code? — The AI Bestie";
+const TITLE = "Lesson 1: What is Claude Code? · The AI Bestie";
 const DESCRIPTION =
-  "No tech words. The simplest explainer you'll ever read — what Claude Code is, how to set it up, and what it can build for you.";
+  "No tech words. The simplest explainer you'll ever read: what Claude Code is, how to set it up, and what it can build for you.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -43,7 +43,7 @@ const PROMISE = [
 
 const CHECKS = [
   "How to get it & set it up in 3 steps",
-  "What Claude Code actually is — in plain words",
+  "What Claude Code actually is, in plain words",
   "The amazing things it can build for you",
 ];
 
@@ -53,7 +53,7 @@ const MAKES = [
   { icon: "iconoir-folder", color: "var(--magenta)", title: "Tidy your files", text: "Sort, rename & organise the mess in seconds." },
   { icon: "iconoir-media-image", color: "var(--sky)", title: "Content", text: "Posts, captions, graphics & ideas on tap." },
   { icon: "iconoir-wrench", color: "var(--green)", title: "Fix stuff", text: "Broken thing? Describe it. It troubleshoots." },
-  { icon: "iconoir-flash", color: "var(--cyan)", title: "Automate", text: "Boring, repetitive tasks — done for you." },
+  { icon: "iconoir-flash", color: "var(--cyan)", title: "Automate", text: "Boring, repetitive tasks? Done for you." },
 ];
 
 export default function Lesson1Page() {
@@ -174,8 +174,8 @@ export default function Lesson1Page() {
         <div className={styles.q}>
           Claude Code is like a <b>super-smart friend who lives inside your computer.</b>
           <br />
-          You tell it what you want — in{" "}
-          <span className={styles.hl}>normal everyday words</span> — and it{" "}
+          You tell it what you want, in{" "}
+          <span className={styles.hl}>normal everyday words</span>, and it{" "}
           <b>builds it for you.</b>
         </div>
         <div className={`${styles.tape} ${styles.tapeCyan}`} style={{ top: -15, right: 40, transform: "rotate(6deg)" }} />
@@ -186,7 +186,7 @@ export default function Lesson1Page() {
           <h3>Explain it like I&apos;m 5?</h3>
           <p>
             It&apos;s a magic helper. You <b>tell it your wish</b> (“make me a website
-            for my bakery”) and it <b>makes the thing appear</b> — right in front of you.
+            for my bakery”) and it <b>makes the thing appear</b>, right in front of you.
             You watch it happen, like magic. No spells required.
           </p>
         </div>
@@ -195,9 +195,9 @@ export default function Lesson1Page() {
       {/* vs */}
       <div className={styles.hRow}>
         <Chip icon="iconoir-percentage-circle" color="var(--magenta)" />
-        <h2>Wait — is this the Claude app?</h2>
+        <h2>Wait, is this the Claude app?</h2>
       </div>
-      <p className={styles.lead}>Almost! Same brain — but two very different jobs.</p>
+      <p className={styles.lead}>Almost! Same brain, but two very different jobs.</p>
       <div className={styles.two}>
         <div className={`${styles.clay} ${styles.vsCard} ${styles.vsApp}`}>
           <div className={styles.vsTop}>
@@ -218,7 +218,7 @@ export default function Lesson1Page() {
             <h3>Claude Code</h3>
           </div>
           <p>
-            It doesn&apos;t just talk — it <b>builds.</b> Websites, files, tools… it
+            It doesn&apos;t just talk. It <b>builds.</b> Websites, files, tools… it
             actually <b>makes the thing,</b> live.
           </p>
           <span className={styles.pill} style={{ marginTop: 12, fontSize: 13 }}>
@@ -234,9 +234,9 @@ export default function Lesson1Page() {
         <img className={styles.qFace} src="/assets/wendy-talk.svg" alt="Wendy" />
         <div>
           <div className={styles.qText}>
-            “Zero coding skills — and I use Claude better than most engineers.”
+            “Zero coding skills, and I use Claude better than most engineers.”
           </div>
-          <div className={styles.qWho}>— Wendy, your AI Bestie</div>
+          <div className={styles.qWho}>· Wendy, your AI Bestie</div>
         </div>
       </div>
 
@@ -245,7 +245,7 @@ export default function Lesson1Page() {
         <Chip icon="iconoir-gift" color="var(--sky)" />
         <h2>So… what can it make for you?</h2>
       </div>
-      <p className={styles.lead}>A little taste. You describe it — Claude Code builds it.</p>
+      <p className={styles.lead}>A little taste. You describe it, Claude Code builds it.</p>
       <div className={styles.grid6}>
         {MAKES.map((m) => (
           <div className={styles.clay} key={m.title}>
@@ -261,7 +261,7 @@ export default function Lesson1Page() {
         <h3>The only skill you actually need</h3>
         <p>
           Knowing <span className={styles.pop}>what you want</span>. That&apos;s it. The
-          more you describe, the better it builds — so be specific, be{" "}
+          more you describe, the better it builds. So be specific, be{" "}
           <span className={styles.pop2}>delusional</span>, dream big.
         </p>
         <p className={styles.yap}>your yap is your superpower</p>

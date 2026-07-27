@@ -8,9 +8,9 @@ import CopyBox from "@/components/lesson/CopyBox";
 import Roadmap from "@/components/lesson/Roadmap";
 import Star from "@/components/lesson/Star";
 
-const TITLE = "Lesson 2: You're Using Claude All Wrong — The AI Bestie";
+const TITLE = "Lesson 2: You're Using Claude All Wrong · The AI Bestie";
 const DESCRIPTION =
-  "Most people only chat with Claude. The real magic is inside VS Code, where it builds for you — live. Set it up in 3 free steps.";
+  "Most people only chat with Claude. The real magic is inside VS Code, where it builds for you, live. Set it up in 3 free steps.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const PROMPT =
-  "Build me a gorgeous landing page for my coffee brand — soft pastel colours, a big friendly headline, a sign-up button, and a little about-me section. Make it stunning.";
+  "Build me a gorgeous landing page for my coffee brand: soft pastel colours, a big friendly headline, a sign-up button, and a little about-me section. Make it stunning.";
 
 export default function Lesson2Page() {
   return (
@@ -52,7 +52,7 @@ export default function Lesson2Page() {
         </h1>
         <p className={styles.sub}>
           Most people only <i>chat</i> with Claude. But the real magic is when it
-          actually <b>builds</b> for you — live, inside VS Code.
+          actually <b>builds</b> for you, live, inside VS Code.
         </p>
         <div className={styles.ccSticker}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -71,7 +71,7 @@ export default function Lesson2Page() {
 
       <Step n={1} title="Get VS Code">
         <p>
-          Download <b>Visual Studio Code</b> — it&apos;s free. Open Chrome or Safari and
+          Download <b>Visual Studio Code</b> (it&apos;s free). Open Chrome or Safari and
           go here:
         </p>
         <CopyBox variant="url" label="OPEN IN YOUR BROWSER" copyText="code.visualstudio.com" />
@@ -87,7 +87,7 @@ export default function Lesson2Page() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className={styles.termIco} src="/assets/vscode.png" alt="VS Code" style={{ imageRendering: "auto" }} />
           <div className={styles.tn}>
-            <b>Where&apos;s Extensions?</b> The four-squares icon in the left sidebar — or
+            <b>Where&apos;s Extensions?</b> The four-squares icon in the left sidebar, or
             press <b>Cmd/Ctrl + Shift + X</b>. Then click the <b>✱ spark</b> icon to open
             Claude.
           </div>
@@ -98,7 +98,7 @@ export default function Lesson2Page() {
         <p>Open any folder, then tell Claude your wish. Paste this to start:</p>
         <CopyBox variant="prompt" label="TRY THIS PROMPT" copyText={PROMPT}>
           Build me a gorgeous{" "}
-          <span className={styles.k}>landing page for my coffee brand</span> — soft pastel
+          <span className={styles.k}>landing page for my coffee brand</span>: soft pastel
           colours, a big friendly headline, a sign-up button, and a little about-me
           section. <span className={styles.k2}>Make it stunning.</span>
         </CopyBox>
@@ -119,7 +119,7 @@ export default function Lesson2Page() {
           <h3>Talking ≠ building</h3>
           <p>
             Claude Code inside the <b>Claude app</b> just <b>talks</b> to you. It gives
-            you answers — but it doesn&apos;t actually build anything. The fun happens
+            you answers, but it doesn&apos;t actually build anything. The fun happens
             somewhere else…
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function Lesson2Page() {
         <Chip icon="iconoir-percentage-circle" color="var(--cyan)" />
         <h2>Answers vs. actually building</h2>
       </div>
-      <p className={styles.lead}>Same Claude — totally different powers.</p>
+      <p className={styles.lead}>Same Claude, totally different powers.</p>
       <div className={styles.two}>
         <div className={`${styles.clay} ${styles.vsCard} ${styles.vsApp}`}>
           <div className={styles.vsTop}>
@@ -151,7 +151,7 @@ export default function Lesson2Page() {
             <h3>Inside VS Code</h3>
           </div>
           <p>
-            Claude <b>makes the thing</b> — websites, files, tools — <b>live, right in
+            Claude <b>makes the thing</b>: websites, files, tools, <b>live, right in
             front of your eyes.</b>
           </p>
           <span className={styles.pill} style={{ marginTop: 12, fontSize: 13 }}>
@@ -169,7 +169,7 @@ export default function Lesson2Page() {
           <div className={styles.qText}>
             “The app talks. VS Code builds. Once you see it happen, you can&apos;t go back.”
           </div>
-          <div className={styles.qWho}>— Wendy, your AI Bestie</div>
+          <div className={styles.qWho}>· Wendy, your AI Bestie</div>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ export default function Lesson2Page() {
       <div className={`${styles.clay} ${styles.super}`}>
         <h3>Be specific. Be delusional.</h3>
         <p>
-          Describe your <span className={styles.pop}>biggest, wildest vision</span> — the
+          Describe your <span className={styles.pop}>biggest, wildest vision</span>: the
           colours, the vibe, every detail. The more you describe, the better it builds. Not
           the <span className={styles.pop2}>basic designs</span> everyone and their uncle is
           making.

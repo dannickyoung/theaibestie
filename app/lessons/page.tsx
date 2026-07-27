@@ -108,7 +108,7 @@ export default function LessonsPage() {
         <LessonCard
           badge="STARTER PACK"
           title="Build Your Personal Brand With Claude"
-          desc="The picture-guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts, in your voice, in one afternoon. No code."
+          desc="The step-by-step guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts, in your voice, in one afternoon. No code."
           href="/api/checkout"
           art="/assets/wendy-front.png"
           pixel={false}

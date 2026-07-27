@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 
 const TABS = [
   { href: "/", label: "Home" },
-  { href: "/lessons", label: "Free Downloads" },
+  { href: "/lessons", label: "Lessons" },
+  { href: "/starter-pack", label: "Starter Pack" },
 ];
 
 export default function NavBar() {

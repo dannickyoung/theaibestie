@@ -25,7 +25,7 @@ export default function Home() {
               <div className="hero-inner">
                 <div className="hero-copy">
                   <span className="free-badge rise" style={{ animationDelay: "60ms" }}>
-                    ★ 100% FREE COURSE
+                    ★ FREE WEEKLY LESSONS
                   </span>
                   <h1 className="hero-type rise" style={{ animationDelay: "140ms" }}>
                     Weekly <span className="hl">AI tips</span>{"\n"}your mom can{" "}
@@ -97,9 +97,25 @@ export default function Home() {
               </div>
             </Reveal>
 
+            <Reveal className="paper-card paper-brown">
+              <div className="lp-head">
+                <h2>Ready to build your personal brand?</h2>
+                <p className="learn-line">
+                  <span className="scrap">The Starter Pack: a guide + a Claude skill</span>
+                  <span className="or-word">·</span>
+                  <span className="scrap">your first 7 posts, in your voice, $9.90</span>
+                </p>
+                <div style={{ textAlign: "center", marginTop: 18 }}>
+                  <a className="btn btn-primary" href="/starter-pack">
+                    <i className="iconoir-cart" /> See the Starter Pack
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+
             <Reveal className="cta-card">
               <div className="cta-grid" />
-              <h2>Download tips for free.</h2>
+              <h2>Read the lessons for free.</h2>
               <a className="btn" href="/lessons">
                 HERE <BtnArrow />
               </a>

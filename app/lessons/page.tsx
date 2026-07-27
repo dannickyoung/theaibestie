@@ -105,19 +105,41 @@ export default function LessonsPage() {
         <div className="section-label">
           <i className="iconoir-cart" /> Go further
         </div>
-        <LessonCard
-          badge="STARTER PACK"
-          title="Build Your Personal Brand With Claude"
-          desc="The step-by-step guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts, in your voice, in one afternoon. No code."
-          href="/api/checkout"
-          art="/assets/wendy-front.png"
-          pixel={false}
-          cta="Get the Starter Pack · $9.90"
-          meta={[
-            { icon: "iconoir-flash", label: "Guide + Claude skill, instant delivery" },
-            { icon: "iconoir-credit-card", label: "$9.90 · one-time, yours forever" },
-          ]}
-        />
+        <a
+          className="lesson-card"
+          href="/starter-pack"
+          style={{ background: "#FBEEE7" }}
+        >
+          <div className="lc-left">
+            <span className="lc-badge" style={{ background: "var(--magenta)", color: "#fff" }}>
+              <i className="iconoir-cart" /> STARTER PACK · PAID
+            </span>
+            <h2>Build Your Personal Brand With Claude</h2>
+            <p>
+              The step-by-step guide + the personal-brand-builder Claude skill. It
+              interviews you, captures how YOU actually sound, then writes your
+              brand system and your first 7 posts, in your voice, in one
+              afternoon. No code.
+            </p>
+            <div className="lc-meta">
+              <span>
+                <i className="iconoir-flash" /> Guide + Claude skill, instant delivery
+              </span>
+              <span>
+                <i className="iconoir-credit-card" /> $9.90 · one-time, yours forever
+              </span>
+            </div>
+            <span className="lc-open">
+              See what&apos;s inside <i className="iconoir-arrow-right" />
+            </span>
+          </div>
+          <div className="lc-art">
+            <div className="cc-tile">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/wendy-front.png" alt="" style={{ imageRendering: "auto" }} />
+            </div>
+          </div>
+        </a>
 
         <div className="section-label" style={{ fontSize: 16, color: "#6b7178" }}>
           <i className="iconoir-clock" style={{ color: "#9aa0a6" }} /> Coming soon

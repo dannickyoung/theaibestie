@@ -361,7 +361,7 @@ a{ color:inherit; }
 .lc-art{ flex:none; width:184px; display:flex; align-items:center; justify-content:center; }
 .cc-tile{ width:172px; height:172px; background:#FBEEE7; border:3px solid var(--ink); border-radius:30px;
   box-shadow:5px 6px 0 rgba(20,20,20,.16); display:flex; align-items:center; justify-content:center; transform:rotate(5deg); }
-.cc-tile img{ width:120px; height:120px; image-rendering:pixelated; }
+.cc-tile img{ width:120px; height:120px; object-fit:contain; image-rendering:pixelated; }
 
 /* ---------- coming soon ---------- */
 .soon-row{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:16px; }

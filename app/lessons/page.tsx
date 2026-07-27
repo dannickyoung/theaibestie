@@ -102,6 +102,23 @@ export default function LessonsPage() {
           ))}
         </div>
 
+        <div className="section-label">
+          <i className="iconoir-cart" /> Go further
+        </div>
+        <LessonCard
+          badge="STARTER PACK"
+          title="Build Your Personal Brand With Claude"
+          desc="The picture-guide + the personal-brand-builder Claude skill. It interviews you, captures how YOU actually sound, then writes your brand system and your first 7 posts — in your voice, in one afternoon. No code."
+          href="/api/checkout"
+          art="/assets/wendy-front.png"
+          pixel={false}
+          cta="Get the Starter Pack — $9.90"
+          meta={[
+            { icon: "iconoir-flash", label: "Guide + Claude skill, instant delivery" },
+            { icon: "iconoir-credit-card", label: "$9.90 · one-time, yours forever" },
+          ]}
+        />
+
         <div className="section-label" style={{ fontSize: 16, color: "#6b7178" }}>
           <i className="iconoir-clock" style={{ color: "#9aa0a6" }} /> Coming soon
         </div>

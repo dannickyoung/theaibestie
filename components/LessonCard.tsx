@@ -8,6 +8,7 @@ export default function LessonCard({
   art,
   pixel = true,
   meta,
+  cta = "Open the lesson",
 }: {
   badge: string;
   title: string;
@@ -16,6 +17,7 @@ export default function LessonCard({
   art: string;
   pixel?: boolean;
   meta: Meta[];
+  cta?: string;
 }) {
   return (
     <a className="lesson-card" href={href}>
@@ -33,7 +35,7 @@ export default function LessonCard({
           ))}
         </div>
         <span className="lc-open">
-          Open the lesson <i className="iconoir-arrow-right" />
+          {cta} <i className="iconoir-arrow-right" />
         </span>
       </div>
       <div className="lc-art">

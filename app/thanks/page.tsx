@@ -21,8 +21,7 @@ export default function ThanksPage() {
             Your Starter Pack is on its way to your inbox right now. Go grab it!
           </p>
           <p style={{ marginTop: 12, marginLeft: "auto", marginRight: "auto" }}>
-            Nothing after a few minutes? Check spam, or DM @the.ai.bestie on
-            Instagram.
+            Nothing after a few minutes? Check spam, or DM @the.ai.bestie.
           </p>
         </div>
         <div className="hero-cta" style={{ justifyContent: "center" }}>

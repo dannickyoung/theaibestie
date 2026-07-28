@@ -25,11 +25,15 @@ a{ color:inherit; }
 .nav-brand{ display:inline-flex; align-items:center; text-decoration:none; }
 .nav-wm{ font-family:'Press Start 2P',monospace; font-size:13px; color:var(--lilac);
   text-shadow:2px 0 var(--magenta),-2px 0 var(--cyan); }
-.nav-tabs{ display:flex; align-items:center; gap:8px; }
-.nav-tab{ font-family:'Baloo 2'; font-weight:800; font-size:15px; color:#eafff2; text-decoration:none;
-  padding:8px 15px; border-radius:11px; border:3px solid transparent; transition:background .15s ease, color .15s ease; }
-.nav-tab:hover{ background:rgba(255,255,255,.16); }
-.nav-tab.active{ background:#fff; color:var(--ink); border-color:var(--ink); box-shadow:3px 3px 0 rgba(20,20,20,.2); }
+.nav-tabs{ display:flex; align-items:center; gap:12px; }
+.nav-tab{ font-family:'Baloo 2'; font-weight:800; font-size:15px; color:var(--ink); text-decoration:none;
+  padding:7px 15px; border-radius:13px; border:3px solid var(--ink);
+  box-shadow:3px 3px 0 rgba(20,20,20,.28);
+  transition:transform .14s ease, box-shadow .14s ease; }
+.nav-tab:nth-child(1){ background:var(--cyan); rotate:-2deg; }
+.nav-tab:nth-child(2){ background:var(--magenta); color:#fff; rotate:2deg; }
+.nav-tab:hover{ transform:translate(-2px,-2px); box-shadow:5px 5px 0 rgba(20,20,20,.3); }
+.nav-tab.active{ transform:translate(2px,2px); box-shadow:0 0 0 rgba(20,20,20,0); }
 
 /* ---------- how it works ---------- */
 .steps-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }

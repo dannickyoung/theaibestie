@@ -15,7 +15,7 @@ export default function ThanksPage() {
         <div className="intro" style={{ marginTop: 90, marginLeft: "auto", marginRight: "auto" }}>
           <span className="free-badge">★ ORDER CONFIRMED</span>
           <h1>
-            You&apos;re <span className="hl">in!</span>
+            Thank <span className="hl">you!</span>
           </h1>
           <p style={{ marginLeft: "auto", marginRight: "auto" }}>
             Your Starter Pack is on its way to your inbox right now. Go grab it!

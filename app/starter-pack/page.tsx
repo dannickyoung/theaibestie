@@ -140,7 +140,7 @@ export default function StarterPackPage() {
         </div>
 
         <div className="section-label">
-          <i className="iconoir-open-book" /> What&apos;s in the box
+          <i className="iconoir-open-book" /> What&apos;s inside the pack
         </div>
         <div className="steps-row">
           {BOX.map((b) => (

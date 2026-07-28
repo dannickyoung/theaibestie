@@ -81,22 +81,35 @@ export default function StarterPackPage() {
     <>
       <NavBar />
       <div className="wrap">
-        <div className="intro" style={{ marginTop: 34 }}>
-          <span className="free-badge">★ THE STARTER PACK · $9.90</span>
-          <h1>
-            Build your personal <span className="hl">brand</span> with Claude
-          </h1>
-          <p>
-            Everyone&apos;s talking about a personal brand. This is the pack that
-            actually builds one: in your voice, in one afternoon, with zero code.
-          </p>
-          <div className="hero-cta">
-            <a className="btn btn-primary" href="/api/checkout">
-              <i className="iconoir-cart" /> Get the Starter Pack · $9.90
-            </a>
-            <span className="hero-note">
-              <i className="iconoir-flash" /> instant download, one-time, yours forever
+        <div className="lesson-card" style={{ marginTop: 34, cursor: "default" }}>
+          <div className="lc-left">
+            <span className="lc-badge" style={{ background: "var(--magenta)" }}>
+              <i className="iconoir-bookmark-book" /> STARTER PACK
             </span>
+            <h2>Build Your Personal Brand With Claude</h2>
+            <p>
+              The step-by-step guide + the personal-brand-builder Claude skill.
+              It interviews you, captures how YOU actually sound, then writes
+              your brand system and your first 7 posts, in your voice, in one
+              afternoon. No code.
+            </p>
+            <div className="lc-meta">
+              <span>
+                <i className="iconoir-flash" /> Guide + Claude skill, instant delivery
+              </span>
+              <span>
+                <i className="iconoir-credit-card" /> $9.90 · one-time, yours forever
+              </span>
+            </div>
+            <a className="lc-open" href="/api/checkout">
+              Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
+            </a>
+          </div>
+          <div className="lc-art">
+            <div className="cc-tile">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/wendy-front.png" alt="" style={{ imageRendering: "auto" }} />
+            </div>
           </div>
         </div>
 

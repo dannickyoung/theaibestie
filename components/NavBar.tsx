@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const TABS = [
-  { href: "/", label: "Home" },
   { href: "/lessons", label: "Lessons" },
   { href: "/starter-pack", label: "Starter Pack" },
 ];

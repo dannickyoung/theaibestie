@@ -104,6 +104,9 @@ export default function StarterPackPage() {
             <a className="lc-open" href="/api/checkout">
               Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
             </a>
+            <p style={{ fontSize: 13, color: "#6b7178", marginTop: 12, maxWidth: "none" }}>
+              Instant digital download. All sales are final, no refunds.
+            </p>
           </div>
           <div className="lc-art">
             <div className="cc-tile">
@@ -174,6 +177,9 @@ export default function StarterPackPage() {
           <a className="btn" href="/api/checkout">
             Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
           </a>
+          <p style={{ marginTop: 14, marginBottom: 0 }}>
+            Instant digital download. All sales are final, no refunds.
+          </p>
         </div>
 
         <footer>

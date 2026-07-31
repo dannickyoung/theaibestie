@@ -104,8 +104,8 @@ export default function StarterPackPage() {
             <a className="lc-open" href="/api/checkout">
               Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
             </a>
-            <p style={{ fontSize: 13, color: "#6b7178", marginTop: 12, maxWidth: "none" }}>
-              All sales are final. But if you can&apos;t get it set up, DM us STUCK and we&apos;ll personally walk you through it until it works.
+            <p style={{ fontSize: 13, color: "#6b7178", marginTop: 12, maxWidth: "none", textWrap: "balance" }}>
+              All sales are final. But if you can&apos;t get it set up, DM us STUCK and we&apos;ll personally walk you through it until it works.
             </p>
           </div>
           <div className="lc-art">
@@ -177,9 +177,6 @@ export default function StarterPackPage() {
           <a className="btn" href="/api/checkout">
             Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
           </a>
-          <p style={{ marginTop: 14, marginBottom: 0 }}>
-            All sales are final. But if you can&apos;t get it set up, DM us STUCK and we&apos;ll personally walk you through it until it works.
-          </p>
         </div>
 
         <footer>

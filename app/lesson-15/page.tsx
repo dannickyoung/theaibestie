@@ -102,7 +102,7 @@ If any of these are missing, ask me before you continue.
 STEP 2: DESIGN MY DIGITAL PRODUCT LADDER
 Give me a "value ladder" of 3 to 5 digital products, from cheap and easy to premium. For each product give me:
 • The name (real, sellable, on-brand).
-• What it is (format: guide, template pack, mini-course, notion system, cohort, etc.)
+• What it is (format: guide, template kit, mini-course, notion system, cohort, etc.)
 • The exact problem it solves for my audience.
 • Why only I could make it (tie it to my unique edge from the brand work).
 • A suggested price.

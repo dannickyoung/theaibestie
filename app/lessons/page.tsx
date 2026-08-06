@@ -107,16 +107,16 @@ export default function LessonsPage() {
         </div>
         <a
           className="lesson-card"
-          href="/packs"
+          href="/kits"
           style={{ background: "#FBEEE7" }}
         >
           <div className="lc-left">
             <span className="lc-badge" style={{ background: "var(--magenta)", color: "#fff" }}>
-              <i className="iconoir-cart" /> THE PACKS · PAID
+              <i className="iconoir-cart" /> THE KITS · PAID
             </span>
             <h2>Build something real in one afternoon</h2>
             <p>
-              Two packs, each a step-by-step guide plus a ready-made Claude
+              Two kits, each a step-by-step guide plus a ready-made Claude
               skill: build your personal brand in your own voice, or build your
               own AI assistant that lives in Telegram. No code.
             </p>
@@ -129,7 +129,7 @@ export default function LessonsPage() {
               </span>
             </div>
             <span className="lc-open">
-              See the packs <i className="iconoir-arrow-right" />
+              See the kits <i className="iconoir-arrow-right" />
             </span>
           </div>
           <div className="lc-art">

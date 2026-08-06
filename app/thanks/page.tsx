@@ -18,7 +18,7 @@ export default function ThanksPage() {
             Thank <span className="hl">you!</span>
           </h1>
           <p style={{ marginLeft: "auto", marginRight: "auto" }}>
-            Your Starter Pack is on its way to your inbox right now. Go grab it!
+            Your kit is on its way to your inbox right now. Go grab it!
           </p>
           <p style={{ marginTop: 12, marginLeft: "auto", marginRight: "auto" }}>
             Nothing after a few minutes? Check spam, or DM @the.ai.bestie.

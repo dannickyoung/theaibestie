@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 
-const TITLE = "The Packs · The AI Bestie";
+const TITLE = "The Kits · The AI Bestie";
 const DESCRIPTION =
   "One-afternoon builds for non-technical people. Build your personal brand with Claude, or build your own AI assistant that lives in Telegram. $9.90 each, instant download.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/packs" },
+  alternates: { canonical: "/kits" },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/packs",
+    url: "/kits",
     siteName: "The AI Bestie",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "The AI Bestie" }],
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PacksPage() {
+export default function KitsPage() {
   return (
     <>
       <NavBar />
       <div className="wrap">
         <div className="intro" style={{ marginTop: 34 }}>
-          <span className="free-badge">★ THE AI BESTIE PACKS</span>
-          <h1>Build something real in one afternoon</h1>
+          <span className="free-badge">★ THE AI BESTIE KITS</span>
+          <h1>Worth every cent</h1>
           <p>
-            Each pack is a step-by-step guide plus a ready-made Claude skill.
+            Each kit is a step-by-step guide plus a ready-made Claude skill.
             You follow the pictures, Claude does the technical work. No code.
           </p>
           <div className="learn-modes">
@@ -48,14 +48,14 @@ export default function PacksPage() {
         </div>
 
         <div className="section-label">
-          <i className="iconoir-cart" /> The packs
+          <i className="iconoir-cart" /> The kits
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-          <a className="lesson-card" href="/starter-pack">
+          <a className="lesson-card" href="/starter-kit">
             <div className="lc-left">
               <span className="lc-badge" style={{ background: "var(--magenta)" }}>
-                <i className="iconoir-bookmark-book" /> STARTER PACK
+                <i className="iconoir-bookmark-book" /> STARTER KIT
               </span>
               <h2>Build Your Personal Brand With Claude</h2>
               <p>
@@ -83,10 +83,10 @@ export default function PacksPage() {
             </div>
           </a>
 
-          <a className="lesson-card" href="/assistant-pack">
+          <a className="lesson-card" href="/assistant-kit" style={{ background: "#FFEAF4" }}>
             <div className="lc-left">
               <span className="lc-badge" style={{ background: "var(--green)" }}>
-                <i className="iconoir-sparks" /> ASSISTANT PACK · NEW
+                <i className="iconoir-sparks" /> ASSISTANT KIT · NEW
               </span>
               <h2>Build Your Own AI Assistant</h2>
               <p>
@@ -111,9 +111,9 @@ export default function PacksPage() {
               </span>
             </div>
             <div className="lc-art">
-              <div className="cc-tile" style={{ background: "#FCE3EE" }}>
+              <div className="cc-tile" style={{ background: "#EFE1FA" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/ava-cheer.png" alt="" style={{ imageRendering: "auto" }} />
+                <img src="/assets/ava-checklist.png" alt="" style={{ imageRendering: "auto" }} />
               </div>
             </div>
           </a>

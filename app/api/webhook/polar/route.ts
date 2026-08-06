@@ -4,7 +4,7 @@ import { Webhooks } from "@polar-sh/nextjs";
 // https://<site>/api/webhook/polar in Polar → Settings → Webhooks, with
 // the same secret as POLAR_WEBHOOK_SECRET).
 //
-// Delivery of the packs is handled by Polar itself, so for now this
+// Delivery of the kits is handled by Polar itself, so for now this
 // only acknowledges events and logs sales; add real handlers here if the
 // site ever gates content on purchases.
 export const POST = Webhooks({

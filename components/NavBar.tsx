@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const TABS = [
-  { href: "/lessons", label: "Lessons", match: ["/lessons"] },
+  { href: "/lessons", label: "Freebies", match: ["/lessons"] },
   {
-    href: "/packs",
-    label: "Packs",
-    match: ["/packs", "/starter-pack", "/assistant-pack"],
+    href: "/kits",
+    label: "Paid",
+    match: ["/kits", "/starter-kit", "/assistant-kit"],
   },
 ];
 

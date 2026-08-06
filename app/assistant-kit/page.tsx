@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 
-const TITLE = "The Assistant Pack · The AI Bestie";
+const TITLE = "The Assistant Kit · The AI Bestie";
 const DESCRIPTION =
   "Build your own AI assistant that lives in Telegram. You name her, Claude builds her: memory, receipts, and a daily affirmation written from your wildest dreams. $9.90, instant download.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/assistant-pack" },
+  alternates: { canonical: "/assistant-kit" },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/assistant-pack",
+    url: "/assistant-kit",
     siteName: "The AI Bestie",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "The AI Bestie" }],
@@ -76,15 +76,15 @@ const BOX = [
   },
 ];
 
-export default function AssistantPackPage() {
+export default function AssistantKitPage() {
   return (
     <>
       <NavBar />
       <div className="wrap">
-        <div className="lesson-card" style={{ marginTop: 34, cursor: "default" }}>
+        <div className="lesson-card" style={{ marginTop: 34, cursor: "default", background: "#FFEAF4" }}>
           <div className="lc-left">
             <span className="lc-badge" style={{ background: "var(--green)" }}>
-              <i className="iconoir-sparks" /> ASSISTANT PACK · NEW
+              <i className="iconoir-sparks" /> ASSISTANT KIT · NEW
             </span>
             <h2>Build Your Own AI Assistant</h2>
             <p>
@@ -104,17 +104,17 @@ export default function AssistantPackPage() {
             <p style={{ fontSize: 13.5, fontWeight: 800, color: "var(--magenta)", marginTop: 10 }}>
               🍎 For Mac users only. Written and tested on Mac.
             </p>
-            <a className="lc-open" href="/api/checkout?pack=assistant">
-              Get the Assistant Pack · $9.90 <i className="iconoir-arrow-right" />
+            <a className="lc-open" href="/api/checkout?kit=assistant">
+              Get the Assistant Kit · $9.90 <i className="iconoir-arrow-right" />
             </a>
             <p style={{ fontSize: 13, color: "#6b7178", marginTop: 12, maxWidth: "none", textWrap: "balance" }}>
               All sales are final. But if you can&apos;t get it set up, DM us <strong>STUCK</strong> and we&apos;ll personally walk you through it until it works.
             </p>
           </div>
           <div className="lc-art">
-            <div className="cc-tile" style={{ background: "#FCE3EE" }}>
+            <div className="cc-tile" style={{ background: "#EFE1FA" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/ava-cheer.png" alt="" style={{ imageRendering: "auto" }} />
+              <img src="/assets/ava-checklist.png" alt="" style={{ imageRendering: "auto" }} />
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function AssistantPackPage() {
         </div>
 
         <div className="section-label">
-          <i className="iconoir-open-book" /> What&apos;s inside the pack
+          <i className="iconoir-open-book" /> What&apos;s inside the kit
         </div>
         <div className="steps-row">
           {BOX.map((b) => (
@@ -163,7 +163,7 @@ export default function AssistantPackPage() {
         </div>
         <div className="learn-modes" style={{ marginTop: 4 }}>
           <span className="lm">
-            <i className="iconoir-laptop" /> A Mac (this pack is written and tested on Mac only)
+            <i className="iconoir-laptop" /> A Mac (this kit is written and tested on Mac only)
           </span>
           <span className="lm">
             <i className="iconoir-chat-bubble" /> Claude Pro or higher (about US$20/month, paid to
@@ -190,8 +190,8 @@ export default function AssistantPackPage() {
         <div className="cta-card" style={{ marginTop: 40 }}>
           <div className="cta-grid" />
           <h2>One afternoon from &ldquo;she just texted me good morning.&rdquo;</h2>
-          <a className="btn" href="/api/checkout?pack=assistant">
-            Get the Assistant Pack · $9.90 <i className="iconoir-arrow-right" />
+          <a className="btn" href="/api/checkout?kit=assistant">
+            Get the Assistant Kit · $9.90 <i className="iconoir-arrow-right" />
           </a>
         </div>
 

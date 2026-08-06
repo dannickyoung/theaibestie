@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 
-const TITLE = "The Starter Pack · The AI Bestie";
+const TITLE = "The Starter Kit · The AI Bestie";
 const DESCRIPTION =
   "Build your personal brand with Claude in one afternoon. A step-by-step guide plus the personal-brand-builder skill: your voice captured, your brand system, and your first 7 posts. $9.90, instant download.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/starter-pack" },
+  alternates: { canonical: "/starter-kit" },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/starter-pack",
+    url: "/starter-kit",
     siteName: "The AI Bestie",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "The AI Bestie" }],
@@ -76,7 +76,7 @@ const BOX = [
   },
 ];
 
-export default function StarterPackPage() {
+export default function StarterKitPage() {
   return (
     <>
       <NavBar />
@@ -84,7 +84,7 @@ export default function StarterPackPage() {
         <div className="lesson-card" style={{ marginTop: 34, cursor: "default" }}>
           <div className="lc-left">
             <span className="lc-badge" style={{ background: "var(--magenta)" }}>
-              <i className="iconoir-bookmark-book" /> STARTER PACK
+              <i className="iconoir-bookmark-book" /> STARTER KIT
             </span>
             <h2>Build Your Personal Brand With Claude</h2>
             <p>
@@ -102,7 +102,7 @@ export default function StarterPackPage() {
               </span>
             </div>
             <a className="lc-open" href="/api/checkout">
-              Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
+              Get the Starter Kit · $9.90 <i className="iconoir-arrow-right" />
             </a>
             <p style={{ fontSize: 13, color: "#6b7178", marginTop: 12, maxWidth: "none", textWrap: "balance" }}>
               All sales are final. But if you can&apos;t get it set up, DM us <strong>STUCK</strong> and we&apos;ll personally walk you through it until it works.
@@ -143,7 +143,7 @@ export default function StarterPackPage() {
         </div>
 
         <div className="section-label">
-          <i className="iconoir-open-book" /> What&apos;s inside the pack
+          <i className="iconoir-open-book" /> What&apos;s inside the kit
         </div>
         <div className="steps-row">
           {BOX.map((b) => (
@@ -175,7 +175,7 @@ export default function StarterPackPage() {
           <div className="cta-grid" />
           <h2>Your brand and your first 7 posts, done today.</h2>
           <a className="btn" href="/api/checkout">
-            Get the Starter Pack · $9.90 <i className="iconoir-arrow-right" />
+            Get the Starter Kit · $9.90 <i className="iconoir-arrow-right" />
           </a>
         </div>
 

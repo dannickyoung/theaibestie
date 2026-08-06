@@ -101,13 +101,13 @@ export default function Home() {
               <div className="lp-head">
                 <h2>Ready to build something real?</h2>
                 <p className="learn-line">
-                  <span className="scrap">The Packs: a guide + a Claude skill, $9.90 each</span>
+                  <span className="scrap">The Kits: a guide + a Claude skill, $9.90 each</span>
                   <span className="or-word">·</span>
                   <span className="scrap">your personal brand, or your own AI assistant</span>
                 </p>
                 <div style={{ textAlign: "center", marginTop: 18 }}>
-                  <a className="btn btn-primary" href="/packs">
-                    <i className="iconoir-cart" /> See the Packs
+                  <a className="btn btn-primary" href="/kits">
+                    <i className="iconoir-cart" /> See the Kits
                   </a>
                 </div>
               </div>

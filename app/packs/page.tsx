@@ -103,6 +103,9 @@ export default function PacksPage() {
                   <i className="iconoir-credit-card" /> $9.90
                 </span>
               </div>
+              <p style={{ fontSize: 13.5, fontWeight: 800, color: "var(--magenta)", marginTop: 10 }}>
+                🍎 For Mac users only. Written and tested on Mac.
+              </p>
               <span className="lc-open">
                 See what&apos;s inside <i className="iconoir-arrow-right" />
               </span>

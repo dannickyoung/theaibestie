@@ -114,7 +114,7 @@ export default function AssistantKitPage() {
           <div className="lc-art">
             <div className="cc-tile" style={{ background: "#EFE1FA" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/ava-checklist.png" alt="" style={{ imageRendering: "auto" }} />
+              <img src="/assets/ava-checklist.png" alt="" style={{ imageRendering: "auto", width: "100%", height: "100%", objectFit: "cover", borderRadius: 26 }} />
             </div>
           </div>
         </div>

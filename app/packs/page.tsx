@@ -83,7 +83,7 @@ export default function PacksPage() {
             </div>
           </a>
 
-          <a className="lesson-card" href="/assistant-pack" style={{ background: "#FFEAF4" }}>
+          <a className="lesson-card" href="/assistant-pack">
             <div className="lc-left">
               <span className="lc-badge" style={{ background: "var(--green)" }}>
                 <i className="iconoir-sparks" /> ASSISTANT PACK · NEW

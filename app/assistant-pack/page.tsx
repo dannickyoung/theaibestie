@@ -81,7 +81,7 @@ export default function AssistantPackPage() {
     <>
       <NavBar />
       <div className="wrap">
-        <div className="lesson-card" style={{ marginTop: 34, cursor: "default", background: "#FFEAF4" }}>
+        <div className="lesson-card" style={{ marginTop: 34, cursor: "default" }}>
           <div className="lc-left">
             <span className="lc-badge" style={{ background: "var(--green)" }}>
               <i className="iconoir-sparks" /> ASSISTANT PACK · NEW
@@ -101,6 +101,9 @@ export default function AssistantPackPage() {
                 <i className="iconoir-credit-card" /> $9.90 · one-time, yours forever
               </span>
             </div>
+            <p style={{ fontSize: 13.5, fontWeight: 800, color: "var(--magenta)", marginTop: 10 }}>
+              🍎 For Mac users only. Written and tested on Mac.
+            </p>
             <a className="lc-open" href="/api/checkout?pack=assistant">
               Get the Assistant Pack · $9.90 <i className="iconoir-arrow-right" />
             </a>

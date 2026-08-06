@@ -99,15 +99,15 @@ export default function Home() {
 
             <Reveal className="paper-card paper-brown">
               <div className="lp-head">
-                <h2>Ready to build your personal brand?</h2>
+                <h2>Ready to build something real?</h2>
                 <p className="learn-line">
-                  <span className="scrap">The Starter Pack: a guide + a Claude skill</span>
+                  <span className="scrap">The Packs: a guide + a Claude skill, $9.90 each</span>
                   <span className="or-word">·</span>
-                  <span className="scrap">your first 7 posts, in your voice, $9.90</span>
+                  <span className="scrap">your personal brand, or your own AI assistant</span>
                 </p>
                 <div style={{ textAlign: "center", marginTop: 18 }}>
-                  <a className="btn btn-primary" href="/starter-pack">
-                    <i className="iconoir-cart" /> See the Starter Pack
+                  <a className="btn btn-primary" href="/packs">
+                    <i className="iconoir-cart" /> See the Packs
                   </a>
                 </div>
               </div>

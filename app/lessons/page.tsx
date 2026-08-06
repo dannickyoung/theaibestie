@@ -107,30 +107,29 @@ export default function LessonsPage() {
         </div>
         <a
           className="lesson-card"
-          href="/starter-pack"
+          href="/packs"
           style={{ background: "#FBEEE7" }}
         >
           <div className="lc-left">
             <span className="lc-badge" style={{ background: "var(--magenta)", color: "#fff" }}>
-              <i className="iconoir-cart" /> STARTER PACK · PAID
+              <i className="iconoir-cart" /> THE PACKS · PAID
             </span>
-            <h2>Build Your Personal Brand With Claude</h2>
+            <h2>Build something real in one afternoon</h2>
             <p>
-              The step-by-step guide + the personal-brand-builder Claude skill. It
-              interviews you, captures how YOU actually sound, then writes your
-              brand system and your first 7 posts, in your voice, in one
-              afternoon. No code.
+              Two packs, each a step-by-step guide plus a ready-made Claude
+              skill: build your personal brand in your own voice, or build your
+              own AI assistant that lives in Telegram. No code.
             </p>
             <div className="lc-meta">
               <span>
                 <i className="iconoir-flash" /> Guide + Claude skill, instant delivery
               </span>
               <span>
-                <i className="iconoir-credit-card" /> $9.90 · one-time, yours forever
+                <i className="iconoir-credit-card" /> $9.90 each · one-time, yours forever
               </span>
             </div>
             <span className="lc-open">
-              See what&apos;s inside <i className="iconoir-arrow-right" />
+              See the packs <i className="iconoir-arrow-right" />
             </span>
           </div>
           <div className="lc-art">

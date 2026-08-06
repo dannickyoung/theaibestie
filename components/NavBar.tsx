@@ -4,8 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const TABS = [
-  { href: "/lessons", label: "Lessons" },
-  { href: "/starter-pack", label: "Starter Pack" },
+  { href: "/lessons", label: "Lessons", match: ["/lessons"] },
+  {
+    href: "/packs",
+    label: "Packs",
+    match: ["/packs", "/starter-pack", "/assistant-pack"],
+  },
 ];
 
 export default function NavBar() {
@@ -21,7 +25,9 @@ export default function NavBar() {
         <div className="nav-tabs">
           {TABS.map((t) => {
             const active =
-              t.href === "/" ? pathname === "/" : pathname.startsWith(t.href);
+              t.href === "/"
+                ? pathname === "/"
+                : t.match.some((m) => pathname.startsWith(m));
             return (
               <Link
                 key={t.href}

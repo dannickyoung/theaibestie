@@ -189,7 +189,7 @@ export default function AssistantKitPage() {
 
         <div className="cta-card" style={{ marginTop: 40 }}>
           <div className="cta-grid" />
-          <h2>One afternoon from &ldquo;she just texted me good morning.&rdquo;</h2>
+          <h2>My assistant works while I sleep</h2>
           <a className="btn" href="/api/checkout?kit=assistant">
             Get the Assistant Kit · $9.90 <i className="iconoir-arrow-right" />
           </a>

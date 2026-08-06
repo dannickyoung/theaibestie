@@ -102,44 +102,6 @@ export default function LessonsPage() {
           ))}
         </div>
 
-        <div className="section-label">
-          <i className="iconoir-cart" /> Go further
-        </div>
-        <a
-          className="lesson-card"
-          href="/kits"
-          style={{ background: "#FBEEE7" }}
-        >
-          <div className="lc-left">
-            <span className="lc-badge" style={{ background: "var(--magenta)", color: "#fff" }}>
-              <i className="iconoir-cart" /> THE KITS · PAID
-            </span>
-            <h2>Build something real in one afternoon</h2>
-            <p>
-              Two kits, each a step-by-step guide plus a ready-made Claude
-              skill: build your personal brand in your own voice, or build your
-              own AI assistant that lives in Telegram. No code.
-            </p>
-            <div className="lc-meta">
-              <span>
-                <i className="iconoir-flash" /> Guide + Claude skill, instant delivery
-              </span>
-              <span>
-                <i className="iconoir-credit-card" /> $9.90 each · one-time, yours forever
-              </span>
-            </div>
-            <span className="lc-open">
-              See the kits <i className="iconoir-arrow-right" />
-            </span>
-          </div>
-          <div className="lc-art">
-            <div className="cc-tile">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/wendy-front.png" alt="" style={{ imageRendering: "auto" }} />
-            </div>
-          </div>
-        </a>
-
         <div className="section-label" style={{ fontSize: 16, color: "#6b7178" }}>
           <i className="iconoir-clock" style={{ color: "#9aa0a6" }} /> Coming soon
         </div>

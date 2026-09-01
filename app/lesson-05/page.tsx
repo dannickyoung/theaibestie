@@ -84,7 +84,7 @@ export default function Lesson5Page() {
           Is a Crime Scene.
         </h1>
         <p className={styles.sub} style={{ maxWidth: "68%" }}>
-          3,000 photos, all named <b>IMG_4821</b>, and you are never going to sort them.{" "}
+          3,000 trip photos, all named <b>IMG_4821</b>, and you are never going to sort them.{" "}
           <b>Claude Code</b> will. <b>While you make coffee</b>.
         </p>
         <div className={styles.ccSticker} style={{ background: "#FFEAFB" }}>

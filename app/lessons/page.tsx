@@ -52,6 +52,18 @@ const LESSONS = [
     ],
   },
   {
+    badge: "LESSON 05",
+    title: "Your Photos Folder Is a Crime Scene",
+    desc: "3,000 trip photos all named IMG_4821? One prompt, and Claude Code renames them by day, sorts them into folders, and pulls out the blurry ones. While you make coffee.",
+    href: "/lesson-05",
+    art: "/assets/claude-code-mascot.png",
+    pixel: true,
+    meta: [
+      { icon: "iconoir-media-image", label: "Photos & videos" },
+      { icon: "iconoir-folder", label: "Sorted in minutes" },
+    ],
+  },
+  {
     badge: "LESSON 15",
     title: "If You're Not Using Fable 5, You're Already Behind",
     desc: "Fable 5 is the smartest AI ever made, and it's free until July 19. Use it to build your whole personal brand: your positioning, a week of posts, and your website.",

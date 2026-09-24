@@ -43,6 +43,19 @@ const MORE_FLAGS = [
 export default function Lesson21Page() {
   return (
     <Lesson label="Lesson 21" pdfHref="/lesson-21-spot-the-ai-scammer.pdf">
+      {/* PDF only: tighter gaps so the printed lesson fits on 3 pages */}
+      <style>{`@media print {
+        [class*="lesson_titleCard"] { margin-top: 18px !important; }
+        [class*="lesson_promise"] { margin-top: 16px !important; }
+        [class*="lesson_explain"] { margin-top: 14px !important; }
+        [class*="lesson_hRow"] { margin-top: 22px !important; }
+        [class*="lesson_setup"] { margin-top: 9px !important; }
+        [class*="lesson_grid6"], [class*="lesson_two"] { margin-top: 12px !important; }
+        [data-section] { margin-top: 20px !important; padding: 16px 20px 18px !important; }
+        [class*="lesson_super"], [class*="lesson_quote"] { margin-top: 20px !important; }
+        [class*="lesson_footer"] { margin-top: 20px !important; }
+      }`}</style>
+
       <CoverBanner tab="LESSON 21" faceSrc="/assets/wendy-cool.svg" />
 
       {/* title */}
@@ -104,7 +117,7 @@ export default function Lesson21Page() {
       </div>
 
       {/* the 3 signs */}
-      <div className={styles.clay} style={SECTION}>
+      <div className={styles.clay} style={SECTION} data-section>
         <div className={styles.hRow} style={SECTION_HEAD}>
           <Chip icon="iconoir-warning-triangle" color="var(--magenta)" />
           <h2>3 signs it&apos;s a scammer</h2>
@@ -158,7 +171,7 @@ export default function Lesson21Page() {
       </div>
 
       {/* the fix */}
-      <div className={styles.clay} style={SECTION}>
+      <div className={styles.clay} style={SECTION} data-section>
         <div className={styles.hRow} style={SECTION_HEAD}>
           <Chip icon="iconoir-phone" color="var(--green)" />
           <h2>The fix is so easy</h2>

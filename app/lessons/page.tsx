@@ -78,7 +78,7 @@ const LESSONS = [
   {
     badge: "LESSON 21",
     title: "Spot the AI Scammer",
-    desc: "AI can copy your voice from a few seconds of video. 3 signs it's a scammer, 1 easy fix, and a family code word. Send this to your parents.",
+    desc: "AI can copy anyone's voice from a few seconds of video. 3 signs it's a scammer, 1 easy fix, and a family code word that stops them cold.",
     href: "/lesson-21",
     art: "/assets/claude-code-mascot.png",
     pixel: true,

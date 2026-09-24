@@ -4,12 +4,11 @@ import Lesson from "@/components/lesson/Lesson";
 import CoverBanner from "@/components/lesson/CoverBanner";
 import Chip from "@/components/lesson/Chip";
 import Step from "@/components/lesson/Step";
-import CopyBox from "@/components/lesson/CopyBox";
 import Star from "@/components/lesson/Star";
 
 const TITLE = "Lesson 21: Spot the AI Scammer · The AI Bestie";
 const DESCRIPTION =
-  "AI can copy your voice from a few seconds of video. Here are 3 signs it's a scammer, 1 easy fix, and a family code word. Send this to your parents.";
+  "AI can copy anyone's voice from a few seconds of video. Here are 3 signs it's a scammer, 1 easy fix, and a family code word that stops them cold.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -31,26 +30,12 @@ export const metadata: Metadata = {
   },
 };
 
-const CHEAT_SHEET = `IS IT REALLY THEM? 5 signs it is a scam
+/** A bordered card that groups one section, so each part of the lesson reads as its own block. */
+const SECTION = { marginTop: 40, padding: "22px 24px 24px" } as const;
+const SECTION_HEAD = { marginTop: 0 } as const;
 
-1. They rush you. "Right now. Do not tell anyone."
-2. They want it kept secret from the rest of the family.
-3. They want gift cards, crypto, cash, or money sent to a new bank account.
-4. They dodge questions only the real person would know.
-5. They ask for a code sent to your phone (OTP), or ask you to install an app. Your bank will never ask for this.
-
-WHAT TO DO
-Hang up. It is not rude. It is smart.
-Call back on the number you already have saved.
-Ask for the family code word. No code word, no money.
-Not sure? In Singapore, call the ScamShield Helpline 1799, any time, 24/7.
-Already sent money? Call your bank right away.`;
-
-const SIGNS = [
-  { icon: "iconoir-timer", color: "var(--magenta)", title: "They rush you", text: "\"Right now. Do not tell anyone.\" Real family can wait five minutes." },
+const MORE_FLAGS = [
   { icon: "iconoir-lock", color: "var(--lilac)", title: "They want a secret", text: "\"Don't tell Dad.\" Real trouble is something the whole family helps with." },
-  { icon: "iconoir-gift", color: "var(--cyan)", title: "Weird way to pay", text: "Gift cards, crypto, cash, or a brand new bank account." },
-  { icon: "iconoir-chat-bubble-question", color: "var(--sky)", title: "They dodge questions", text: "Ask something only the real person would know. Watch it fall apart." },
   { icon: "iconoir-smartphone-device", color: "var(--green)", title: "They want your code", text: "The code sent to your phone, or an app to install. Your bank never asks." },
   { icon: "iconoir-emoji-sad", color: "var(--magenta)", title: "They cry. A lot.", text: "Big feelings stop you from thinking. That is exactly the point." },
 ];
@@ -71,8 +56,8 @@ export default function Lesson21Page() {
           AI Scammer.
         </h1>
         <p className={styles.sub} style={{ maxWidth: "68%" }}>
-          AI can now copy your voice from <b>a few seconds of video</b>. So the next call
-          your mom gets might sound exactly like you. <b>Send this to your parents.</b>
+          AI can now copy anyone&apos;s voice from <b>a few seconds of video</b>. Here&apos;s
+          how to tell when that call from family is <b>really a scammer</b>.
         </p>
         <div className={styles.ccSticker} style={{ background: "#FFEAFB" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -107,79 +92,98 @@ export default function Lesson21Page() {
         <div>
           <h3>Here&apos;s what scams look like now</h3>
           <p>
-            A scammer takes <b>a few seconds of your voice</b> from one of your videos. AI
-            makes it say anything. So your mom gets a call. It&apos;s you. Crying.{" "}
-            <i>&quot;Mom, I&apos;m in trouble. Please send money.&quot;</i> It sounds like you.{" "}
-            <b>It is not you.</b>
+            A scammer grabs <b>a few seconds of someone&apos;s voice</b> from a video they
+            posted. AI makes it say anything. Then the call comes. It&apos;s your grandchild.
+            Crying. <i>&quot;I&apos;m in trouble. Please send money.&quot;</i> It sounds exactly
+            like them. <b>It is not them.</b>
+          </p>
+          <p>
+            Anyone can fall for this. What protects you is <b>a plan you make before the call comes</b>.
           </p>
         </div>
       </div>
 
-      <div className={`${styles.clay} ${styles.bigAnalogy}`}>
-        <div className={styles.q}>
-          Honestly? <b>I would fall for it.</b> I cry at insurance ads. So this is not
-          about being smart. It&apos;s about having <span className={styles.hl}>a plan</span>{" "}
-          before the call comes.
+      {/* the 3 signs */}
+      <div className={styles.clay} style={SECTION}>
+        <div className={styles.hRow} style={SECTION_HEAD}>
+          <Chip icon="iconoir-warning-triangle" color="var(--magenta)" />
+          <h2>3 signs it&apos;s a scammer</h2>
+        </div>
+        <p className={styles.lead}>You only need to spot one.</p>
+
+        <Step n={1} title="They rush you">
+          <p>
+            <i>&quot;Right now. Do not tell anyone.&quot;</i> Scammers need you panicking, not
+            thinking. <b>Real family can wait five minutes. Scammers cannot.</b>
+          </p>
+        </Step>
+
+        <Step n={2} title="They want money in a weird way">
+          <p>
+            <b>Gift cards. Crypto. A brand new bank account.</b> Nobody in real trouble asks
+            for a stack of gift cards.
+          </p>
+          <p className={styles.note} style={{ fontSize: 19, marginTop: 9, color: "#3a4047" }}>
+            your real grandkids ask for snacks, not gift cards.
+          </p>
+        </Step>
+
+        <Step n={3} title="They dodge questions">
+          <p>
+            Ask something <b>only the real person would know</b>. Like{" "}
+            <i>&quot;What did we eat at Grandma&apos;s last Sunday?&quot;</i> A scammer
+            changes the subject, cries louder, or hangs up. <b>Watch the lie fall apart.</b>
+          </p>
+        </Step>
+      </div>
+
+      {/* more red flags */}
+      <div style={{ breakInside: "avoid" }}>
+        <div className={styles.hRow}>
+          <Chip icon="iconoir-eye" color="var(--sky)" />
+          <h2>Also watch out for</h2>
+        </div>
+        <p className={styles.lead}>Spot any of these? Same answer: hang up and call back.</p>
+        <div className={styles.grid6}>
+          {MORE_FLAGS.map((s) => (
+            <div className={styles.clay} key={s.title}>
+              <Chip icon={s.icon} color={s.color} />
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* the 3 signs */}
-      <div className={styles.hRow}>
-        <Chip icon="iconoir-warning-triangle" color="var(--magenta)" />
-        <h2>Mom, Dad, this part is for you</h2>
-      </div>
-      <p className={styles.lead}>Three signs it&apos;s a scammer. You only need to spot one.</p>
-
-      <Step n={1} title="They rush you">
-        <p>
-          <i>&quot;Right now. Do not tell anyone.&quot;</i> Scammers need you panicking, not
-          thinking. <b>Real family can wait five minutes. Scammers cannot.</b>
-        </p>
-      </Step>
-
-      <Step n={2} title="They want money in a weird way">
-        <p>
-          <b>Gift cards. Crypto. A brand new bank account.</b> Nobody in real trouble asks
-          for a stack of gift cards.
-        </p>
-        <p className={styles.note} style={{ fontSize: 19, marginTop: 9, color: "#3a4047" }}>
-          your real grandkids ask for snacks, not gift cards.
-        </p>
-      </Step>
-
-      <Step n={3} title="They dodge questions">
-        <p>
-          Ask something <b>only the real person would know</b>. Like{" "}
-          <i>&quot;What did we eat at Grandma&apos;s last Sunday?&quot;</i> A scammer
-          changes the subject, cries louder, or hangs up. <b>Watch the lie fall apart.</b>
-        </p>
-      </Step>
-
       {/* the fix */}
-      <div className={styles.hRow}>
-        <Chip icon="iconoir-phone" color="var(--green)" />
-        <h2>The fix is so easy</h2>
+      <div className={styles.clay} style={SECTION}>
+        <div className={styles.hRow} style={SECTION_HEAD}>
+          <Chip icon="iconoir-phone" color="var(--green)" />
+          <h2>The fix is so easy</h2>
+        </div>
+        <p className={styles.lead}>Two moves. No tech needed. Works on every scam call, AI or not.</p>
+
+        <Step n="A" title="Hang up. Call back.">
+          <p>
+            <b>Hang up.</b> It is not rude. It is smart. Then <b>call back on the number you
+            already have saved</b>. Not the number that just called you. If it was really
+            them, they pick up.
+          </p>
+        </Step>
+
+        <Step n="B" title="Pick a family code word">
+          <p>
+            Something silly only your family knows, like <b>&quot;pineapple tart&quot;</b>. Share
+            it in person or on a call, never in a text. Then the rule is simple:{" "}
+            <b>no code word, no money.</b>
+          </p>
+          <p className={styles.note} style={{ fontSize: 19, marginTop: 9, color: "#3a4047" }}>
+            not even for the favourite grandchild.
+          </p>
+        </Step>
       </div>
-      <p className={styles.lead}>Two moves. No tech needed. Works on every scam call, AI or not.</p>
-
-      <Step n="A" title="Hang up. Call back.">
-        <p>
-          <b>Hang up.</b> It is not rude. It is smart. Then <b>call back on the number you
-          already have saved</b>. Not the number that just called you. If it was really
-          them, they pick up.
-        </p>
-      </Step>
-
-      <Step n="B" title="Pick a family code word, tonight">
-        <p>
-          Something silly only your family knows, like <b>&quot;pineapple tart&quot;</b>. Share
-          it in person or on a call, never in a text. Then the rule is simple:{" "}
-          <b>no code word, no money.</b>
-        </p>
-        <p className={styles.note} style={{ fontSize: 19, marginTop: 9, color: "#3a4047" }}>
-          not even for the favourite grandchild.
-        </p>
-      </Step>
 
       {/* scammer vs real family */}
       <div style={{ breakInside: "avoid" }}>
@@ -221,43 +225,15 @@ export default function Lesson21Page() {
         </div>
       </div>
 
-      {/* all the red flags */}
-      <div className={styles.hRow}>
-        <Chip icon="iconoir-eye" color="var(--sky)" />
-        <h2>Every red flag, in one place</h2>
-      </div>
-      <p className={styles.lead}>Spot even one of these? Hang up and call back.</p>
-      <div className={styles.grid6}>
-        {SIGNS.map((s) => (
-          <div className={styles.clay} key={s.title}>
-            <Chip icon={s.icon} color={s.color} />
-            <div>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* cheat sheet for the group chat */}
-      <div style={{ breakInside: "avoid" }}>
-        <div className={styles.hRow}>
-          <Chip icon="iconoir-send" color="var(--green)" />
-          <h2>Drop this in the family group chat</h2>
-        </div>
-        <p className={styles.lead}>Tap the black box to copy. Paste it in the chat. That&apos;s it.</p>
-        <CopyBox variant="prompt" collapsible label="THE CHEAT SHEET" copyText={CHEAT_SHEET} />
-      </div>
-
       {/* help numbers */}
-      <div className={`${styles.clay} ${styles.super}`}>
+      <div className={`${styles.clay} ${styles.super}`} style={{ marginTop: 40 }}>
         <h3>Not sure? Ask for help. Any time.</h3>
         <p>
           In Singapore, call the <span className={styles.pop}>ScamShield Helpline 1799</span>,
           24/7. Already sent money? <span className={styles.pop2}>Call your bank right away.</span>{" "}
           The faster you call, the better the chance of getting it back.
         </p>
-        <p className={styles.yap}>it sounds like you. it is not you.</p>
+        <p className={styles.yap}>it sounds like them. it is not them.</p>
         <div className={`${styles.tape} ${styles.tapeCyan}`} style={{ top: -14, right: 40, transform: "rotate(-6deg)" }} />
       </div>
 
@@ -270,25 +246,6 @@ export default function Lesson21Page() {
             “Real family can wait five minutes. Scammers cannot.”
           </div>
           <div className={styles.qWho}>· Wendy, your AI Bestie</div>
-        </div>
-      </div>
-
-      {/* cta */}
-      <div style={{ breakInside: "avoid" }}>
-        <div className={styles.hRow}>
-          <Chip icon="iconoir-heart" color="var(--magenta)" />
-          <h2>Tonight&apos;s homework</h2>
-        </div>
-        <p className={styles.lead}>Five minutes. Could save your family a lot more than that.</p>
-        <div className={`${styles.clay} ${styles.super}`} style={{ marginTop: 14 }}>
-          <h3>Pick your code word tonight.</h3>
-          <p>
-            Send this page to <span className={styles.pop}>Mom, Dad, Grandma, Grandpa</span>.
-            Pick something silly. Say it out loud, together. Then{" "}
-            <span className={styles.pop2}>no code word, no money</span>.
-          </p>
-          <p className={styles.yap}>comment SAFE and I&apos;ll send you the big-font cheat sheet</p>
-          <div className={`${styles.tape} ${styles.tapeMag}`} style={{ top: -14, right: 40, transform: "rotate(6deg)" }} />
         </div>
       </div>
 

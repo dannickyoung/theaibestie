@@ -91,7 +91,7 @@ const GET = [
   { icon: "iconoir-video-camera", d: "The filming guide: 8 things that make the edit look expensive" },
   {
     icon: "iconoir-refresh-double",
-    d: "Free updates. Your purchase page always has the latest version; tell Claude \"update edit bestie\" and it swaps it in.",
+    d: "Free updates. Your purchase page always has the latest version; tell Claude \"update edit bestie\" and it swaps it in. First one coming: CapCut export, every layer editable.",
   },
 ];
 
@@ -115,7 +115,10 @@ const FAQ = [
     a: "Neither is Wendy. You paste \"set up edit bestie\" and say yes a few times. Claude does the rest.",
   },
   { q: "Will it look like me?", a: "It's your face, your words, your look. Claude edits, you direct." },
-  { q: "Do I need CapCut?", a: "No. You get a finished video." },
+  {
+    q: "Do I need CapCut?",
+    a: "No. You get a finished video. A CapCut export (every clip, caption and sound on its own layer, so you can tweak it) is coming as a free update.",
+  },
   { q: "How many reels?", a: "No cap from us. Your Claude plan has daily usage; short reels use little." },
   { q: "Other languages?", a: "Captions work in most. Add your names to the \"spell right\" list." },
   { q: "Music?", a: "We add sound effects. Add the trending sound in Instagram when you post." },

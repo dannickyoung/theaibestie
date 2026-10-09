@@ -8,7 +8,7 @@ const TABS = [
   {
     href: "/kits",
     label: "Paid",
-    match: ["/kits", "/starter-kit", "/assistant-kit"],
+    match: ["/kits", "/starter-kit", "/assistant-kit", "/edit-bestie"],
   },
 ];
 

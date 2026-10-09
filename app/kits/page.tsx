@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
+import EditBestiePrice from "./EditBestiePrice";
 
 const TITLE = "The Kits · The AI Bestie";
 const DESCRIPTION =
-  "One-afternoon builds for non-technical people. Build your personal brand with Claude, or build your own AI assistant that lives in Telegram. $9.90 each, instant download.";
+  "One-afternoon builds for non-technical people. Build your personal brand with Claude, build your own AI assistant that lives in Telegram, or let Claude edit your reels. One-time, instant download.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -42,7 +43,7 @@ export default function KitsPage() {
               <i className="iconoir-flash" /> Instant download
             </span>
             <span className="lm">
-              <i className="iconoir-credit-card" /> $9.90 each · one-time, yours forever
+              <i className="iconoir-credit-card" /> One-time, yours forever
             </span>
           </div>
         </div>
@@ -52,6 +53,51 @@ export default function KitsPage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          <a className="lesson-card" href="/edit-bestie" style={{ background: "#FFF6CC" }}>
+            <div className="lc-left">
+              <span className="lc-badge" style={{ background: "var(--ink)" }}>
+                <i className="iconoir-video-camera" /> EDIT BESTIE · NEW
+              </span>
+              <h2>You Film. Claude Edits. You&nbsp;Post.</h2>
+              <p>
+                Edit Bestie turns your phone clips into a finished reel in your
+                look. Best takes picked, ums cut, captions timed to your voice,
+                sound effects in. You say &ldquo;edit my reel&rdquo;. You get a&nbsp;video.
+              </p>
+              <div className="lc-meta">
+                <span>
+                  <i className="iconoir-flash" /> Claude skill + handbook + sound kit
+                </span>
+                <span>
+                  <i className="iconoir-credit-card" />{" "}
+                  <EditBestiePrice
+                    sale={
+                      <>
+                        <s style={{ fontWeight: 700 }}>$69.99</s>&nbsp;$49.99 · flash sale
+                      </>
+                    }
+                  />
+                </span>
+              </div>
+              <p style={{ fontSize: 13.5, fontWeight: 800, color: "var(--magenta)", marginTop: 10 }}>
+                🍎 For Mac users only. Needs a Claude&nbsp;Pro&nbsp;plan.
+              </p>
+              <span className="lc-open">
+                See how it works <i className="iconoir-arrow-right" />
+              </span>
+            </div>
+            <div className="lc-art">
+              <div className="cc-tile" style={{ background: "#CFF3FA", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/edit-bestie/sample_01-tile.jpg"
+                  alt="A frame from a reel edited with Edit Bestie"
+                  style={{ imageRendering: "auto", width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </a>
+
           <a className="lesson-card" href="/starter-kit">
             <div className="lc-left">
               <span className="lc-badge" style={{ background: "var(--magenta)" }}>
@@ -86,7 +132,7 @@ export default function KitsPage() {
           <a className="lesson-card" href="/assistant-kit" style={{ background: "#FFEAF4" }}>
             <div className="lc-left">
               <span className="lc-badge" style={{ background: "var(--green)" }}>
-                <i className="iconoir-sparks" /> ASSISTANT KIT · NEW
+                <i className="iconoir-sparks" /> ASSISTANT KIT
               </span>
               <h2>Build Your Own AI Assistant</h2>
               <p>

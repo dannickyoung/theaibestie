@@ -389,6 +389,52 @@ footer .ig:hover{ color:var(--magenta); }
 .ig-float:hover{ transform:translateY(-50%) scale(1.07); background:var(--ink); }
 .ig-float i{ font-size:32px; }
 
+/* ===== Edit Bestie launch: hero tag (black button) + section (lp-new-*) =====
+   Uses `rotate`, never `transform`, because .rise/.reveal own transform/translate. */
+.lp-new-tag{ display:inline-flex; align-items:center; gap:10px; margin-top:22px; rotate:-1.6deg; position:relative; isolation:isolate;
+  font-family:'Baloo 2',cursive; font-weight:800; font-size:16px; color:#fff; text-decoration:none; padding:7px 14px 7px 8px; white-space:nowrap; }
+.lp-new-tag::before{ content:""; position:absolute; inset:-2px -4px; z-index:-1;
+  background:var(--ink); border:2.5px solid var(--ink); border-radius:14px; box-shadow:3px 4px 0 rgba(20,20,20,.25); }
+.lp-new-tag-stamp{ font-family:'Press Start 2P',monospace; font-size:9px; color:#fff; background:var(--magenta);
+  border:2px solid #fff; border-radius:8px; padding:6px 7px; rotate:-4deg; }
+.lp-new-tag .btn-arrow{ transition:translate .15s ease; }
+.lp-new-tag:hover .btn-arrow{ translate:3px 0; }
+/* in the hero button row it sits beside Start Lesson 1, same height: black torn paper */
+.hero-cta .lp-new-tag{ margin-top:0; rotate:1.2deg; align-self:stretch; padding:0 18px 0 10px; color:#fff; }
+.hero-cta .lp-new-tag::before{ inset:-3px -7px; background:linear-gradient(rgba(22,20,18,.86), rgba(22,20,18,.86)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  background-blend-mode:multiply; border:none; border-radius:0; box-shadow:none; filter:url(#torn) drop-shadow(1px 2px 3px rgba(20,20,20,.28)); }
+
+.lp-new{ position:relative; text-align:center; padding:40px 30px 34px; rotate:0.9deg; }
+.lp-new > *{ position:relative; z-index:1; }
+.lp-new::before{ content:""; position:absolute; inset:-8px; z-index:0;
+  background:linear-gradient(rgba(255,226,92,.74), rgba(255,226,92,.74)), url(/assets/tex/paper-kraft.jpg) center/cover;
+  filter:url(#torn) drop-shadow(1px 5px 7px rgba(45,33,16,.22)); }
+.lp-new::after{ content:""; position:absolute; top:-17px; left:84px; rotate:-5deg; z-index:3; width:156px; height:36px; opacity:.85;
+  background-color:var(--green); background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.5) 0 12px, rgba(255,255,255,.16) 12px 24px); box-shadow:0 2px 3px rgba(0,0,0,.12); }
+.lp-new-stamp{ position:absolute !important; top:-20px; right:34px; z-index:4 !important; rotate:9deg;
+  font-family:'Press Start 2P',monospace; font-size:14px; color:#fff; background:var(--magenta);
+  border:3px solid var(--ink); border-radius:12px; padding:11px 13px; box-shadow:3px 3px 0 rgba(20,20,20,.25); }
+.lp-new-kicker{ display:block; font-family:'Caveat',cursive; font-weight:700; font-size:30px; color:#7a3e00; rotate:-2deg; }
+.lp-new h2{ font-size:40px; font-weight:800; letter-spacing:-.5px; margin:6px 0 0; text-wrap:balance; }
+.lp-new-copy{ font-size:17px; font-weight:700; color:#3a2c18; max-width:52ch; margin:12px auto 0; line-height:1.45; text-wrap:balance; }
+.lp-new-wink{ font-family:'Caveat',cursive; font-weight:700; font-size:25px; color:#5a3a12; margin:10px 0 0; text-wrap:balance; }
+.lp-new-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 22px; margin-top:22px; }
+.lp-new-row .btn{ rotate:-1.4deg; }
+.lp-new-price{ font-family:'Baloo 2',cursive; font-weight:800; font-size:17px; color:#3a2c18; min-height:1.5em; }
+.lp-new-price s{ color:#8a7350; font-weight:700; }
+.lp-new-price b{ font-size:22px; color:var(--ink); }
+.lp-new-fine{ display:block; margin-top:14px; font-weight:800; font-size:13.5px; color:#5a3a12; }
+
+@media (max-width:640px){
+  .lp-new-tag{ font-size:15px; }
+  .lp-new{ padding:36px 18px 28px; }
+  .lp-new::after{ left:40px; width:120px; }
+  .lp-new-stamp{ right:14px; font-size:11px; padding:9px 10px; }
+  .lp-new h2{ font-size:29px; }
+  .lp-new-copy{ font-size:15.5px; }
+  .lp-new-wink{ font-size:22px; }
+}
+
 @media (max-width:640px){
   .hb-banner{ height:210px; }
   .hb-coursetab{ display:none; }
@@ -408,6 +454,7 @@ footer .ig:hover{ color:var(--magenta); }
   .promise-row{ grid-template-columns:1fr; }
   .steps-row{ grid-template-columns:1fr; }
   .hero-cta .btn{ flex:1 1 auto; justify-content:center; }
+  .hero-cta .lp-new-tag{ flex:1 1 auto; justify-content:center; }
   .testi img{ width:72px; }
   .cta-card h2{ font-size:27px; }
   .nav-inner{ padding:0 16px; gap:8px; }

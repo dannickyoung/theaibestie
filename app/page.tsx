@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Reveal from "@/components/Reveal";
+import EditBestiePrice from "@/app/kits/EditBestiePrice";
 
 function BtnArrow() {
   return (
@@ -36,8 +37,9 @@ export default function Home() {
                     <a className="btn btn-primary" href="/lesson-01">
                       Start Lesson 1 <BtnArrow />
                     </a>
-                    <a className="btn btn-ghost" href="/lessons">
-                      <i className="iconoir-bookmark-book" /> Browse lessons
+                    <a className="lp-new-tag" href="/edit-bestie">
+                      <span className="lp-new-tag-stamp">NEW</span>
+                      Claude edits your reels <BtnArrow />
                     </a>
                     <span className="hero-note">
                       <i className="iconoir-heart" /> beginner-friendly, promise
@@ -75,6 +77,37 @@ export default function Home() {
         {/* ---------- learn / testimonial / final cta ---------- */}
         <section className="lp-section" id="learn">
           <div className="lp-container lp-close">
+            <Reveal className="lp-new">
+              <span className="lp-new-stamp" aria-hidden="true">NEW!</span>
+              <span className="lp-new-kicker">Meet Edit Bestie</span>
+              <h2>You film. Claude edits. You&nbsp;post.</h2>
+              <p className="lp-new-copy">
+                Your phone clips go in. A finished reel comes out. Best takes
+                picked, ums cut, captions timed to your voice, sound effects in.
+              </p>
+              <p className="lp-new-wink">Moguls don&apos;t spend three hours cutting&nbsp;ums.</p>
+              <div className="lp-new-row">
+                <a className="btn btn-primary" href="/edit-bestie">
+                  Meet Edit Bestie <BtnArrow />
+                </a>
+                <span className="lp-new-price">
+                  <EditBestiePrice
+                    sale={
+                      <>
+                        <s>$69.99</s> <b>$49.99</b> · 48-hour flash sale
+                      </>
+                    }
+                    regular={
+                      <>
+                        <b>$69.99</b> · one-time
+                      </>
+                    }
+                  />
+                </span>
+              </div>
+              <span className="lp-new-fine">🍎 Mac only · needs a Claude Pro plan</span>
+            </Reveal>
+
             <Reveal className="paper-card paper-brown">
               <div className="lp-head">
                 <h2>Online or offline, your call</h2>

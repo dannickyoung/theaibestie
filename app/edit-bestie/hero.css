@@ -1,0 +1,145 @@
+/* ===== Edit Bestie hero: eggshell film band + one Wendy head selected like a layer in a video editor =====
+   ebh- prefixed. .ebh-art / .ebh-h1 / .ebh-sub / .ebh-buy carry .rise (which owns `transform`), so any static
+   offsets or motion here use rotate / scale / translate / left / top, or live on inner wrappers. */
+
+.ebh{
+  --ebh-egg:#FAF1D1;            /* light eggshell yellow film */
+  --ebh-soft:#43372b;
+  --ebh-guide:#ff12e6;
+  position:relative; isolation:isolate; overflow:hidden; color:var(--ink); background:var(--ebh-egg);
+  padding:clamp(62px, 5.6vw, 88px) 0 clamp(60px, 5.4vw, 86px);
+  box-shadow:inset 0 10px 16px -14px rgba(45,33,16,.3);
+}
+
+/* film edges: sprocket holes + faint edge printing */
+.ebh-edge{ position:absolute; left:0; right:0; height:44px; z-index:3; pointer-events:none;
+  display:flex; justify-content:space-around; padding:0 6%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='22'%3E%3Crect x='9' y='4' width='16' height='14' rx='3.5' fill='%23221d27' fill-opacity='.24'/%3E%3C/svg%3E") repeat-x;
+  background-size:34px 22px; }
+.ebh-edge-top{ top:0; background-position:left 10px; align-items:flex-end; }
+.ebh-edge-bottom{ bottom:0; background-position:left calc(100% - 10px); align-items:flex-start; }
+.ebh-edge span{ font-family:'Press Start 2P',monospace; font-size:7px; letter-spacing:1px; color:rgba(110,82,36,.45); white-space:nowrap; }
+
+.ebh-inner{ position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:clamp(28px, 4vw, 64px); align-items:center; }
+
+/* ---------- copy ---------- */
+.ebh-copy{ display:flex; flex-direction:column; align-items:flex-start; }
+.ebh-h1{ font-family:'Baloo 2',cursive; font-weight:800; font-size:clamp(46px, 5.4vw, 80px); line-height:1.03; letter-spacing:-.02em; color:var(--ink); margin:0; }
+.ebh-line{ display:block; white-space:nowrap; }
+.ebh-mark{ position:relative; display:inline-block; isolation:isolate; margin:.04em 0 .08em; }
+.ebh-mark::before{ content:""; position:absolute; inset:.1em -.14em .02em; z-index:-1; border-radius:.1em; background:var(--eb-yellow);
+  box-shadow:0 0 0 3px var(--ink), .08em .08em 0 3px var(--ink); rotate:-1.6deg; }
+.ebh-sub{ font-size:clamp(17px, 1.5vw, 19px); font-weight:700; line-height:1.5; color:var(--ebh-soft); margin:22px 0 0; max-width:30ch; }
+.ebh-buy{ display:flex; flex-direction:column; align-items:flex-start; gap:16px; margin-top:28px; }
+
+/* ---------- the editor art ---------- */
+.ebh-art{ position:relative; justify-self:center; display:flex; flex-direction:column; align-items:center; width:100%; max-width:420px; }
+.ebh-stage{ position:relative; padding:60px 44px 28px; }
+
+/* snapping guides (magenta, dashed), blink like they just snapped */
+.ebh-guide{ position:absolute; z-index:0; opacity:.85; animation:ebh-snap 2.4s steps(1,end) infinite; }
+.ebh-guide-v{ left:50%; top:18px; bottom:-6px; width:2px; margin-left:-1px;
+  background:repeating-linear-gradient(180deg, var(--ebh-guide) 0 8px, transparent 8px 14px); }
+.ebh-guide-h{ top:46%; left:-8px; right:-8px; height:2px;
+  background:repeating-linear-gradient(90deg, var(--ebh-guide) 0 8px, transparent 8px 14px); animation-delay:-1.2s; }
+@keyframes ebh-snap{ 0%,70%{ opacity:.85; } 70.01%,100%{ opacity:.25; } }
+
+/* the selected layer: nudges + scales in stop-motion frames */
+.ebh-sel{ position:relative; z-index:1; width:clamp(190px, 19vw, 262px); transform-origin:50% 60%;
+  animation:ebh-nudge 2.4s steps(1,end) infinite; }
+@keyframes ebh-nudge{
+  0%{ rotate:-2deg; scale:1; }
+  33%{ rotate:1deg; scale:1.035; }
+  66%{ rotate:-.6deg; scale:1.018; }
+  100%{ rotate:-2deg; scale:1; } }
+.ebh-face{ display:block; width:116%; max-width:none; margin-left:-8%; height:auto; filter:drop-shadow(4px 8px 8px rgba(45,33,16,.28)); }
+
+.ebh-box{ position:absolute; inset:-14px; width:calc(100% + 28px); height:calc(100% + 28px); overflow:visible; pointer-events:none; }
+.ebh-box path{ fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+
+.ebh-h{ position:absolute; width:13px; height:13px; translate:-50% -50%; background:#fffaf0; border:2.5px solid var(--ink); border-radius:2px; z-index:2; }
+.ebh-h-tl{ left:-14px; top:-14px; }               .ebh-h-tm{ left:50%; top:-14px; }               .ebh-h-tr{ left:calc(100% + 14px); top:-14px; }
+.ebh-h-ml{ left:-14px; top:50%; }                                                                 .ebh-h-mr{ left:calc(100% + 14px); top:50%; }
+.ebh-h-bl{ left:-14px; top:calc(100% + 14px); }   .ebh-h-bm{ left:50%; top:calc(100% + 14px); }   .ebh-h-br{ left:calc(100% + 14px); top:calc(100% + 14px); background:var(--eb-rec); }
+
+/* rotation handle on a stalk */
+.ebh-rot{ position:absolute; left:50%; top:-14px; width:2.5px; height:34px; translate:-50% -100%; background:var(--ink); }
+.ebh-rot i{ position:absolute; left:50%; top:0; width:15px; height:15px; translate:-50% -60%; border-radius:50%; background:var(--eb-yellow); border:2.5px solid var(--ink); }
+
+/* layer tag */
+.ebh-tag{ position:absolute; left:-15px; top:-14px; translate:0 calc(-100% - 10px); z-index:2;
+  font-family:'Press Start 2P',monospace; font-size:8px; letter-spacing:.5px; line-height:1; color:var(--eb-yellow);
+  background:var(--ink); padding:6px 8px; border-radius:5px; rotate:-2deg; white-space:nowrap; }
+
+/* cursor mid-drag on the corner handle */
+.ebh-cursor{ position:absolute; z-index:3; left:calc(100% + 18px); top:calc(100% + 16px); width:26px;
+  animation:ebh-tap 2.4s steps(1,end) infinite; }
+.ebh-cursor svg{ display:block; width:100%; height:auto; overflow:visible; filter:drop-shadow(1px 2px 1px rgba(45,33,16,.3)); }
+.ebh-cursor path{ fill:#fffaf0; stroke:var(--ink); stroke-width:2; stroke-linejoin:round; }
+@keyframes ebh-tap{ 0%{ translate:0 0; } 33%{ translate:5px 5px; } 66%{ translate:3px 3px; } 100%{ translate:0 0; } }
+
+/* mini timeline */
+.ebh-tl{ position:relative; width:100%; max-width:340px; margin-top:22px; padding:8px 12px 10px; border-radius:12px; background:var(--eb-film);
+  border:3px solid var(--ink); box-shadow:4px 5px 0 rgba(20,20,20,.16); rotate:-1.2deg; }
+.ebh-ruler{ height:10px; margin-bottom:7px; opacity:.55;
+  background:repeating-linear-gradient(90deg, #f4efe4 0 1px, transparent 1px 10px), repeating-linear-gradient(90deg, #f4efe4 0 2px, transparent 2px 50px);
+  background-size:auto 5px, auto 10px; background-repeat:repeat-x; background-position:bottom, bottom; }
+.ebh-track{ position:relative; height:40px; }
+.ebh-clip{ position:absolute; top:0; height:24px; border-radius:6px; border:2px solid rgba(0,0,0,.5); display:flex; align-items:center; padding-left:8px;
+  font-family:'Press Start 2P',monospace; font-size:7px; color:var(--ink); white-space:nowrap; overflow:hidden; }
+.ebh-clip-1{ left:0; width:62%; background:var(--eb-yellow); }
+.ebh-clip-2{ left:64%; width:36%; background:var(--cyan); }
+.ebh-key{ position:absolute; top:30px; width:9px; height:9px; translate:-50% 0; rotate:45deg; background:var(--eb-yellow); border:1.5px solid #f4efe4; }
+.ebh-key-1{ left:10%; } .ebh-key-2{ left:41%; } .ebh-key-3{ left:78%; }
+.ebh-playhead{ position:absolute; top:4px; bottom:4px; left:12px; width:3px; background:var(--eb-rec); border-radius:2px;
+  animation:ebh-play 6.5s steps(26,end) infinite; }
+.ebh-playhead::before{ content:""; position:absolute; top:-2px; left:50%; translate:-50% 0; border:7px solid transparent; border-top:9px solid var(--eb-rec); border-bottom:0; }
+@keyframes ebh-play{ from{ left:12px; } to{ left:calc(100% - 15px); } }
+
+/* ---------- smaller screens ---------- */
+@media (max-width:900px){
+  .ebh{ padding:48px 0 58px; }
+  .ebh .lp-container{ padding:0 18px; }
+  .ebh-inner{ grid-template-columns:1fr; }
+  .ebh-art{ order:-1; max-width:none; }
+  .ebh-stage{ padding:70px 34px 20px; }
+  .ebh-tag{ left:-46px; font-size:7px; padding:5px 7px; }
+  .ebh-sel{ width:clamp(124px, 34vw, 180px); }
+  .ebh-tl{ max-width:250px; margin-top:20px; padding:6px 10px 8px; }
+  .ebh-track{ height:34px; }
+  .ebh-clip{ height:20px; font-size:6px; }
+  .ebh-key{ top:25px; width:8px; height:8px; }
+  .ebh-inner{ gap:14px; }
+  .ebh-h1{ font-size:clamp(40px, 12.4vw, 56px); }
+  .ebh-sub{ font-size:17px; margin-top:16px; }
+  .ebh-buy{ align-self:stretch; margin-top:22px; }
+  .ebh .btn.eb-buy{ align-self:stretch; justify-content:center; font-size:17px; }
+  .ebh .eb-price-now{ font-size:44px; }
+  .ebh .eb-price-was{ font-size:23px; }
+}
+@media (max-width:700px){
+  .ebh-edge{ justify-content:center; }
+  .ebh-edge span + span{ display:none; }
+}
+
+/* phones: tighten the art and the stack so the buy button lands inside the first screen (390x844) */
+@media (max-width:520px){
+  .ebh{ padding-top:40px; }
+  .ebh-stage{ padding:54px 34px 10px; }
+  .ebh-sel{ width:29vw; }
+  .ebh-tl{ margin-top:12px; }
+  .ebh-inner{ gap:8px; }
+  .ebh-h1{ font-size:11vw; }
+  .ebh-sub{ margin-top:12px; }
+  .ebh-buy{ margin-top:16px; gap:12px; }
+  .ebh .eb-price{ gap:6px; }
+  .ebh-stage{ padding-bottom:14px; }
+  .ebh-cursor{ left:calc(100% + 10px); top:calc(100% + 8px); }   /* tip sits on the corner handle, clear of the timeline */
+  .ebh-edge{ justify-content:flex-start; padding:0 18px; }   /* edge printing off-centre so the rotation handle never lands on it */
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ebh-sel, .ebh-cursor, .ebh-guide, .ebh-playhead{ animation:none; }
+  .ebh-sel{ rotate:-2deg; }
+  .ebh-playhead{ left:40%; }
+}

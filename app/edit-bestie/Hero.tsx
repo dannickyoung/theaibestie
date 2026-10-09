@@ -37,7 +37,7 @@ function EditorArt() {
         <span className="ebh-guide ebh-guide-v" />
         <span className="ebh-guide ebh-guide-h" />
         <div className="ebh-sel">
-          <img className="ebh-face" src="/assets/wendy-wink-clean.png" alt="" />
+          <img className="ebh-face" src="/edit-bestie/wendy-wink-hero.webp" width={609} height={760} alt="" />
           <svg className="ebh-box" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M0.6 0.9 L 50 0.2 L 99.4 0.8 L 99.8 50 L 99.2 99.3 L 50 99.8 L 0.4 99.1 L 0.1 50 Z" />
           </svg>

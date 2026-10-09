@@ -219,9 +219,6 @@ export default function EditBestiePage() {
           {/* ---------- how it works ---------- */}
           <section id="how" className="eb-section">
             <div className="eb-head">
-              <span className="eb-kicker" aria-hidden="true">
-                <span className="eb-rec" /> HOW IT WORKS
-              </span>
               <h2>How it works</h2>
             </div>
 
@@ -251,9 +248,6 @@ export default function EditBestiePage() {
           {/* ---------- pick your look ---------- */}
           <section className="eb-section">
             <div className="eb-head">
-              <span className="eb-kicker" aria-hidden="true">
-                <span className="eb-rec" /> PICK YOUR LOOK
-              </span>
               <h2>Pick your look</h2>
             </div>
             <div className="eb-looks">
@@ -276,9 +270,6 @@ export default function EditBestiePage() {
           {/* ---------- what you get ---------- */}
           <section className="eb-section">
             <div className="eb-head">
-              <span className="eb-kicker" aria-hidden="true">
-                <span className="eb-rec" /> WHAT YOU GET
-              </span>
               <h2>What you get</h2>
             </div>
             <Reveal className="eb-paper eb-paper-kraft eb-bin">
@@ -357,9 +348,6 @@ export default function EditBestiePage() {
           {/* ---------- faq ---------- */}
           <section className="eb-section">
             <div className="eb-head">
-              <span className="eb-kicker" aria-hidden="true">
-                <span className="eb-rec" /> FAQ
-              </span>
               <h2>FAQ</h2>
             </div>
             <div className="eb-paper eb-paper-white eb-faq">
@@ -392,7 +380,16 @@ export default function EditBestiePage() {
               </p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="eb-close-face" src="/assets/wendy-wink.png" alt="" aria-hidden="true" />
+            <img
+              className="eb-close-face"
+              src="/edit-bestie/wendy-wink-close.webp"
+              width={312}
+              height={390}
+              loading="lazy"
+              decoding="async"
+              alt=""
+              aria-hidden="true"
+            />
             <Sprockets pos="bottom" />
           </Reveal>
 

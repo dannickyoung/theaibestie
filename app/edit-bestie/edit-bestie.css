@@ -93,6 +93,7 @@
   font-family:'Baloo 2',cursive; font-weight:800; font-size:14px; color:var(--ink); background:var(--eb-yellow);
   border:2.5px solid var(--ink); border-radius:999px; padding:6px 13px; cursor:pointer; box-shadow:2px 3px 0 rgba(0,0,0,.35); }
 .eb-sound i{ font-size:17px; }
+.eb-sound::after{ content:""; position:absolute; inset:-6px -4px; }   /* invisible padding: 44px+ tap target without a bigger pill */
 
 /* ---------- body sections ---------- */
 .eb-body{ max-width:1060px; padding-top:40px; padding-bottom:40px; }
@@ -254,7 +255,7 @@
 .eb-dm{ margin:26px 0 0; font-size:16px; font-weight:700; color:#4a3f36; }
 .eb-dm strong{ color:var(--eb-rec-ink); }
 .eb-dm a{ color:var(--ink); text-decoration-color:var(--eb-rec); text-underline-offset:3px; }
-.eb-close-face{ position:absolute !important; right:34px; bottom:48px; width:104px; z-index:2; transform-origin:center bottom;
+.eb-close-face{ position:absolute !important; right:34px; bottom:48px; width:104px; height:auto; z-index:2; transform-origin:center bottom;
   filter:drop-shadow(4px 6px 6px rgba(0,0,0,.35)); animation:scrapbook 1.7s steps(3,end) infinite; }
 .eb-body > footer{ margin-top:44px; }
 

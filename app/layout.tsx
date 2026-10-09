@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ReelTracking from "@/components/ReelTracking";
 
 const SITE_URL = "https://theaibestie.vercel.app";
 const TITLE = "The AI Bestie · AI tutorials even your mom can understand";
@@ -67,6 +68,7 @@ export default function RootLayout({
         >
           <i className="iconoir-instagram" />
         </a>
+        <ReelTracking />
       </body>
     </html>
   );

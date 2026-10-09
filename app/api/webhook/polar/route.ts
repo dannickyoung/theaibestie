@@ -91,7 +91,7 @@ export const POST = Webhooks({
   webhookSecret: process.env.POLAR_WEBHOOK_SECRET!,
   onOrderPaid: async (payload) => {
     const productName = payload.data.product?.name ?? "unknown product";
-    console.log(`Polar order paid: ${payload.data.id} (${productName})`);
+    console.log(`Polar order paid: ${payload.data.id} (${productName}) ${JSON.stringify(payload.data.metadata ?? {})}`);
     try {
       await sendThankYou({
         customerEmail: payload.data.customer?.email,

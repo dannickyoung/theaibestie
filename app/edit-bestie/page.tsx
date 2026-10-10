@@ -60,11 +60,11 @@ const STEPS = [
   { t: "Say it in plain words.", d: "\"Edit my reel.\" \"Make it calm.\" \"Bold for the hook.\"" },
   {
     t: "Claude edits.",
-    d: "It picks your best take of every line, cuts the pauses, puts your words on screen on the beat you said them, drops in soft clicks and pops, and puts one big word behind your head.",
+    d: "It picks your best take of every line, cuts the pauses, puts your words on screen on the beat you said them, drops in soft clicks and pops, an emoji where you made the joke, a snap zoom on the punch, and puts one big word behind your head. Then it makes you a cover.",
   },
   {
     t: "Watch. Give notes.",
-    d: "\"Captions bigger.\" \"Cut the pause before the ask.\" Claude builds a new version. Keeps the old one.",
+    d: "\"Captions bigger.\" \"Cut the pause before the ask.\" Claude builds a new version. Keeps the old one. Want to tweak it yourself? \"Give me the CapCut version.\" Every layer is still yours.",
   },
   { t: "Post.", d: "A finished 1080x1920 video. No other app needed." },
 ];
@@ -83,6 +83,8 @@ const LOOKS = [
 const GET = [
   { icon: "iconoir-folder", d: "The Edit Bestie skill for Claude Code (a folder you open once)" },
   { icon: "iconoir-palette", d: "The three looks, plus mixing" },
+  { icon: "iconoir-sparks", d: "Emoji pops, snap zooms, push-ins, freeze frames and shakes, placed on the beat" },
+  { icon: "iconoir-media-image", d: "A cover image for every reel" },
   {
     icon: "iconoir-music-double-note",
     d: "Our own sound kit: 34 clicks, pops, whooshes and payoffs we made, safe to use on any post, even paid ads",
@@ -90,8 +92,12 @@ const GET = [
   { icon: "iconoir-book", d: "The handbook: install, the menu of things to say, stuck list. Short, with pictures." },
   { icon: "iconoir-video-camera", d: "The filming guide: 8 things that make the edit look expensive" },
   {
+    icon: "iconoir-design-pencil",
+    d: "CapCut export: say \"give me the CapCut version\" and every clip, caption and sound lands on its own layer in CapCut",
+  },
+  {
     icon: "iconoir-refresh-double",
-    d: "Free updates. Your purchase page always has the latest version; tell Claude \"update edit bestie\" and it swaps it in. First one coming: CapCut export, every layer editable.",
+    d: "Free updates. Your purchase page always has the latest version; tell Claude \"update edit bestie\" and it swaps it in.",
   },
 ];
 
@@ -117,10 +123,13 @@ const FAQ = [
   { q: "Will it look like me?", a: "It's your face, your words, your look. Claude edits, you direct." },
   {
     q: "Do I need CapCut?",
-    a: "No. You get a finished video. A CapCut export (every clip, caption and sound on its own layer, so you can tweak it) is coming as a free update.",
+    a: "No. You get a finished video. Like to tweak? Say \"give me the CapCut version\" and you get a CapCut project with every clip, caption and sound on its own layer.",
   },
   { q: "How many reels?", a: "No cap from us. Your Claude plan has daily usage; short reels use little." },
-  { q: "Other languages?", a: "Captions work in most. Add your names to the \"spell right\" list." },
+  {
+    q: "Other languages?",
+    a: "Yes. English out of the box; say your language and Claude fetches the bigger speech model once. Add your names to the \"spell right\" list.",
+  },
   { q: "Music?", a: "We add sound effects. Add the trending sound in Instagram when you post." },
   { q: "Windows?", a: "Not yet. Buyers get it free when it ships." },
   {

@@ -27,7 +27,8 @@ const { Polar } = require("@polar-sh/sdk");
 
 const ENV_PATH = path.join(__dirname, "..", ".env.local");
 const KIT_DIR = "/Volumes/DATA/AI Bestie/Edit Bestie";
-const WORKSPACE = path.join(KIT_DIR, "My Reels");
+// The buyer workspace for the current version (unzipped from the co-founder's My-Reels.zip).
+const WORKSPACE = "/Volumes/DATA/AI Bestie/Edit Bestie 0.3.0/My Reels";
 const DIST = path.join(KIT_DIR, "dist");
 const HANDBOOK = path.join(DIST, "handbook.pdf");
 // Blank style profile + starter edit.json: the source copies get rewritten whenever someone test-runs the kit.
@@ -50,7 +51,7 @@ const SALE_ENDS_AT = "2026-10-11T11:45:00Z";
 // Polar renders markdown on the checkout page.
 const PRODUCT_DESCRIPTION = [
   "**You film. Claude edits. You post.** Drop your phone clips in one folder, say \"edit my reel\", and get a finished reel in your look. Best takes picked, ums cut, captions timed to your voice, sound effects in.",
-  "**Inside the kit:** the handbook (PDF) and the My Reels workspace with the Edit Bestie skill for Claude Code, three looks you can mix, and our own sound kit (34 sounds, safe for any post, even ads).",
+  "**Inside the kit:** the handbook (PDF) and the My Reels workspace with the Edit Bestie skill for Claude Code, three looks you can mix, emoji pops and snap zooms, a cover for every reel, a CapCut version with every layer editable, and our own sound kit (34 sounds, safe for any post, even ads).",
   "**You will also need:** a Mac (Mac only for now) and Claude Pro or higher (about US$20/month, paid to Claude, not to us).",
   "Three hours of editing, now two words. Your empire just hired an editor. 👑",
 ].join("\n\n");

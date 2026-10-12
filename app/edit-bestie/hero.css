@@ -96,6 +96,18 @@
 .ebh-playhead::before{ content:""; position:absolute; top:-2px; left:50%; translate:-50% 0; border:7px solid transparent; border-top:9px solid var(--eb-rec); border-bottom:0; }
 @keyframes ebh-play{ from{ left:12px; } to{ left:calc(100% - 15px); } }
 
+/* ---------- demo under the headline + numbers row ---------- */
+.ebh-demo{ display:flex; align-items:center; gap:clamp(20px, 2.4vw, 32px); margin-top:26px; }
+.ebh-phone.eb-phone{ width:clamp(170px, 15vw, 210px); padding:7px; border-radius:30px; }
+.ebh-phone .eb-screen{ border-radius:23px; }
+.ebh-phone .eb-sound{ font-size:11px; padding:6px 10px; bottom:10px; }
+.ebh-side{ display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+.ebh-side .ebh-sub{ margin-top:0; }
+.ebh-stats{ grid-column:1 / -1; list-style:none; margin:34px 0 0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 12px; }
+.ebh-stats li{ font-family:'Baloo 2',cursive; font-weight:800; font-size:16px; line-height:1; color:var(--ink); background:#fff; padding:9px 15px 8px;
+  border:2px solid var(--ink); border-radius:999px; box-shadow:2px 2px 0 var(--ink); white-space:nowrap; }
+.ebh-stats li:nth-child(odd){ rotate:-1deg; } .ebh-stats li:nth-child(even){ rotate:1deg; }
+
 /* ---------- smaller screens ---------- */
 @media (max-width:900px){
   .ebh{ padding:48px 0 58px; }
@@ -136,6 +148,12 @@
   .ebh-stage{ padding-bottom:14px; }
   .ebh-cursor{ left:calc(100% + 10px); top:calc(100% + 8px); }   /* tip sits on the corner handle, clear of the timeline */
   .ebh-edge{ justify-content:flex-start; padding:0 18px; }   /* edge printing off-centre so the rotation handle never lands on it */
+  .ebh-stats{ margin-top:22px; gap:8px; }
+  .ebh-stats li{ font-size:14px; padding:8px 12px 7px; }
+}
+@media (max-width:600px){
+  .ebh-demo{ flex-direction:column; align-items:stretch; margin-top:18px; gap:18px; }
+  .ebh-phone.eb-phone{ align-self:center; width:min(240px, 64vw); }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -143,3 +161,4 @@
   .ebh-sel{ rotate:-2deg; }
   .ebh-playhead{ left:40%; }
 }
+.ebh-side .eb-sale-stamp{ white-space:nowrap; font-size:clamp(8.5px, .78vw, 10.5px); }

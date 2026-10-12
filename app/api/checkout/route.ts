@@ -1,13 +1,13 @@
 import { Checkout } from "@polar-sh/nextjs";
 import { Polar } from "@polar-sh/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { isOnSale } from "../../edit-bestie/sale";
+import { priceCentsAt } from "../../edit-bestie/sale";
 
 // Redirects the visitor to a Polar-hosted checkout page.
 //
 //   /api/checkout                      → sells the Starter Kit
 //   /api/checkout?kit=assistant        → sells the Assistant Kit
-//   /api/checkout?kit=edit             → sells Edit Bestie (flash-sale price inside the sale.ts window)
+//   /api/checkout?kit=edit             → sells Edit Bestie at the price set in app/edit-bestie/sale.ts
 //   /api/checkout?products=<id>        → sells any other Polar product
 //
 // Any utm_* tags on the URL (added by components/ReelTracking from the reel link the buyer
@@ -20,9 +20,6 @@ const KITS: Record<string, { env: string; id: string | undefined }> = {
   assistant: { env: "POLAR_ASSISTANT_PACK_PRODUCT_ID", id: process.env.POLAR_ASSISTANT_PACK_PRODUCT_ID },
   edit: { env: "POLAR_EDIT_BESTIE_PRODUCT_ID", id: process.env.POLAR_EDIT_BESTIE_PRODUCT_ID },
 };
-
-// Edit Bestie 48-hour flash sale: $49.99 until this instant, then the product's own $69.99.
-const EDIT_SALE_PRICE_CENTS = 4999;
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
 
@@ -38,33 +35,26 @@ function utmTags(url: URL): Record<string, string> {
 
 const server = process.env.POLAR_SERVER === "sandbox" ? "sandbox" : "production";
 
+// Edit Bestie's thank-you page (?kit=edit) plays the setup video.
 function successUrl(url: URL) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || url.origin;
   const success = new URL("/thanks", siteUrl);
+  success.searchParams.set("kit", "edit");
   success.searchParams.set("checkoutId", "{CHECKOUT_ID}");
   return decodeURI(success.toString());
 }
 
-// During the sale: a Polar discount if POLAR_EDIT_BESTIE_DISCOUNT_ID is set (shows the $20 off
-// line on checkout; needs a token with the discounts scope to create), otherwise a checkout
-// price override. After the deadline neither is sent, so Polar charges the regular price.
+// The price always comes from sale.ts as a checkout price override (the Polar product's own
+// price is not used): USD 69.99 before the Bestie flash sale, 39.99 during it, 59.99 after it.
 async function editCheckout(url: URL, productId: string, metadata: Record<string, string>) {
-  const onSale = isOnSale(Date.now());
-  const discountId = process.env.POLAR_EDIT_BESTIE_DISCOUNT_ID;
+  const priceAmount = priceCentsAt(Date.now());
   const polar = new Polar({ accessToken: process.env.POLAR_ACCESS_TOKEN, server });
   try {
     const result = await polar.checkouts.create({
       products: [productId],
       successUrl: successUrl(url),
       metadata,
-      ...(onSale && discountId ? { discountId } : {}),
-      ...(onSale && !discountId
-        ? {
-            prices: {
-              [productId]: [{ amountType: "fixed", priceAmount: EDIT_SALE_PRICE_CENTS, priceCurrency: "usd" }],
-            },
-          }
-        : {}),
+      prices: { [productId]: [{ amountType: "fixed", priceAmount, priceCurrency: "usd" }] },
     });
     const redirect = new URL(result.url);
     redirect.searchParams.set("theme", "light");

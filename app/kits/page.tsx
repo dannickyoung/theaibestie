@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import EditBestiePrice from "./EditBestiePrice";
+import { PRICE_REGULAR, PRICE_SALE } from "../edit-bestie/sale";
 
 const TITLE = "The Kits · The AI Bestie";
 const DESCRIPTION =
@@ -62,18 +63,18 @@ export default function KitsPage() {
               <p>
                 Edit Bestie turns your phone clips into a finished reel in your
                 look. Best takes picked, ums cut, captions timed to your voice,
-                sound effects in. You say &ldquo;edit my reel&rdquo;. You get a&nbsp;video.
+                sound effects in. You say &ldquo;edit my video&rdquo;. You get a&nbsp;reel.
               </p>
               <div className="lc-meta">
                 <span>
-                  <i className="iconoir-flash" /> Claude skill + handbook + sound kit
+                  <i className="iconoir-flash" /> Claude app skill + free Script Bestie + 85 sounds
                 </span>
                 <span>
                   <i className="iconoir-credit-card" />{" "}
                   <EditBestiePrice
                     sale={
                       <>
-                        <s style={{ fontWeight: 700 }}>$69.99</s>&nbsp;$49.99 · flash sale
+                        <s style={{ fontWeight: 700 }}>{PRICE_REGULAR}</s>&nbsp;{PRICE_SALE} · Bestie flash sale
                       </>
                     }
                   />

@@ -56,6 +56,7 @@
 .eb-price-was{ font-family:'Baloo 2',cursive; font-weight:700; font-size:26px; color:rgba(43,36,32,.55);
   text-decoration-color:var(--eb-rec); text-decoration-thickness:3px; }
 .eb-price-now{ font-family:'Baloo 2',cursive; font-weight:800; font-size:52px; line-height:1; color:var(--ink); }
+.eb-setup-help{ margin:0; font-size:14.5px; font-weight:700; line-height:1.4; color:#6b5d50; max-width:34ch; }
 .eb-price-note{ font-family:'Caveat',cursive; font-weight:700; font-size:23px; color:#6b5d50; }
 .eb-strip-bar{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px 18px; padding:clamp(16px, 2vw, 22px) 16px; text-align:center;
   background:var(--eb-yellow); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink); }
@@ -260,6 +261,28 @@
 .eb-body > footer{ margin-top:44px; }
 
 /* ---------- responsive ---------- */
+/* ---------- 11 Oct additions: flipped video rows, looks preview, how-it-works link, why us ---------- */
+.eb-watch-flip{ grid-template-columns:minmax(0,400px) auto; margin-top:clamp(64px, 8vw, 110px); }
+.eb-watch-flip .eb-watch-reel{ order:2; }
+.eb-skip{ margin:40px auto 0; max-width:46ch; text-align:center; font-size:18px; font-weight:700; line-height:1.5; color:#2f2620; }
+.eb-how-btn{ display:flex; width:fit-content; margin:22px auto 0; rotate:1deg; }
+.eb-looks-row{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(28px, 4vw, 56px); align-items:center; }
+.eb-looks-row .eb-looks{ grid-template-columns:repeat(2,1fr); }
+.eb-looks-phone.eb-phone{ width:250px; }
+.eb-why-us{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1040px; margin:0 auto; }
+.eb-why-card{ padding:28px 24px 26px; }
+.eb-why-card h3{ margin:16px 0 0; font-family:'Baloo 2',cursive; font-size:23px; font-weight:800; line-height:1.15; color:var(--ink); }
+.eb-why-card p{ margin:8px 0 0; font-size:16.5px; font-weight:700; line-height:1.5; color:#2f2620; }
+.eb-close-setup-help{ margin:14px 0 0; max-width:38ch; text-align:center; font-size:15px; font-weight:700; line-height:1.45; color:#4a3f36; }
+
+.eb-reels{ display:flex; justify-content:center; gap:clamp(18px, 3vw, 40px); margin:clamp(40px, 5vw, 64px) auto 0; }
+.eb-reel{ margin:0; display:flex; flex-direction:column; align-items:center; }
+.eb-reel-phone.eb-phone{ width:clamp(150px, 16vw, 200px); padding:7px; border-radius:28px; }
+.eb-reel-phone .eb-screen{ border-radius:21px; }
+.eb-reel-phone .eb-sound{ font-size:11px; padding:5px 10px; bottom:10px; }
+.eb-reel figcaption{ margin-top:12px; font-family:'Caveat',cursive; font-weight:700; font-size:22px; color:#2b2420; text-align:center; }
+.eb-faq-video{ display:block; width:100%; max-width:640px; margin:4px 0 18px; border-radius:14px; border:3px solid var(--ink); background:#000; aspect-ratio:16/9; }
+
 @media (max-width:980px){
   .eb-looks{ grid-template-columns:repeat(2,1fr); }
 }
@@ -276,7 +299,20 @@
   .eb-steps{ grid-template-columns:1fr 1fr; }
   .eb-who, .eb-honest-row{ grid-template-columns:1fr; }
 }
+@media (max-width:900px){
+  .eb-watch-flip{ grid-template-columns:minmax(0,1fr); }
+  .eb-watch-flip .eb-watch-reel{ order:-1; }
+  .eb-looks-row{ grid-template-columns:minmax(0,1fr); }
+  .eb-looks-phone.eb-phone{ justify-self:center; }
+  .eb-why-us{ grid-template-columns:1fr; max-width:560px; }
+}
 @media (max-width:640px){
+  .eb-reels{ overflow-x:auto; justify-content:flex-start; scroll-snap-type:x mandatory; padding:0 4px 8px; margin-inline:-18px; padding-inline:18px; }
+  .eb-reel{ scroll-snap-align:center; }
+  .eb-reel-phone.eb-phone{ width:58vw; }
+  .eb-looks-row .eb-looks{ grid-template-columns:1fr; }
+  .eb-looks-phone.eb-phone{ width:min(250px, 72vw); }
+  .eb-skip{ font-size:16.5px; margin-top:30px; }
   .eb-film{ padding:44px 20px; }
   .eb-sprockets{ left:10px; right:10px; height:16px; background-size:26px 16px; }
   .eb-sprockets-top{ top:10px; } .eb-sprockets-bottom{ bottom:10px; }

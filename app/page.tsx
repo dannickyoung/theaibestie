@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBar";
 import Reveal from "@/components/Reveal";
 import EditBestiePrice from "@/app/kits/EditBestiePrice";
+import { PRICE_BEFORE, PRICE_REGULAR, PRICE_SALE } from "@/app/edit-bestie/sale";
 
 function BtnArrow() {
   return (
@@ -94,12 +95,17 @@ export default function Home() {
                   <EditBestiePrice
                     sale={
                       <>
-                        <s>$69.99</s> <b>$49.99</b> · 48-hour flash sale
+                        <s>{PRICE_REGULAR}</s> <b>{PRICE_SALE}</b> · Bestie flash sale
                       </>
                     }
-                    regular={
+                    before={
                       <>
-                        <b>$69.99</b> · one-time
+                        <b>{PRICE_BEFORE}</b> · one-time
+                      </>
+                    }
+                    after={
+                      <>
+                        <b>{PRICE_REGULAR}</b> · one-time
                       </>
                     }
                   />

@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edit Bestie</title>
+<meta name="description" content="You film. Claude edits. See real reels Edit Bestie made, how it works, and everything you get.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=Press+Start+2P&family=Caveat:wght@600&display=swap">
+<style>
+/* Layout: a scrapbook on black. Phones and wide screens carry the proof; label tags and pixel captions come straight from the reels themselves. One committed dark look. */
+:root{
+  --ink:#0d0d0f; --panel:#17171b; --line:#2a2a31; --paper:#fcfaf5; --muted:#a9a6b3;
+  --yellow:#ffe14d; --cyan:#35ecec; --magenta:#ff12e6; --lilac:#bd8ddb; --green:#0bb14b;
+  --display:"Baloo 2","Arial Rounded MT Bold",ui-rounded,system-ui,sans-serif;
+  --body:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pixel:"Press Start 2P",ui-monospace,"SF Mono",Menlo,monospace;
+  --hand:"Caveat","Bradley Hand","Segoe Print",cursive;
+  --r:22px; --wrap:1120px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,5vw,3.3rem);font-weight:800}
+h3{font-size:1.35rem;font-weight:700}
+p{margin:0}
+.lede{color:var(--muted);font-size:1.12rem;max-width:58ch}
+.tag{display:inline-block;font-family:var(--pixel);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;padding:.55em .8em .5em;border-radius:7px;background:var(--magenta);color:#fff;line-height:1.3}
+.tag.cyan{background:var(--cyan);color:var(--ink)}
+.tag.yellow{background:var(--yellow);color:var(--ink)}
+.tag.lilac{background:var(--lilac);color:var(--ink)}
+.hand{font-family:var(--hand);color:var(--yellow);font-size:1.6rem;line-height:1}
+section{padding-block:clamp(56px,9vw,104px)}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;gap:14px;margin-bottom:34px;max-width:760px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;background:var(--yellow);color:var(--ink);padding:.78em 1.35em .7em;border-radius:999px;box-shadow:4px 4px 0 var(--magenta);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--magenta)}
+.btn:focus-visible,.snd:focus-visible,summary:focus-visible,.ghost:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.ghost{display:inline-flex;align-items:center;font-weight:800;text-decoration:none;color:var(--cyan);border-bottom:2px solid currentColor;padding-bottom:2px}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(13,13,15,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand b{font-family:var(--pixel);font-size:.72rem;line-height:1.35;color:var(--lilac);letter-spacing:.04em}
+.brand span{font-family:var(--display);font-weight:800;font-size:1.2rem;white-space:nowrap}
+.bar .btn{font-size:.95rem;padding:.6em 1.05em .52em;box-shadow:3px 3px 0 var(--magenta)}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,80px) clamp(56px,8vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(3rem,8.5vw,6.2rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--yellow);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.08em;height:.16em;background:var(--magenta);z-index:-1;border-radius:4px;transform:rotate(-1.5deg)}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero-copy .lede{font-size:1.2rem;color:#d8d5df}
+.buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.price{display:grid;gap:2px}
+.price strong{font-family:var(--display);font-size:1.6rem;font-weight:800;line-height:1}
+.price small{color:var(--muted);font-size:.9rem}
+.sale{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:700;width:fit-content;max-width:100%}
+.sale .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(11,177,75,.22);flex:none}
+.sale time{font-family:var(--pixel);font-size:.7rem;color:var(--yellow);font-variant-numeric:tabular-nums}
+
+/* phones */
+.phone{position:relative;width:100%;max-width:330px;aspect-ratio:9/16;border-radius:34px;padding:9px;background:#000;border:2px solid #34343c;box-shadow:0 30px 60px -20px rgba(0,0,0,.7),0 0 0 1px #000}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;border-radius:26px;display:block;background:#111}
+.phone .tag{position:absolute;top:22px;left:22px;z-index:2}
+.snd{position:absolute;right:18px;bottom:18px;z-index:2;font-family:var(--body);font-weight:800;font-size:.85rem;border:0;border-radius:999px;padding:.5em .9em;background:rgba(0,0,0,.72);color:#fff;cursor:pointer}
+.hero-visual{display:flex;justify-content:center;position:relative}
+.hero-visual .phone{max-width:340px;transform:rotate(2deg)}
+.hero-visual .note{position:absolute;left:0;bottom:12%;transform:rotate(-6deg);background:var(--paper);color:var(--ink);padding:10px 14px;border-radius:10px;box-shadow:4px 4px 0 var(--cyan);max-width:190px;font-weight:800;font-size:.95rem;line-height:1.25}
+.hero-visual .note span{display:block;font-family:var(--pixel);font-size:.55rem;color:var(--magenta);margin-bottom:6px}
+
+/* proof numbers */
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.num{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:8px;align-content:start}
+.num b{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:var(--yellow);font-variant-numeric:tabular-nums}
+.num:nth-child(2) b{color:var(--cyan)}
+.num:nth-child(3) b{color:var(--magenta)}
+.num p{color:#d8d5df}
+
+/* real run */
+.run{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;align-items:center}
+.screen{position:relative;border-radius:18px;overflow:hidden;border:2px solid #34343c;background:#000;box-shadow:0 30px 60px -24px rgba(0,0,0,.7);max-width:100%}
+.screen video,.screen img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.steps{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--pixel);font-size:.7rem;width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:var(--yellow);color:var(--ink)}
+.steps b{display:block;font-family:var(--display);font-size:1.15rem}
+.steps span{color:var(--muted);font-size:.98rem}
+.say{font-family:var(--display);font-weight:700;color:var(--cyan);white-space:nowrap}
+
+/* reel wall */
+.wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:start}
+.wall figure{margin:0;display:grid;gap:10px;justify-items:center;min-width:0}
+.wall .phone{max-width:260px;border-radius:28px;padding:7px}
+.wall .phone video,.wall .phone img{border-radius:22px}
+.wall figure:nth-child(odd) .phone{transform:rotate(-1.5deg)}
+.wall figure:nth-child(even) .phone{transform:rotate(1.5deg) translateY(18px)}
+.wall figcaption{font-weight:700;font-size:.95rem;text-align:center;color:var(--muted)}
+.wall figcaption b{display:block;color:var(--paper);font-family:var(--display);font-size:1.1rem}
+.wall figure:nth-child(even) figcaption{margin-top:18px}
+
+/* split feature */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.split.flip > :first-child{order:2}
+.split .copy{display:grid;gap:18px;min-width:0}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ticks li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.ticks li::before{content:"";width:18px;height:18px;margin-top:.22em;border-radius:5px;background:var(--green);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+.trio{display:flex;gap:14px;justify-content:center;align-items:flex-start}
+.trio .phone{max-width:200px;border-radius:24px;padding:6px}
+.trio .phone video{border-radius:19px}
+.trio .phone:nth-child(2){transform:translateY(28px)}
+.looks{display:grid;gap:12px}
+.look{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-weight:700;font-size:.88rem;padding:.42em .8em;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
+.chip.k{border-color:transparent;background:var(--lilac);color:var(--ink)}
+.panelwin{max-width:460px;justify-self:center;width:100%;position:relative}
+.panelwin video{aspect-ratio:600/760}
+.panelwin .tag{position:absolute;top:14px;left:14px;z-index:2}
+.shot{border-radius:18px;overflow:hidden;border:2px solid #34343c;background:#000;max-width:100%}
+.shot img{display:block;width:100%;height:auto}
+
+/* value */
+.value{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}
+.stack{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);display:grid;gap:0}
+.stack .row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.stack .row:last-child{border-bottom:0}
+.stack .row b{font-family:var(--display);font-size:1.12rem;font-weight:700}
+.stack .row p{color:var(--muted);font-size:.95rem;grid-column:1/-1;margin-top:-6px}
+.stack .row em{font-style:normal;font-family:var(--pixel);font-size:.6rem;color:var(--cyan);white-space:nowrap}
+.compare{display:grid;gap:14px}
+.card{border-radius:var(--r);padding:24px;display:grid;gap:10px}
+.card.them{background:var(--panel);border:1px solid var(--line)}
+.card.us{background:var(--yellow);color:var(--ink);box-shadow:6px 6px 0 var(--magenta)}
+.card .big{font-family:var(--display);font-weight:800;font-size:2.3rem;line-height:1}
+.card.them .big{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--magenta);text-decoration-thickness:3px}
+.card.us .btn{background:var(--ink);color:var(--yellow);box-shadow:4px 4px 0 var(--magenta);width:fit-content}
+.card small{font-size:.9rem;opacity:.85}
+
+/* needs + faq */
+.need{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.need div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:6px;align-content:start}
+.need b{font-family:var(--display);font-size:1.1rem}
+.need span{color:var(--muted);font-size:.95rem}
+.faq{display:grid;gap:10px;max-width:820px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:0 20px}
+summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:700;font-size:1.15rem;padding:18px 0;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--yellow);font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:18px;color:#d8d5df;max-width:65ch}
+
+/* final */
+.final{text-align:center}
+.final .wrap{display:grid;justify-items:center;gap:20px}
+.final h2{font-size:clamp(2.4rem,7vw,4.6rem)}
+.final .sale{margin-inline:auto}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:900px){
+  .hero .wrap,.run,.split,.value{grid-template-columns:1fr}
+  .split.flip > :first-child{order:0}
+  .wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .need{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-visual .note{left:4px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .nums{grid-template-columns:1fr}
+  .need{grid-template-columns:1fr}
+  .bar .btn{display:none}
+  .trio .phone{max-width:31vw}
+  .wall figure:nth-child(even) .phone{transform:rotate(1.5deg)}
+  .wall figure:nth-child(even) figcaption{margin-top:0}
+  .hero-visual .note{position:static;transform:rotate(-3deg);margin-top:-30px}
+  .hero-visual{flex-direction:column;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){.btn,.btn:hover{transition:none;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/edit-bestie" style="text-decoration:none"><b>THE AI<br>BESTIE</b><span>Edit Bestie</span></a>
+    <a class="btn" href="/api/checkout?kit=edit&amp;utm_content=howitworks_bar">Edit my reels for me</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="tag cyan">For the Claude app on your Mac</span>
+        <h1>You film.<br><em>Claude edits.</em></h1>
+        <p class="lede">Drop your takes in a folder and type <span class="say">edit my video</span>. About five minutes later you have a finished reel in your own style: your best take of every line, no ums, captions, B-roll, sound and three covers. You never open an editing app.</p>
+        <div class="buyrow">
+          <a class="btn" href="/api/checkout?kit=edit&amp;utm_content=howitworks_hero">Edit my reels for me</a>
+          <div class="price"><strong data-price>USD 69.99</strong><small>one payment, yours to keep</small></div>
+        </div>
+        <div class="sale" data-sale><span class="dot"></span><span data-sale-text>Bestie flash sale: Wednesday 21 to Tuesday 27 Oct</span><time data-count></time></div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone">
+          <span class="tag">Real result</span>
+          <video data-auto muted loop playsinline preload="metadata" poster="media/beforeafter.jpg" src="media/beforeafter.mp4" aria-label="Before and after: 12 minutes of raw takes edited into a 51 second reel"></video>
+          <button class="snd" type="button" data-sound>Sound on</button>
+        </div>
+        <p class="note"><span>RAW TIME 12:26</span>Twelve minutes of my rambling, cut to a 51-second reel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="nums">
+        <div class="num"><b>12:26 → 0:51</b><p>Twelve minutes of raw takes became one 51-second reel. Every um, pause and bad take, gone.</p></div>
+        <div class="num"><b>~5 min</b><p>From "edit my video" to a reel you can post. Editing one by hand can take two hours.</p></div>
+        <div class="num"><b>129</b><p>People commented EDIT on my first reels about it in two days, asking how I did it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag yellow">No cuts, no tricks</span>
+        <h2>Watch it edit a real reel</h2>
+        <p class="lede">This is the whole thing, start to finish, in the Claude app. Sped up only while it works.</p>
+      </div>
+      <div class="run">
+        <div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/realrun.jpg" src="media/realrun.mp4" aria-label="Screen recording of Edit Bestie editing a reel in the Claude app"></video></div>
+        <ol class="steps">
+          <li><div><b>Type <span class="say">new video</span></b><span>A folder for the video opens, with a VO and a B-roll folder inside.</span></div></li>
+          <li><div><b>Drop your clips in</b><span>Talking takes in VO, your other shots in B-roll.</span></div></li>
+          <li><div><b>Type <span class="say">edit my video</span></b><span>Claude picks your best takes, cuts the ums and builds the reel.</span></div></li>
+          <li><div><b>Tap to change anything</b><span>A review panel opens next to the chat. Bigger captions, a different take, your notes.</span></div></li>
+          <li><div><b>Version 2, ready to post</b><span>It lands in the video's Finished folder with three covers and your caption copied.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="reels">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">Made by Edit Bestie</span>
+        <h2>Reels it made. Nobody opened an editor.</h2>
+        <p class="lede">Different creators, different looks, same three words. Each one picked the best takes, timed every caption to the voice and cut the B-roll in over the right line.</p>
+      </div>
+      <div class="wall">
+        <figure><div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/finished.jpg" src="media/finished.mp4" aria-label="Wendy's reel edited by Edit Bestie"></video><button class="snd" type="button" data-sound>Sound on</button></div><figcaption><b>My reel, 51 seconds</b>Captions, pop-up screens, zooms</figcaption></figure>
+        <figure><div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/sneakers.jpg" src="media/sneakers.mp4" aria-label="Sample reel in the cool girl look"></video></div><figcaption><b>Cool girl</b>Soft words, one handwritten line</figcaption></figure>
+        <figure><div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/matcha.jpg" src="media/matcha.mp4" aria-label="Sample reel in the bold look"></video></div><figcaption><b>Bold</b>Big punchy hook, pops on every beat</figcaption></figure>
+        <figure><div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/car.jpg" src="media/car.mp4" aria-label="Sample reel with B-roll cut in"></video></div><figcaption><b>B-roll, cut in for you</b>Your shots over the line they match</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="trio">
+        <div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/showcase.jpg" src="media/showcase.mp4" aria-label="Every look and effect"></video></div>
+        <div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/camera.jpg" src="media/camera.mp4" aria-label="Camera moves: follow cam, whip pan, speed ramp"></video></div>
+        <div class="phone"><video data-auto muted loop playsinline preload="none" poster="media/emoji.jpg" src="media/emoji.mp4" aria-label="Moving emoji and hand-drawn stickers"></video></div>
+      </div>
+      <div class="copy">
+        <span class="tag lilac">26 effects, placed for you</span>
+        <h2>The edit you'd pay an editor for</h2>
+        <p class="lede">Claude chooses where each one goes, so the reel feels designed, not busy.</p>
+        <div class="chips">
+          <span class="chip k">Punch in</span><span class="chip k">Snap zoom</span><span class="chip k">Follow cam</span><span class="chip k">Whip pan</span><span class="chip k">Speed ramp</span><span class="chip k">Freeze</span>
+          <span class="chip">Emoji pop</span><span class="chip">Bounce</span><span class="chip">Burst</span><span class="chip">Hand-drawn arrows</span><span class="chip">Circles</span><span class="chip">Underlines</span>
+          <span class="chip">Floating mini screens</span><span class="chip">Shrink to card</span><span class="chip">Split screen</span><span class="chip">Progress bar</span><span class="chip">Word behind your head</span><span class="chip">85 sound effects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split flip">
+      <div class="trio" style="justify-content:center">
+        <div class="phone" style="max-width:300px"><video data-auto muted loop playsinline preload="none" poster="media/looks.jpg" src="media/looks.mp4" aria-label="The three looks side by side"></video></div>
+      </div>
+      <div class="copy">
+        <span class="tag cyan">Your style, every time</span>
+        <h2>Pick a look. Or bring your own.</h2>
+        <div class="looks">
+          <div class="look"><span class="tag yellow">Cool girl</span><p>Soft and warm, lowercase words and one handwritten line.</p></div>
+          <div class="look"><span class="tag">Bold</span><p>Big punchy words that pop on every beat.</p></div>
+          <div class="look"><span class="tag lilac">Cool dude</span><p>Dark and cinematic, small caps and big serif words.</p></div>
+          <div class="look"><span class="tag cyan">Your own</span><p>Show it a reel you love and it builds your look from it.</p></div>
+        </div>
+        <p class="lede">It also films in your language. Chinese, Thai and more come out as captions in that language.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="screen panelwin"><span class="tag cyan">The real panel</span><video data-auto muted loop playsinline preload="none" poster="media/panelvid.jpg" src="media/panel.mp4" aria-label="Scrolling the review panel: playing the reel, changing colour and caption size, editing lines and typing a note"></video></div>
+      <div class="copy">
+        <span class="tag yellow">You stay the boss</span>
+        <h2>Tap to change anything</h2>
+        <ul class="ticks">
+          <li>Cut a line, or swap in a different take.</li>
+          <li>Fix any word in the captions.</li>
+          <li>Move a B-roll shot, change the look, the colour, the caption size.</li>
+          <li>Or just type a note like you would to an editor: <span class="say">captions bigger</span>.</li>
+        </ul>
+        <p class="lede">Press send, and version 2 comes back with your notes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split flip">
+      <div class="shot"><img src="media/covers.jpg" alt="Three cover options for one reel, numbered 1 to 3" loading="lazy"></div>
+      <div class="copy">
+        <span class="tag">Ready to post</span>
+        <h2>Three covers with every reel</h2>
+        <p class="lede">Your hook on a clean frame, one big word, or a label on your best shot. Say 1, 2 or 3. The reel, covers and caption all land in the video's own Finished folder, ready to AirDrop to your phone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="tag cyan">Love tweaking it yourself?</span>
+        <h2>Finish it in CapCut, every layer ready</h2>
+        <p class="lede">Type <span class="say">give me the CapCut version</span>. Captions, emoji, zooms, B-roll and sounds come in on their own layers, so you change one word or move one emoji and you're done.</p>
+      </div>
+      <div class="screen"><video data-auto muted loop playsinline preload="none" poster="media/capcut.jpg" src="media/capcut.mp4" aria-label="The Edit Bestie reel opened in CapCut with every part on its own layer"></video></div>
+    </div>
+  </section>
+
+  <section id="get">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag yellow">Everything you get</span>
+        <h2>What's inside</h2>
+      </div>
+      <div class="value">
+        <div class="stack">
+          <div class="row"><b>Edit Bestie</b><em>THE EDITOR</em><p>Best takes, no ums, captions timed to your voice, B-roll, sound, 3 covers, the caption copied.</p></div>
+          <div class="row"><b>The review panel</b><em>INSIDE THE APP</em><p>Tap to cut, fix, move and restyle. Version 2 in minutes.</p></div>
+          <div class="row"><b>3 looks + your own</b><em>STYLE</em><p>Cool girl, bold, cool dude, or one built from a reel you love.</p></div>
+          <div class="row"><b>26 effects and 85 sounds</b><em>MOTION</em><p>Camera moves, emoji, stickers, mini screens, split screens.</p></div>
+          <div class="row"><b>CapCut version</b><em>EVERY LAYER</em><p>For when you want to finish it yourself.</p></div>
+          <div class="row"><b>Script Bestie</b><em>INCLUDED</em><p>Writes your next script in your voice, with the shots to film.</p></div>
+          <div class="row"><b>Updates and setup help</b><em>ONGOING</em><p>New versions on your download page. Stuck? DM STUCK and we'll get you running.</p></div>
+        </div>
+        <div class="compare">
+          <div class="card them"><span class="tag lilac">A freelance editor</span><span class="big">USD 20–50</span><small>per reel. Four reels a month is USD 80 to 200, every month.</small></div>
+          <div class="card us"><span class="tag">Edit Bestie</span><span class="big" data-price>USD 69.99</span><small>once, for every reel you'll ever make.</small><a class="btn" href="/api/checkout?kit=edit&amp;utm_content=howitworks_value">Edit my reels for me</a></div>
+          <p class="hand">pays for itself on your first reel ✶</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <span class="tag lilac">What you need</span>
+        <h2>Simple setup, private by design</h2>
+      </div>
+      <div class="need">
+        <div><b>A Mac</b><span>Apple chip is best. Intel works, just slower.</span></div>
+        <div><b>The Claude app</b><span>With a paid plan (Pro, about USD 20 a month, paid to Claude).</span></div>
+        <div><b>One sentence to set up</b><span>Type <span class="say">set up edit bestie</span> and Claude installs everything while you make a coffee.</span></div>
+        <div><b>Your footage stays yours</b><span>Edited on your own Mac. Claude only touches the folders you give it.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Do I need to be technical?</summary><p>No. You click four buttons once to open your folder in the Claude app, then you talk to it in plain words. No coding, no terminal, no editing app.</p></details>
+        <details><summary>Will it look like me, or like everyone else?</summary><p>Like you. At setup it learns your look, your colour and the words it must spell right. Show it a reel you love and it builds your own look from it.</p></details>
+        <details><summary>Does it touch anything else on my Mac or phone?</summary><p>No. Claude only uses the footage you put in your video's VO and B-roll folders. Your Photos, other files and phone stay untouched.</p></details>
+        <details><summary>Do you see my videos?</summary><p>No. Your clips are edited on your own Mac and never uploaded to us.</p></details>
+        <details><summary>Can I film in Chinese, Thai or another language?</summary><p>Yes. Tell Claude your language at setup and your captions come out in it.</p></details>
+        <details><summary>Does it work on Windows?</summary><p>Not yet. It's Mac only for now.</p></details>
+        <details><summary>What if I get stuck?</summary><p>Tell Claude "fix it". Still stuck? DM STUCK to @the.ai.bestie and we'll get you running.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="hand">your next reel, edited while you make a coffee</span>
+      <h2>Stop editing your own reels.</h2>
+      <div class="buyrow" style="justify-content:center">
+        <a class="btn" href="/api/checkout?kit=edit&amp;utm_content=howitworks_final">Edit my reels for me</a>
+        <div class="price" style="text-align:left"><strong data-price>USD 69.99</strong><small>one payment, yours to keep</small></div>
+      </div>
+      <div class="sale" data-sale><span class="dot"></span><span data-sale-text>Bestie flash sale: Wednesday 21 to Tuesday 27 Oct</span><time data-count></time></div>
+      <p class="lede" style="margin-inline:auto">Not ready yet? Start with <a class="ghost" href="https://buy.polar.sh/polar_cl_MJOUSV4D2dJ4rNFRzEy70qOfBKf45YPbHvf0A0OqDKI">Script Bestie, free</a></p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span><a href="/edit-bestie" style="text-decoration:none">The AI Bestie</a> · Edit Bestie</span><span>Mac only · Claude app with a paid plan</span></div></footer>
+
+<script>
+(function(){
+  // Sale window, Singapore time.
+  var START = Date.parse("2026-10-21T00:00:00+08:00");
+  var END = Date.parse("2026-10-27T23:59:59+08:00");
+  var texts = document.querySelectorAll("[data-sale-text]"), counts = document.querySelectorAll("[data-count]"), prices = document.querySelectorAll("[data-price]");
+  function pad(n){return (n<10?"0":"")+n}
+  function tick(){
+    var now = Date.now(), t, c = "";
+    if (now < START){ t = "Bestie flash sale opens Wednesday 21 Oct: USD 39.99 for 7 days"; }
+    else if (now <= END){
+      var s = Math.floor((END-now)/1000), d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60), x = s%60;
+      t = "Bestie price ends in"; c = d+"d "+pad(h)+"h "+pad(m)+"m "+pad(x)+"s";
+    } else {
+      t = "Edit Bestie is USD 59.99"; prices.forEach(function(p){p.textContent="USD 59.99"});
+    }
+    texts.forEach(function(el){el.textContent=t}); counts.forEach(function(el){el.textContent=c; el.hidden=!c});
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Videos: play while on screen, pause when not. Respect reduced motion.
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var vids = document.querySelectorAll("video[data-auto]");
+  if (!reduce && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting){ if (v.preload==="none") v.preload="auto"; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+        else { v.pause(); }
+      });
+    }, {threshold:.35});
+    vids.forEach(function(v){io.observe(v)});
+  } else { vids.forEach(function(v){v.controls=true}); }
+
+  // Sound buttons: one video with sound at a time.
+  document.querySelectorAll("[data-sound]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var v = b.parentElement.querySelector("video"), on = v.muted;
+      vids.forEach(function(o){o.muted=true}); document.querySelectorAll("[data-sound]").forEach(function(o){o.textContent="Sound on"});
+      v.muted = !on; if (on){ v.currentTime=0; var p=v.play(); if(p&&p.catch)p.catch(function(){}); b.textContent="Sound off"; }
+    });
+  });
+})();
+</script>
+</body>
+</html>

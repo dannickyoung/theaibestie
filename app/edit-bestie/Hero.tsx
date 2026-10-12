@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { BuyButton, PriceTag, SaleStrip } from "./Pricing";
+import SampleReel from "./SampleReel";
 import "./hero.css";
 
 function BtnArrow() {
@@ -22,6 +23,8 @@ function FilmEdge({ pos }: { pos: "top" | "bottom" }) {
     </div>
   );
 }
+
+const STATS = ["26 effects", "8 caption styles", "3 looks + your own", "85 sound effects", "3 covers per reel"];
 
 const HANDLES = ["tl", "tm", "tr", "ml", "mr", "bl", "bm", "br"];
 
@@ -58,7 +61,7 @@ function EditorArt() {
       <div className="ebh-tl">
         <div className="ebh-ruler" />
         <div className="ebh-track">
-          <span className="ebh-clip ebh-clip-1">edit my reel</span>
+          <span className="ebh-clip ebh-clip-1">edit my video</span>
           <span className="ebh-clip ebh-clip-2" />
           <span className="ebh-key ebh-key-1" />
           <span className="ebh-key ebh-key-2" />
@@ -85,12 +88,20 @@ export default function Hero({ ssrOnSale }: { ssrOnSale: boolean }) {
             </span>{" "}
             <span className="ebh-line">You post.</span>
           </h1>
+          <div className="ebh-demo">
+            <SampleReel
+              className="ebh-phone"
+              src="/edit-bestie/demo.mp4"
+              poster="/edit-bestie/demo-poster.jpg"
+              label="Demo: Claude editing a reel with Edit Bestie"
+            />
+            <div className="ebh-side">
           <p className="ebh-sub rise" style={{ animationDelay: "140ms" }}>
             Edit Bestie turns your phone clips into a finished reel in your&nbsp;look.
           </p>
           <div className="ebh-buy rise" style={{ animationDelay: "220ms" }}>
             <PriceTag ssrOnSale={ssrOnSale} />
-            <BuyButton ssrOnSale={ssrOnSale}>
+            <BuyButton>
               <BtnArrow />
             </BuyButton>
             <p className="eb-musts">
@@ -102,8 +113,15 @@ export default function Hero({ ssrOnSale }: { ssrOnSale: boolean }) {
               </span>
             </p>
           </div>
+            </div>
+          </div>
         </div>
         <EditorArt />
+        <ul className="ebh-stats" aria-label="What Edit Bestie can do">
+          {STATS.map((s) => (
+            <li key={s}>{s}</li>
+          ))}
+        </ul>
       </div>
       <FilmEdge pos="bottom" />
     </section>

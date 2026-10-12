@@ -16,7 +16,7 @@ function noteFor(productId: string | undefined, productName: string): Note {
   if (productId === process.env.POLAR_EDIT_BESTIE_PRODUCT_ID || /edit bestie/i.test(productName)) {
     return {
       subject: "you film, Claude edits 🎬",
-      line: "Your editing days are numbered. Open the handbook, set it up once (about 20 minutes, mostly waiting), then drop your clips in and say \"edit my reel\". Moguls don't cut their own ums.",
+      line: "Your editing days are numbered. Watch the 90-second setup video in your download, set it up once (about 20 minutes, mostly waiting), then drop your takes in and say \"edit my video\". Moguls don't cut their own ums.",
     };
   }
   if (
